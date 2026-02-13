@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'svgmapjs',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Client-centric, de-centralized web mapping',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -18,11 +18,12 @@ const config: Config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/tutorials/',
 
   // GitHub pages deployment config.
   organizationName: 'svgmap',
   projectName: 'tutorials',
+  deploymentBranch: 'main',
 
   onBrokenLinks: 'throw',
 
