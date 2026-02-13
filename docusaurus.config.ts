@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'svgmapjs',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Client-centric, de-centralized web mapping',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -23,6 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   organizationName: 'svgmap',
   projectName: 'tutorials',
+  deploymentBranch: 'main',
 
   onBrokenLinks: 'throw',
 
