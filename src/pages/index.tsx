@@ -34,7 +34,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Client-centric, de-centralized web mapping">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
