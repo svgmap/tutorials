@@ -42,7 +42,7 @@ tutorial2.html
      +-Coastline_Airport.svg (actual map content (coastline and airport points))
 ```
 
-### Container.svg
+### tutorial2.html
 
 Basically the same as tutorial1.html used in Tutorial 1.
 
@@ -144,22 +144,61 @@ Basically the same as tutorial1.html used in Tutorial 1.
 </html>
 ```
 
-#### SVGMap content format
+### Container.svg
 
-The SVGMap content format is essentially SVG format data, with some extensions (one of which is required):
+Load an SVG file for each layer you want to display (only Coastline_Airport.svg is loaded).
 
-##### Required extension: globalCoordinateSystem element
+```svg
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="122.9800817, -45.398095, 21.97626, 21.0533039" >
+ <globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />
 
-The following globalCoordinateSystem element is required. (The SVGMap content must describe its relationship to the geographic coordinate system as a map.)
+<!-- Load the SVG file of Japan's coastline and airport data as a display state -->
+<animation xlink:href="Coastline_Airport.svg" x="-3000" y="-3000" width="6000" height="6000" title="Japan Coastline and Air Port" class="editable" visibility="visible"/>
 
-### Coastline.svg
+</svg>
+```
 
-- The Japanese coastline data is defined by numerous lines.
-- Since the transform of the globalCoordinateSystem is matrix(100,0,0,-100,0,0), the values described are multiplied by 100 for latitude and longitude (latitude is -100).
+### Coastline_Airport.svg
 
-The method for creating this data itself will be explained in a separate tutorial.
+- Added airport information to Coastline.svg in Tutorial 1.
+- **Drawing proceeds from the top row**, so first write the background (coastline), then write the point data (additional information).
 
-```svg property:test
+#### How to write point data (POI)
+
+##### Defining icons using the defs element
+
+- **Within the defs element**, define the icons to be used within that SVG file.
+- Each individual icon is defined using a **g** element placed as its child element.
+  - Assign an ID to the g element to reference the icon.
+  - Describe the actual icon within the g element. Here, an image element is used to employ a bitmap image as the icon.
+- For bitmap icons using the image element:
+  - Specify the icon size using the width and height attributes.
+  - Use the x and y attributes to define the origin (anchor point).
+    - This determines which part of the bitmap icon corresponds to the point geometry's coordinates. For instance, when using an icon shaped like a pin, it is advisable to set the pin's tip as the origin.
+    - Specifies the shift amount of the POI icon's origin relative to the bitmap image's origin (top-left). The shift value is typically negative.
+    - In this sample, for an icon size of 19x27, specifying x="-8" y="-25" sets the origin to (almost) the bottom-left corner, centred.
+
+##### Placing POI data using the use element
+
+- References the icon defined by the **xlink:href** attribute.
+- Coordinates for point data are set in the **transform** attribute for use with the feature described later (Non-scaling Object) (set x and y attributes to 0).
+- Describe metadata in the **content** attribute, separated by commas. This metadata is displayed when the icon is clicked.
+  - Define the airport display image and describe the actual airport information (latitude/longitude, image used, title, information displayed on click).
+  - Using the **property** attribute of the **svg** element (documentElement), metadata attribute names can be specified in CSV format to enable organised display upon clicking.
+  - The number of entries in the CSV for the **property** attribute (metadata names) must match the number of entries in the CSV for the **content** attribute (metadata values).
+
+- Note:
+  - By embedding the use element within the **a** element, hyperlinks can be described alongside airline information. In this case, the following functionality is possible:
+  - Clicking the airport image will navigate to another webpage.
+  - The above functionality can be configured for a single airport (a dialogue box will appear after clicking, allowing selection between displaying airline information or navigating to the URL).
+
+#### Source Code
+
+<details>
+<summary>Expand to see source code</summary>
+
+```svg
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="12078.24557, -4750.342539, 2637.1512, 2526.396468" xmlns:go="http://purl.org/svgmap/profile" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" property="id,type,latitude,longitude,title,address,spec" >
  <globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(100,0,0,-100,0,0)" />
@@ -405,3 +444,5 @@ The method for creating this data itself will be explained in a separate tutoria
  </a>
 </svg>
 ```
+
+</details>
