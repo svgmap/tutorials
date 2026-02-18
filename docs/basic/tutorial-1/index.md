@@ -2,7 +2,7 @@
 
 ## Introduction {#introduction}
 
-This is a tutorial for displaying Japan's coastline. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/tutorial1.html) to see it in action.
+This is a tutorial for displaying Japan's coastline. [Click here to see it in action](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/tutorial1.html).
 
 ### File Structure {#file-structure}
 
@@ -53,7 +53,7 @@ tutorial1.html
 - Download the ZIP archive file mentioned above, or
 - Download directly from the sample source directory
   - Use the wget (wget2) command with the -r option
-  - `wget -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/
+  - `wget -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/`
   - `wget2 --http2=off -timeout=60 --max-threads=1 -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/`
   - `index.html*` There is no need to create a directory for each download.
 
@@ -84,7 +84,7 @@ Standalone execution is also possible on the terminal PC (though an internet con
   - macos: `open -a “Google Chrome” --args --allow-file-access-from-files --auto-open-devtools-for-tabs` (unverified)
   - Disable the browser cache beforehand.
 
-### tutorial1.html
+### tutorial1.html {#tutorial1-html}
 
 - Accessing this HTML file in a web browser displays map content with a user interface.
 - **SCRIPT** element
@@ -101,50 +101,97 @@ Standalone execution is also possible on the terminal PC (though an internet con
 - (Optional) span element with id="centerPos": Displays the latitude and longitude on the map where the crosshair mark is pointing (actually displays the latitude and longitude of the map's center when the map moves).
 
 ```html
-<!DOCTYPE html> 
-<html> 
-<title>SVGMapLevel0.1-Rev14-Draft Tutorial1 Coastline</title> 
-<!-- Define the viewport display area as the entire screen --> 
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" /> 
-<meta charset="UTF-8"> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<!DOCTYPE html>
+<html>
+  <title>SVGMapLevel0.1-Rev14-Draft Tutorial1 Coastline</title>
+  <!-- Define the viewport display area as the entire screen -->
+  <meta
+    name="viewport"
+    content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"
+  />
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<!-- Load the SVGMap core API --> 
-<script type="module"> 
-  import { svgMap } from 'https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js'; 
-  window.svgMap=svgMap 
-</script> 
+  <!-- Load the SVGMap core API -->
+  <script type="module">
+    import { svgMap } from "https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js";
+    window.svgMap = svgMap;
+  </script>
 
-<body bgcolor="#ffffff" style="overflow:hidden;" > 
-<!-- Loading a container file (Container.svg) that contains multiple map SVG files (this tutorial uses only one file) --> 
- <div id="mapcanvas" data-src="Container.svg"></div> 
- <div id="gui"> 
-<!-- Zoom up button --> 
-  <img id="zoomupButton" style="left: 5px; top: 5px; position: absolute;" src="./img/zoomup.png" onclick="svgMap.zoomup()" width="20" height="20" /> 
-<!-- Zoom down button --> 
-  <img id="zoomdownButton" style="left: 5px; top: 25px; position: absolute;" src="./img/zoomdown.png" onclick="svgMap.zoomdown()" width="20" height="20" /> 
-<!-- GPS button --> 
-  <img id="gpsButton" style="left: 5px; top: 45px; position: absolute;" src="./img/gps.png" onclick="svgMap.gps()" width="20" height="20" /> < 
-!-- Title to display in the top right of the screen --> 
-  <font color="blue" style="right: 5px; top: 5px; position: absolute;" >SVGMap.js : Tutorial1 Coastline</font> 
-<!-- Title to display in the bottom right of the screen --> 
-  <font color="blue" style="right: 5px; bottom: 5px; position: absolute;" size="-2" >by SVGMap tech.</font> 
-<!-- Cross mark to display in the center --> 
-  <img id="centerSight" style="opacity:0.5" src="./img/Xcursor.png" width="15" height="15"/> 
-<!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (title) --> 
-  <font id="posCmt" size="-2" color="brown" style="left: 5px; bottom: 5px; position: absolute;">Lat,Lng:</font> 
-<!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (initial display of actual values) --> 
-  <span id="centerPos" style="font-size:12px;color:brown;left:50px;bottom:5px;position:absolute;" >lat ,lng</span> 
- </div> 
-</body> 
+  <body bgcolor="#ffffff" style="overflow:hidden;">
+    <!-- Loading a container file (Container.svg) that contains multiple map SVG files (this tutorial uses only one file) -->
+    <div id="mapcanvas" data-src="Container.svg"></div>
+    <div id="gui">
+      <!-- Zoom up button -->
+      <img
+        id="zoomupButton"
+        style="left: 5px; top: 5px; position: absolute;"
+        src="./img/zoomup.png"
+        onclick="svgMap.zoomup()"
+        width="20"
+        height="20"
+      />
+      <!-- Zoom down button -->
+      <img
+        id="zoomdownButton"
+        style="left: 5px; top: 25px; position: absolute;"
+        src="./img/zoomdown.png"
+        onclick="svgMap.zoomdown()"
+        width="20"
+        height="20"
+      />
+      <!-- GPS button -->
+      <img
+        id="gpsButton"
+        style="left: 5px; top: 45px; position: absolute;"
+        src="./img/gps.png"
+        onclick="svgMap.gps()"
+        width="20"
+        height="20"
+      />
+      <!-- Title to display in the top right of the screen -->
+      <font color="blue" style="right: 5px; top: 5px; position: absolute;"
+        >SVGMap.js : Tutorial1 Coastline</font
+      >
+      <!-- Title to display in the bottom right of the screen -->
+      <font
+        color="blue"
+        style="right: 5px; bottom: 5px; position: absolute;"
+        size="-2"
+        >by SVGMap tech.<
+        /font>
+      <!-- Cross mark to display in the center -->
+      <img
+        id="centerSight"
+        style="opacity:0.5"
+        src="./img/Xcursor.png"
+        width="15"
+        height="15"
+      />
+      <!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (title) -->
+      <font
+        id="posCmt"
+        size="-2"
+        color="brown"
+        style="left: 5px; bottom: 5px; position: absolute;"
+        >Lat,Lng:</font
+      >
+      <!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (initial display of actual values) -->
+      <span
+        id="centerPos"
+        style="font-size:12px;color:brown;left:50px;bottom:5px;position:absolute;"
+        >lat ,lng</span
+      >
+    </div>
+  </body>
 </html>
 ```
 
-### Container.svg
+### Container.svg {#container-svg}
 
 The single SVG content loaded first by SVGMap.js. This content does not contain actual map data itself; its role is to reference various map contents (called layers) and bundle them together into a single map.
 
-It loads the SVG files (in SVGMap content format) for each layer to be displayed using the [animation element]() (here, only Coastline.svg is loaded).
+It loads the SVG files (in SVGMap content format) for each layer to be displayed using the [animation element](.) (here, only Coastline.svg is loaded).
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -157,19 +204,21 @@ It loads the SVG files (in SVGMap content format) for each layer to be displayed
 </svg>
 ```
 
-#### SVGMap content format
+#### SVGMap content format {#svgmap-content-format}
 
 The SVGMap content format is essentially SVG format data, with some extensions (one of which is required):
 
-##### Required extension: globalCoordinateSystem element
+##### Required extension: globalCoordinateSystem element {#container-svg}
 
 The following globalCoordinateSystem element is required. (The SVGMap content must describe its relationship to the geographic coordinate system as a map.)
 
-### Coastline.svg
+`<globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />`
+
+### Coastline.svg {#coastline-svg}
 
 - The Japanese coastline data is defined by numerous lines.
 - Since the transform of the globalCoordinateSystem is matrix(100,0,0,-100,0,0), the values described are multiplied by 100 for latitude and longitude (latitude is -100).
-  
+
 The method for creating this data itself will be explained in a separate tutorial.
 
 <details>
@@ -2831,3 +2880,4 @@ The method for creating this data itself will be explained in a separate tutoria
 ```
 
 </details>
+
