@@ -1,10 +1,10 @@
 # Tutorial 1: Coastal Map Display
 
-## Introduction  
+## Introduction {#introduction}
 
 This is a tutorial for displaying Japan's coastline. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/tutorial1.html) to see it in action.
 
-### File Structure
+### File Structure {#file-structure}
 
 The following files are present in the tutorial1 directory. This section explains how to download the files used in the tutorial.
 
@@ -22,9 +22,9 @@ The following files are present in the tutorial1 directory. This section explain
 - [Coastline.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial1/Coastline.svg)
   - Defines Japan's coastline data using numerous lines.
 
-## Tutorial
+## Tutorial {#tutorial}
 
-### Files Used
+### Files Used {#files-used}
 
 The files used in this tutorial can be obtained from the following locations:
 
@@ -34,7 +34,7 @@ The files used in this tutorial can be obtained from the following locations:
   - [js directory](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/js) : SVGMap framework library and stylesheets (SVGMap.js)
   - Note: The SVGMap.js open-source repository is here ([GitHub](https://github.com/svgmap/svgMapLv0.1))
 
-### Content Structure
+#### Content Structure {#content-structure}
 
 ```plaintext
 tutorial1.html
@@ -46,6 +46,98 @@ tutorial1.html
    +-Container.svg (one SVG file with a role to bind various data (layers) is loaded)
      | |
      +-Coastline.svg (map content (climbing content (clicoastia)) that is actually displayed)
+```
+
+#### Note: Downloading the content used in this tutorial {#downloading-content}
+
+- Download the ZIP archive file mentioned above, or
+- Download directly from the sample source directory
+  - Use the wget (wget2) command with the -r option
+  - `wget -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/
+  - `wget2 --http2=off -timeout=60 --max-threads=1 -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/`
+  - `index.html*` There is no need to create a directory for each download.
+
+##### Windows (using wget2)
+
+[wget2](https://gitlab.com/gnuwget/wget2/) is also available for Windows. Locate and download the Windows executable: wget2.zip from the [wget2 release URL](https://gitlab.com/gnuwget/wget2/-/releases).
+
+- Use it in Command Prompt or PowerShell.
+- Since the wget2.exe file is contained within the zip archive, either add it to your path or navigate to the directory where you saved the exe file using `cd` before executing it.
+
+### Placing content files on the server
+
+This tutorial runs on a classic static web host (such as Apache).
+
+- Place the tutorial distribution files in a directory on your static web host, using a suitable name.
+  - Open the placed content in a web browser (such as Chrome) using the URL provided for the static web host.
+    - **Important**: Browser caching can cause confusion during trial and error. Practice with Developer Tools open and the cache clearing option enabled in their settings. (Cache disabling applies to the window where DevTools is open)
+      - Chrome setup method: From the window displaying the practice content, open DevTools (CTRL+SHIFT+I, Settings menu (︙) - More Tools - Developer Tools) ⇒ Settings (gear icon top-right) ⇒ Network (while DevTools is open) ⇒ Disable cache.
+
+Standalone execution is also possible on the terminal PC (though an internet connection is required).
+
+- Note: Insufficient validation
+- Place the tutorial distribution files in an appropriate directory (folder).
+- **Important**: Open a Chrome browser with the `--allow-file-access-from-files` option and open index.html here to enable operation.
+  - The `--allow-file-access-from-files` option is a development launch option that allows Chrome to read local files. If Chrome is already running, you must close it completely before launching again.
+  - Windows: `start chrome --allow-file-access-from-files --auto-open-devtools-for-tabs`
+  - linux: `google-chrome --allow-file-access-from-files --auto-open-devtools-for-tabs`
+  - macos: `open -a “Google Chrome” --args --allow-file-access-from-files --auto-open-devtools-for-tabs` (unverified)
+  - Disable the browser cache beforehand.
+
+### tutorial1.html
+
+- Accessing this HTML file in a web browser displays map content with a user interface.
+- **SCRIPT** element
+  - SVGMap uses a library (SVGMap.js) to display map content.
+  - Load the SVGMap.js program file (SVGMapLv0.1_r18module.js) from the CDN (jsdelivr) to enable SVGMap's various APIs.
+    - Adds the svgMap object as a member of the window global object.
+    - If you want to load the library from your own host instead of the CDN, copy and use the svgmapjs repository.
+- **mapcanvas** Defines the map display area (using a DIV) with the ID “mapcanvas”. The data-src attribute specifies the SVG file (Containers.svg) that SVGMap.js loads.
+- Define the display and click actions for the zoom up, zoom down, and GPS buttons (each calls the corresponding API in SVGMap's core program).
+  - img element with id="zoomupButton": Zoom up button: Calls the svgMap.zoomup() API to zoom up the map.
+  - img element with id="zoomdownButton": Zoom Down Button: Calls the svgMap.zoomdown() API to zoom out the map.
+  - img element with id="gpsButton": Calls the svgMap.gps() API to zoom in and center the map on the current location (the position of the PC or smartphone, if detectable).
+- img element with id="centerSight": Displays a crosshair mark indicating the center.
+- (Optional) span element with id="centerPos": Displays the latitude and longitude on the map where the crosshair mark is pointing (actually displays the latitude and longitude of the map's center when the map moves).
+
+```html
+<!DOCTYPE html> 
+<html> 
+<title>SVGMapLevel0.1-Rev14-Draft Tutorial1 Coastline</title> 
+<!-- Define the viewport display area as the entire screen --> 
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" /> 
+<meta charset="UTF-8"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+<!-- Load the SVGMap core API --> 
+<script type="module"> 
+  import { svgMap } from 'https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js'; 
+  window.svgMap=svgMap 
+</script> 
+
+<body bgcolor="#ffffff" style="overflow:hidden;" > 
+<!-- Loading a container file (Container.svg) that contains multiple map SVG files (this tutorial uses only one file) --> 
+ <div id="mapcanvas" data-src="Container.svg"></div> 
+ <div id="gui"> 
+<!-- Zoom up button --> 
+  <img id="zoomupButton" style="left: 5px; top: 5px; position: absolute;" src="./img/zoomup.png" onclick="svgMap.zoomup()" width="20" height="20" /> 
+<!-- Zoom down button --> 
+  <img id="zoomdownButton" style="left: 5px; top: 25px; position: absolute;" src="./img/zoomdown.png" onclick="svgMap.zoomdown()" width="20" height="20" /> 
+<!-- GPS button --> 
+  <img id="gpsButton" style="left: 5px; top: 45px; position: absolute;" src="./img/gps.png" onclick="svgMap.gps()" width="20" height="20" /> < 
+!-- Title to display in the top right of the screen --> 
+  <font color="blue" style="right: 5px; top: 5px; position: absolute;" >SVGMap.js : Tutorial1 Coastline</font> 
+<!-- Title to display in the bottom right of the screen --> 
+  <font color="blue" style="right: 5px; bottom: 5px; position: absolute;" size="-2" >by SVGMap tech.</font> 
+<!-- Cross mark to display in the center --> 
+  <img id="centerSight" style="opacity:0.5" src="./img/Xcursor.png" width="15" height="15"/> 
+<!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (title) --> 
+  <font id="posCmt" size="-2" color="brown" style="left: 5px; bottom: 5px; position: absolute;">Lat,Lng:</font> 
+<!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (initial display of actual values) --> 
+  <span id="centerPos" style="font-size:12px;color:brown;left:50px;bottom:5px;position:absolute;" >lat ,lng</span> 
+ </div> 
+</body> 
+</html>
 ```
 
 ### Container.svg
