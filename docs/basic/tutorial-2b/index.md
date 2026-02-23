@@ -1,12 +1,12 @@
 # Tutorial 2b: Displaying Coastline Maps and POIs (Airports) (Layering)
 
-## Introduction
+## Introduction {#introduction}
 
 This tutorial demonstrates how to separate POI (airport) and coastline maps into distinct files and display them using layering.
 
 [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2b/tutorial2b.html) to see it in action.
 
-### File Structure
+### File Structure {#file-structure}
 
 The [tutorial2b directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/) contains the following files. The file structure is as follows:
 
@@ -19,15 +19,15 @@ The [tutorial2b directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tuto
 - [Coastline.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Coastline.svg)
   - Coastline.svg from Tutorial 1
 
-## Tutorial
+## Tutorial {#tutorial}
 
 Implementing layering enables users to toggle the visibility of each layer as required. It also facilitates the encapsulation and organisation of data per layer, thereby improving development efficiency. In this chapter, we shall attempt layering by treating the background map and overlay information (airport POI) as separate layers.
 
-### Files Used
+### Files Used {#files-used}
 
 [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b.zip) of used files.
 
-### Content Structure
+### Content Structure {#content-structure}
 
 ```plaintext
 tutorial2b.html 
@@ -43,7 +43,7 @@ tutorial2b.html
      +-Airport.svg (Actual map layer content (airport points))
 ```
 
-### tutorial2b.html
+### tutorial2b.html {#tutorial2b-html}
 
 Add a layer list display and control UI to tutorial1.html used in Tutorial 1. (Note: Layering itself remains possible without this UI; only the layer visibility toggle UI becomes unavailable.)
 
@@ -51,7 +51,7 @@ Add a layer list display and control UI to tutorial1.html used in Tutorial 1. (N
   - Place an empty div element with id="layerList" (the id name is defined by the framework)
   - Load the stylesheet for this layerList div element (#layerListStyle.css)
 
-#### Source code
+#### Source code {#source-code}
 
 ```html
 <!DOCTYPE html> 
