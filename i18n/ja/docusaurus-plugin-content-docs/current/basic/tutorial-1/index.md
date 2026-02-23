@@ -50,22 +50,118 @@ tutorial1.html
      +-Coastline.svg (実際に表示される地図コンテンツ(海岸線)）
 ```
 
-### Container.svg
+#### Note:　チュートリアルで使用するコンテンツのダウンロード {#downloading-content}
+
+##### windows (wget2を使う場合) {#wget2}
+
+- windows用にも[wget2](https://gitlab.com/gnuwget/wget2/)が配布されています。[wget2リリースURL](https://gitlab.com/gnuwget/wget2/-/releases) の、Windows executable: wget2.zip を探してダウンロード
+  - コマンドプロンプトもしくはpowershellで使用します。
+  - wget2.exeファイルがzipアーカイブ内にあるだけですので、パスを通すかexeファイルを保存したディレクトリにcdして実行してください。
+
+### サーバへのコンテンツ・ファイルの設置 {#content-files-on-server}
+
+- 本チュートリアルは 古典的な静的ウェブホスト(apache等による)上で動作します
+  - 適当な名前で用意した静的ウェブホストのディレクトリ上にチュートリアルの配布ファイルを設置します
+  - 設置したコンテンツを静的ウェブホストに与えられたURLを用いて、ウェブブラウザ(Chrome等)で開きます。
+    - **重要** : 試行錯誤を行うとき、ブラウザのキャッシュが混乱のもとになります。開発者ツール(デベロッパーツール)を開いた上で、同ツール設定のキャッシュ無効化オプションが入った状態で練習します（キャッシュ無効化は開発者ツールが開いているwindowに対して有効）
+      - Chrome設定方法：練習用コンテンツを開いているwindowから、開発者ツールを開く(CTRL+SHIFT+I, 設定メニュー(︙)-その他のツール-デベロッパーツール)⇒設定(右上歯車アイコン)⇒ネットワーク (DevToolsが開いている間に)キャッシュを無効化する
+- 端末PC上でスタンドアロン実施も可能です(ただしインターネット接続は必須)
+  - 注記：検証が不十分です
+  - 適当なディレクトリ(フォルダ)にチュートリアルの配布ファイルを設置
+  - 重要 : `--allow-file-access-from-files` オプションを付けたChromeブラウザを開き、ここでindex.htmlを開くことで動作可能。
+    - `--allow-file-access-from-files`オプションはchromeにローカルファイルの読み込みを許可する、開発用起動オプションです。既にchromeが起動している場合は一丹前終了してから起動する必要があります。
+    - windows: `start chrome --allow-file-access-from-files --auto-open-devtools-for-tabs`
+    - linux: `google-chrome --allow-file-access-from-files --auto-open-devtools-for-tabs`
+    - macos: `open -a "Google Chrome" --args --allow-file-access-from-files --auto-open-devtools-for-tabs` (未検証)
+    - ブラウザのキャッシュ無効化は同様に実施しておきます
+
+### tutorial1.html {#tutorial1-html}
+
+- ウェブブラウザがこのhtmlファイルにアクセスすることでUI付きの地図コンテンツが表示されます。
+- **SCRIPT要素**
+  - SVGMapでは地図を表示するためのライブラリ(SVGMap.js)を使用して、地図コンテンツを表示可能にします。
+  - SVGMap.jsのプログラムファイル(SVGMapLv0.1_r18module.js)をCDN(jsdelivr)から読み込み、SVGMapの各種APIを利用可能にします。
+    - widows(ウェブページのグローバルオブジェクト)のメンバにsvgMapオブジェクトを追加しています
+    - CDNではなく自前のホストからライブラリを読み込ませたい場合は、[svgmapjsリポジトリ](https://github.com/svgmap/svgmapjs)をコピーして使用します。
+  - **mapcanvas**というIDがある地図表示部分を(DIVで)定義し、そのdata-src属性で、SVGMap.jsが読み込むSVGファイル(Containers.svg)を指定。
+  - ズームアップ・ズームダウン・GPSの各ボタンの表示とクリック時の動作(SVGMapのコアプログラムのそれぞれのAPIを呼び出す)を定義。
+    - id="**zoomupButton**"のimg要素：ズームアップボタン:svgMap.zoomup() APIを呼び出すことで地図をズームアップ。
+    - id="**zoomdownButton**"のimg要素：ズームダウンボタン:svgMap.zoomdown() APIを呼び出すことで地図をズームダウン。
+    - id="**gpsButton**"のimg要素：svgMap.gps() APIを呼び出すことで、現在地(PCやスマートフォンの位置、特定できる場合のみ)を中心にズームアップ表示。
+  - id="**centerSight**"のimg要素：中心を表す十字マークを表示。
+  - (Optional) id="**centerPos**"のspan要素：上記十字マークが示している地図上の緯度・経度の表示(実際には、地図の移動時に地図の中心の緯度・経度を表示)。
+
+```html
+<!DOCTYPE html>
+<html>
+<title>SVGMapLevel0.1-Rev14-Draft Tutorial1 Coastline</title>
+<!-- viewport 知表示領域を画面全体とする定義 -->
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- SVGMapのコアAPIの読み込み -->
+<script type="module">
+  import { svgMap } from 'https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js';
+  window.svgMap=svgMap
+</script>
+
+<body bgcolor="#ffffff" style="overflow:hidden;" >
+<!-- 地図SVGファイルを複数含む(このチュートリアルでは1ファイルのみ)コンテナファイル(Container.svg)の読み込み -->
+ <div id="mapcanvas" data-src="Container.svg"></div>
+ <div id="gui">
+<!-- ズームアップボタン -->
+  <img id="zoomupButton" style="left: 5px; top: 5px; position: absolute;" src="./img/zoomup.png" onclick="svgMap.zoomup()" width="20" height="20" />
+<!-- ズームダウンボタン -->
+  <img id="zoomdownButton" style="left: 5px; top: 25px; position: absolute;" src="./img/zoomdown.png" onclick="svgMap.zoomdown()" width="20" height="20" />
+<!-- GPSボタン -->
+  <img id="gpsButton" style="left: 5px; top: 45px; position: absolute;" src="./img/gps.png" onclick="svgMap.gps()" width="20" height="20" />
+<!-- 画面右上に表示するタイトル -->
+  <font color="blue" style="right: 5px; top: 5px; position: absolute;" >SVGMap.js : Tutorial1 Coastline</font>
+<!-- 画面右下に表示する -->
+  <font color="blue" style="right: 5px; bottom: 5px; position: absolute;" size="-2" >by SVGMap tech.</font>
+<!-- 中央に表示される十字マーク -->
+  <img id="centerSight" style="opacity:0.5" src="./img/Xcursor.png" width="15" height="15"/>
+<!-- 画面左下に表示される十字マークの緯度・経度(タイトル) -->
+  <font id="posCmt" size="-2" color="brown" style="left: 5px; bottom: 5px; position: absolute;">Lat,Lng:</font>
+<!-- 画面左下に表示される十字マークの緯度・経度(実際の値の初期表示) -->
+  <span id="centerPos" style="font-size:12px;color:brown;left:50px;bottom:5px;position:absolute;" >lat , lng</span>
+ </div>
+</body>
+</html>
+```
+
+### Container.svg {#container-svg}
 
 - SVGMap.jsが最初に読み込む一個のSVGコンテンツ。　このコンテンツには実際の地図データを入れることはなく、様々な地図コンテンツ（レイヤーと言う）を参照し、それらを束ねて一枚の地図にする役割を持っています。
-- [animation要素]()によって表示する各レイヤ用のSVGファイル(SVGMapコンテンツ形式)を読み込む(ここではCoastline.svgのみを読み込んでいます)。
+- [animation要素](#animation-element)によって表示する各レイヤ用のSVGファイル(SVGMapコンテンツ形式)を読み込む(ここではCoastline.svgのみを読み込んでいます)。
 
-#### 必須の拡張 : globalCoordinateSystem要素
+```svg
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="122.9800817, -45.398095, 21.97626, 21.0533039" >
+ <globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />
+
+<!-- 日本の海岸線データのSVGファイルを表示状態として読み込む -->
+<animation xlink:href="Coastline.svg" x="-3000" y="-3000" width="6000" height="6000" title="Japan Coastline" class="editable" visibility="visible"/>
+
+</svg>
+```
+
+#### SVGMapコンテンツ形式 {#svgmap-content-format}
+
+SVGMapコンテンツ形式は基本的にはSVG形式のデータです。ただしいくつかの拡張がされています（必須の拡張は一個）
+
+##### 必須の拡張 : globalCoordinateSystem要素
 
 以下のようなglobalCoordinateSystem要素が必須です。（SVGMapコンテンツは地図として地理座標系との関係を記述しなければならない）
 
 `<globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />`
 
-#### srsName
+##### srsName {#srs-name}
 
 空間参照系(地理座標系)をURLで指定します。"[http://purl.org/crs/84](http://purl.org/crs/84)" を記述します。(WGS84系の意味) (実質的にこの値で固定)
 
-#### transform
+##### transform {#transform}
 
 地理座標とこのコンテンツのSVG座標との間の座標変換係数を一次座標変換マトリクス(a,b,c,d,e,f値)で記述。形式は[https://developer.mozilla.org/ja/docs/Web/SVG/Attribute/transform svgの変換マトリクス]の形( matrix(a,b,c,d,e,f) )。 (geoは地理座標系、svgはそのsvgドキュメントの座標系)
 
@@ -78,14 +174,14 @@ svgY = b * geoX + d * geoY + f
 
 経度,-緯度の形でsvgコンテンツの座標を記述するのがもっとも単純ですので、その場合は　matrix(1,0,0,-1,0,0)　と記述することになります。
 
-#### animation要素
+##### animation要素 {#animation-element}
 
 - [SVG1.2Tinyのanimation要素](https://www.w3.org/TR/SVGTiny12/multimedia.html#AnimationElement)によって、SVGコンテンツの読み込みを行います。
   - 注意:[animate要素](https://www.w3.org/TR/SVGTiny12/animate.html)ではありません。
 - SVGコンテンツを読み込むケースはレイヤリングとタイリングの２パターンがある
   - xlink:href属性 読み込むSVGコンテンツのリンクを設定する
 
-#### レイヤリング
+##### レイヤリング {#layering}
 
 - [チュートリアル2b](../tutorial-2b/index.md)に具体例
 - `x,y,width,height`属性 レイヤーが取り得る最大領域を設定する (必須の属性)
@@ -95,23 +191,22 @@ svgY = b * geoX + d * geoY + f
 - `class` 属性: レイヤーリストUIのグルーピングが可能。その他ベクトル図形のクリッカブル機能を制御できる。[こちらを参照してください](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#class.E5.B1.9E.E6.80.A7.E3.81.AB.E3.82.88.E3.82.8B.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.AE.E3.82.B0.E3.83.AB.E3.83.BC.E3.83.94.E3.83.B3.E3.82.B0.E3.83.BB.E3.82.AF.E3.83.AA.E3.83.83.E3.82.AB.E3.83.96.E3.83.AB.E6.A9.9F.E8.83.BD.E3.81.AE.E6.8F.90.E4.BE.9B) (オプション)
 - レイヤーの順番は、下の行ほど上のレイヤーになる。[SVGのPainters Model](https://www.w3.org/TR/SVG11/render.html#PaintersModel)
 
-#### タイリング
+##### タイリング {#tiling}
 
 - [チュートリアル3](../tutorial-3/index.md/#coastline-svg)で解説
 
-#### その他の拡張
+##### その他の拡張 {#other-enhancements}
 
-- Non-scaling object (Point Geometryの表現)　[[チュートリアル2#Non-scaling_Object|チュートリアル2]]で説明
+- Non-scaling object (Point Geometryの表現)　[チュートリアル2#Non-scaling_Object|チュートリアル2](../tutorial-2a/index.md/)で説明
 
-### Coastline.svg
+### Coastline.svg {#coastline-svg}
 
-- The Japanese coastline data is defined by numerous lines.
-- Since the transform of the globalCoordinateSystem is matrix(100,0,0,-100,0,0), the values described are multiplied by 100 for latitude and longitude (latitude is -100).
-  
-The method for creating this data itself will be explained in a separate tutorial.
+- 日本の海岸線のデータを多数の線で定義している。
+- globalCoordinateSystem のtransformがmatrix(100,0,0,-100,0,0)ですので、緯度経度の100倍(緯度は-100)された値が記述されています
+- このデータ自体の作成方法は別のチュートリアルで解説します。
 
 <details>
-<summary>Click see full SVG data</summary>
+<summary>クリックして展開し、完全なSVGソースコードを表示します。</summary>
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
