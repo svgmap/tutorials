@@ -1,12 +1,12 @@
 # Tutorial 2a: Coastline Map and Airport POI Display
 
-## Introduction
+## Introduction {#introduction}
 
 This is a tutorial that adds airport POIs [(Points of Interest)](https://ja.wikipedia.org/wiki/Point_of_interest) to the content of [Tutorial 1](../tutorial-1/).
 
 [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html) to see it in action.
 
-### File Structure
+### File Structure {#file-structure}
 
 The [tutorial2 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2) contains the following files. The file structure is as follows:
 
@@ -22,13 +22,13 @@ The [tutorial2 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutor
     - Adding a hash to the current URL changes the map display position.
     - The above settings can be configured for a single airport (a dialogue box appears after clicking, allowing selection between displaying airport information or navigating to the URL).
 
-## Tutorial
+## Tutorial {#tutorial}
 
-### Files Used
+### Files Used {#files-used}
 
 [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip) of the files used in this tutorial.
 
-### Content Structure
+### Content Structure {#content-structure}
 
 ```plaintext
 tutorial2.html
@@ -42,7 +42,7 @@ tutorial2.html
      +-Coastline_Airport.svg (actual map content (coastline and airport points))
 ```
 
-### tutorial2.html
+### tutorial2.html {#tutorial2-html}
 
 Basically the same as tutorial1.html used in Tutorial 1.
 
@@ -159,14 +159,14 @@ Load an SVG file for each layer you want to display (only Coastline_Airport.svg 
 </svg>
 ```
 
-### Coastline_Airport.svg
+### Coastline_Airport.svg {#coastline-airport-svg}
 
 - Added airport information to Coastline.svg in Tutorial 1.
 - **Drawing proceeds from the top row**, so first write the background (coastline), then write the point data (additional information).
 
-#### How to write point data (POI)
+#### How to write point data (POI) {#how-to-write-point-data}
 
-##### Defining icons using the defs element
+##### Defining icons using the defs element {#defining-using-defs-element}
 
 - **Within the defs element**, define the icons to be used within that SVG file.
 - Each individual icon is defined using a **g** element placed as its child element.
@@ -179,7 +179,7 @@ Load an SVG file for each layer you want to display (only Coastline_Airport.svg 
     - Specifies the shift amount of the POI icon's origin relative to the bitmap image's origin (top-left). The shift value is typically negative.
     - In this sample, for an icon size of 19x27, specifying x="-8" y="-25" sets the origin to (almost) the bottom-left corner, centred.
 
-##### Placing POI data using the use element
+##### Placing POI data using the use element {#poi-data-use-element}
 
 - References the icon defined by the **xlink:href** attribute.
 - Coordinates for point data are set in the **transform** attribute for use with the feature described later (Non-scaling Object) (set x and y attributes to 0).
@@ -193,7 +193,14 @@ Load an SVG file for each layer you want to display (only Coastline_Airport.svg 
   - Clicking the airport image will navigate to another webpage.
   - The above functionality can be configured for a single airport (a dialogue box will appear after clicking, allowing selection between displaying airline information or navigating to the URL).
 
-#### Source Code
+##### Non-scaling Object {#non-scaling-object}
+
+- The non-scaling object notation (objects whose size on screen remains unchanged when scaled) [specified in SVG 1.2 Tiny](https://www.w3.org/TR/SVGTiny12/coords.html#transform-ref) is supported. This is used for describing POIs (point geometries).
+- Using the syntax `transform=‘ref(svg,x,y)’`, an object with this transform becomes a non-scaling object. The referenced icon is then placed at the specified x,y coordinates as a non-scaling object.
+  - In this example, the globalCoordinateSystem element has `transform="matrix(100,0,0,-100,0,0)"` set, establishing the relationship `x = 100 * longitude, y = -100 * latitude`. ([Reference](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E5.BF.85.E9.A0.88.E3.81.AE.E6.8B.A1.E5.BC.B5_:_globalCoordinateSystem.E8.A6.81.E7.B4.A0))
+  - Therefore, `transform=‘ref(svg,14179.54536,-4539.8095)’` corresponds to point data with latitude = 45.398095 and longitude = 141.7954536.
+
+#### Source Code {#source-code}
 
 <details>
 <summary>Expand to see source code</summary>
