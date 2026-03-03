@@ -49,7 +49,7 @@ Add a layer list display and control UI to tutorial1.html used in Tutorial 1. (N
 
 - Place the layer list UI
   - Place an empty div element with id="layerList" (the id name is defined by the framework)
-  - Load the stylesheet for this layerList div element (#layerListStyle.css)
+  - Load the stylesheet for this layerList div element ([#layerListStyle.css](#layer-list-style-css))
 
 #### Source code {#source-code}
 
@@ -98,11 +98,11 @@ Add a layer list display and control UI to tutorial1.html used in Tutorial 1. (N
 </html>
 ```
 
-### layerListStyle.css
+### layerListStyle.css {#layer-list-style-css}
 
 Stylesheet for the div element (id:layerList) for the layer list UI.
 
-#### Source Code
+#### Source Code {#source-code}
 
 ```css
 /** Layer List UI Stylesheet **/
@@ -129,7 +129,7 @@ Stylesheet for the div element (id:layerList) for the layer list UI.
 
 ```
 
-### Container.svg
+### Container.svg {#container-svg}
 
 - Load the SVG files for the two layers to be displayed as layers:
   - Coastline.svg
@@ -153,15 +153,15 @@ Stylesheet for the div element (id:layerList) for the layer list UI.
 </svg>
 ```
 
-### Coastline.svg
+### Coastline.svg {#coastline-svg}
 
-Coastline.svg is identical to [Tutorial 1's Coastline.svg](../tutorial-2a/#containersvg) (Reusing the same data improves development efficiency).
+Coastline.svg is identical to [Tutorial 1's Coastline.svg](../tutorial-1/#coastline-svg) (Reusing the same data improves development efficiency).
 
-### Airport.svg
+### Airport.svg {#airport-svg}
 
 This SVG file was created by extracting only the airport point section from the Coastline_Airport.svg used in Tutorial 2a.
 
-#### Source Code
+#### Source Code {#source-code}
 
 <details>
 <summary>Expand to see source code</summary>
