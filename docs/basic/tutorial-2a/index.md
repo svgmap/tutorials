@@ -144,7 +144,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
 </html>
 ```
 
-### Container.svg {container-svg}
+### Container.svg {#container-svg}
 
 Load an SVG file for each layer you want to display (only Coastline_Airport.svg is loaded).
 
