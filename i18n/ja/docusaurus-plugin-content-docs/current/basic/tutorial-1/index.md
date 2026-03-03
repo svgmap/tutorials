@@ -197,7 +197,7 @@ svgY = b * geoX + d * geoY + f
 
 ##### その他の拡張 {#other-enhancements}
 
-- Non-scaling object (Point Geometryの表現)　[チュートリアル2#Non-scaling_Object|チュートリアル2](../tutorial-2a/#non-scaling-object})で説明
+- Non-scaling object (Point Geometryの表現)　[チュートリアル2#Non-scaling_Object|チュートリアル2](../tutorial-2a/#non-scaling-object)で説明
 
 ### Coastline.svg {#coastline-svg}
 
