@@ -240,7 +240,7 @@ Describing the coordinates of SVG content in the form longitude,-latitude is the
 
 ##### Layering {#layering}
 
-- [Tutorial 2b](../tutorial-2b/index.md): Specific Examples
+- [Tutorial 2b](../tutorial-2b/): Specific Examples
   - `x, y, width, height` attributes: Set the maximum area a layer can occupy (mandatory attributes)
     - In layering, you needn't concern yourself too much with this; simply set very large areas such as -30000,-30000,60000,60000.
   - `title` attribute: Layer name. Layer names must not duplicate those of other layers. (Required attribute)
