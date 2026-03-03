@@ -1,6 +1,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -33,6 +33,18 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ja'],
+    path: 'i18n',
+    localeConfigs: {
+      en: {
+        label: 'English',
+        path: 'en',
+        translate: false,
+      },
+      ja: {
+        label: '日本語',
+        path: 'ja'
+      }
+    }
   },
 
   presets: [
@@ -71,6 +83,10 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Tutorial',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/svgmap',
