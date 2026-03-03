@@ -22,11 +22,11 @@
     - 現在のURLに対してハッシュを付加することで、地図の表示位置を変更できる。
     - 上記の内容を1つの空港に対して、設定することができる(クリック後に、空港情報表示かURL遷移かを選択するダイアログが表示される)
 
-## チュートリアル
+## チュートリアル {#tutorial}
 
-### 使用されたファイル
+### 使用ファイル {#files-used}
 
-[ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip) of used files.
+使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip)
 
 ### コンテンツの構造 {#content-structure}
 
