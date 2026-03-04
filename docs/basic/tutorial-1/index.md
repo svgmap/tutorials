@@ -191,7 +191,7 @@ Standalone execution is also possible on the terminal PC (though an internet con
 
 The single SVG content loaded first by SVGMap.js. This content does not contain actual map data itself; its role is to reference various map contents (called layers) and bundle them together into a single map.
 
-It loads the SVG files (in SVGMap content format) for each layer to be displayed using the [animation element](#animation) (here, only Coastline.svg is loaded).
+It loads the SVG files (in SVGMap content format) for each layer to be displayed using the [animation element](#animation-element) (here, only Coastline.svg is loaded).
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -240,7 +240,7 @@ Describing the coordinates of SVG content in the form longitude,-latitude is the
 
 ##### Layering {#layering}
 
-- [Tutorial 2b](../tutorial-2b/index.md): Specific Examples
+- [Tutorial 2b](../tutorial-2b/): Specific Examples
   - `x, y, width, height` attributes: Set the maximum area a layer can occupy (mandatory attributes)
     - In layering, you needn't concern yourself too much with this; simply set very large areas such as -30000,-30000,60000,60000.
   - `title` attribute: Layer name. Layer names must not duplicate those of other layers. (Required attribute)
@@ -254,7 +254,7 @@ Explained in [Tutorial 3](../tutorial-3/index.md).
 
 ##### Other enhancements {#other-enhancements}
 
-- Non-scaling object (representation of Point Geometry) explained in [Tutorial 2](../tutorial-2a/index.md/#)
+- Non-scaling object (representation of Point Geometry) explained in [Tutorial 2](../tutorial-2a/#non-scaling-object)
 
 ### Coastline.svg {#coastline-svg}
 

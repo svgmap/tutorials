@@ -193,11 +193,11 @@ svgY = b * geoX + d * geoY + f
 
 ##### タイリング {#tiling}
 
-- [チュートリアル3](../tutorial-3/index.md/#coastline-svg)で解説
+- [チュートリアル3](..)で解説 <!-- should link to ../tutorial-3/index.md/#coastline-svg -->
 
 ##### その他の拡張 {#other-enhancements}
 
-- Non-scaling object (Point Geometryの表現)　[チュートリアル2#Non-scaling_Object|チュートリアル2](../tutorial-2a/index.md/)で説明
+- Non-scaling object (Point Geometryの表現)　[チュートリアル2#Non-scaling_Object|チュートリアル2](../tutorial-2a/#non-scaling-object)で説明
 
 ### Coastline.svg {#coastline-svg}
 

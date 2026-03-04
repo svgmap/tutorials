@@ -1,65 +1,65 @@
-# Tutorial 2a: Coastline Map and Airport POI Display
+# チュートリアル2a 海岸線地図と空港POI表示
 
-## Introduction
+## はじめ {#introduction}
 
-This is a tutorial that adds airport POIs [(Points of Interest)](https://ja.wikipedia.org/wiki/Point_of_interest) to the content of [Tutorial 1](../tutorial-1/).
+チュートリアル1の内容に空港のPOI([Point of interest](https://ja.wikipedia.org/wiki/Point_of_interest))を表示するチュートリアルです。
 
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html) to see it in action.
+実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html)をクリック。
 
-### File Structure
+### ファイル構造 {#file-structure}
 
-The [tutorial2 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2) contains the following files. The file structure is as follows:
+ファイル構成は[tutorial2ディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2)に以下のファイルがあります。
 
 - [tutorial2.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html)
-  - HTML for Tutorial 2. Same content as tutorial1.html.
+  - チュートリアル2用のhtml。tutrial1.htmlと同様の内容。
 - Container.svg
-  - Load an SVG file for each layer you want to display (only Coastline_Airport.svg is loaded)
+  - 表示する各レイヤ用のSVGファイルを読み込む(Coastline_Airport.svgのみを読み込んでいる)
 - [Coastline_Airport.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2/Coastline_Airport.svg)
-  - Adds airport information to Coastline.svg in Tutorial 1.
-  - Defines the airport display image and describes the actual airport information (latitude/longitude, image used, title, information displayed upon clicking).
-  - HTTP links can also be described alongside airport information. In this case, the following actions become possible:
-    - Clicking an airport image navigates to another webpage.
-    - Adding a hash to the current URL changes the map display position.
-    - The above settings can be configured for a single airport (a dialogue box appears after clicking, allowing selection between displaying airport information or navigating to the URL).
+  - チュートリアル1のCoastline.svgに空港情報を追加。
+  - 空港の表示イメージの定義・実際の空港情報(緯度・経度、使用するイメージ、タイトル、クリック時の表示情報)を記述。
+  - 空港情報以外にhttpリンクも記述できる。この場合、以下の内容が実行可能になる。
+    - 空港イメージをクリックすると他のWebページに遷移する。
+    - 現在のURLに対してハッシュを付加することで、地図の表示位置を変更できる。
+    - 上記の内容を1つの空港に対して、設定することができる(クリック後に、空港情報表示かURL遷移かを選択するダイアログが表示される)
 
-## Tutorial
+## チュートリアル {#tutorial}
 
-### Files Used
+### 使用ファイル {#files-used}
 
-[ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip) of the files used in this tutorial.
+使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip)
 
-### Content Structure
+### コンテンツの構造 {#content-structure}
 
 ```plaintext
 tutorial2.html
  |
- +-img/zoomup.png, img/zoomdown.png, img/gps.png, img/Xcursor.png (images of map operation UI)
+ +-img/zoomup.png, img/zoomdown.png, img/gps.png, img/Xcursor.png (地図操作UIのイメージ類)
  |
- +-js/SVGMapLv0.1_r17.js, js/SVGMapLv0.1_LayerUI2_r4.js (Javascript library for displaying SVGMap)
+ +-js/SVGMapLv0.1_r17.js, js/SVGMapLv0.1_LayerUI2_r4.js (SVGMapを表示するjavascriptライブラリ)
    |
-   +-Container.svg (Loads an SVG file that serves as a bundle for various data (layers))
+   +-Container.svg (様々なデータ(レイヤー)を束ねるための役割を持つ一個のSVGファイルを読み込む)
      |
-     +-Coastline_Airport.svg (actual map content (coastline and airport points))
+     +-Coastline_Airport.svg (実際に表示される地図コンテンツ(海岸線と空港ポイント)）
 ```
 
-### tutorial2.html
+### tutorial2.html {#tutorial2-html}
 
-Basically the same as tutorial1.html used in Tutorial 1.
+基本的に、チュートリアル1で使用したtutorial1.htmlと同様。
 
-- Loads the SVGMap core program file (SVGMapLv0.1_r18module.js) and makes various SVGMap APIs available.
-- Defines the map display area (using a DIV) and loads an SVG file (Containers.svg) that contains the layers to be displayed (layers that are automatically made visible in the SVGMap core program above will be displayed).
-- Defines the display of the zoom up, zoom down, and GPS buttons and their behavior when clicked (calling the respective APIs of the SVGMap core program).
-  - Zoom up the map by calling the svgMap.zoomup() API.
-  - Zoom down the zoom down button: svgMap.zoomdown() Zoom down the map by calling the API.
-  - GPS button: svgMap.gps() By calling the API, zoom up and display around the current location (only if the position of the PC or smartphone can be identified).
-- A cross mark indicating the center is displayed.
-- Displays the latitude and longitude on the map indicated by the cross mark above (actually, displays the latitude and longitude of the center of the map when moving the map).
+- SVGMapのコアプログラムファイル(SVGMapLv0.1_r18module.js)を読み込み、SVGMapの各種APIを利用可能にする。
+- 地図表示部分を(DIVで)定義し、そこに表示するレイヤをまとめたSVGファイル(Containers.svg)を読み込む(上記SVGMapのコアプログラムにて自動的にVisibleになっているレイヤが表示される)。
+- ズームアップ・ズームダウン・GPSの各ボタンの表示とクリック時の動作(SVGMapのコアプログラムのそれぞれのAPIを呼び出す)を定義。
+  - ズームアップボタン:svgMap.zoomup() APIを呼び出すことで地図をズームアップする。
+  - ズームダウンボタン:svgMap.zoomdown() APIを呼び出すことで地図をズームダウンする。
+  - GPSボタン:svgMap.gps() APIを呼び出すことで、現在地(PCやスマートフォンの位置、特定できる場合のみ)を中心にズームアップ表示する。
+- 中心を表す十字マークを表示。
+- 上記十字マークが示している地図上の緯度・経度の表示(実際には、地図の移動時に地図の中心の緯度・経度を表示する)。
 
 ```html
 <!DOCTYPE html>
 <html>
   <title>SVGMapLevel0.1-Rev14-Draft Tutorial2 Coastline & Air Port</title>
-  <!-- viewport Defines the entire screen as the display area -->
+  <!-- viewport 知表示領域を画面全体とする定義 -->
   <meta
     name="viewport"
     content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"
@@ -67,17 +67,17 @@ Basically the same as tutorial1.html used in Tutorial 1.
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <!-- Loading SVGMap's core API -->
+  <!-- SVGMapのコアAPIの読み込み -->
   <script type="module">
     import { svgMap } from "https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js";
     window.svgMap = svgMap;
   </script>
 
   <body bgcolor="#ffffff" style="overflow:hidden;">
-    <!-- Loading a container file (Container.svg) containing multiple map SVG files (only one file in this tutorial) -->
+    <!-- 地図SVGファイルを複数含む(このチュートリアルでは1ファイルのみ)コンテナファイル(Container.svg)の読み込み -->
     <div id="mapcanvas" data-src="Container.svg"></div>
     <div id="gui">
-      <!-- Zoom up button -->
+      <!-- ズームアップボタン -->
       <img
         id="zoomupButton"
         style="left: 5px; top: 5px; position: absolute;"
@@ -86,7 +86,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
         width="20"
         height="20"
       />
-      <!-- Zoom down button -->
+      <!-- ズームダウンボタン -->
       <img
         id="zoomdownButton"
         style="left: 5px; top: 25px; position: absolute;"
@@ -95,7 +95,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
         width="20"
         height="20"
       />
-      <!-- GPS button -->
+      <!-- GPSボタン -->
       <img
         id="gpsButton"
         style="left: 5px; top: 45px; position: absolute;"
@@ -104,18 +104,18 @@ Basically the same as tutorial1.html used in Tutorial 1.
         width="20"
         height="20"
       />
-      <!-- Title to display in the top right corner of the screen -->
+      <!-- 画面右上に表示するタイトル -->
       <font color="blue" style="right: 5px; top: 5px; position: absolute;"
         >SVGMapLevel0.1 Rev14 Draft : Tutorial2 Coastline & Air Port</font
       >
-      <!-- Display at the bottom right of the screen -->
+      <!-- 画面右下に表示する -->
       <font
         color="blue"
         style="right: 5px; bottom: 5px; position: absolute;"
         size="-2"
         >by SVGMap tech.</font
       >
-      <!-- Cross mark displayed in the center -->
+      <!-- 中央に表示される十字マーク -->
       <img
         id="centerSight"
         style="opacity:0.5"
@@ -123,7 +123,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
         width="15"
         height="15"
       />
-      <!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (title) -->
+      <!-- 画面左下に表示される十字マークの緯度・経度(タイトル) -->
       <font
         id="posCmt"
         size="-2"
@@ -131,7 +131,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
         style="left: 5px; bottom: 5px; position: absolute;"
         >Lat,Lng:</font
       >
-      <!-- Latitude and longitude of the cross mark displayed at the bottom left of the screen (initial display of actual values) -->
+      <!-- 画面左下に表示される十字マークの緯度・経度(実際の値の初期表示) -->
       <font
         id="centerPos"
         size="-2"
@@ -144,59 +144,65 @@ Basically the same as tutorial1.html used in Tutorial 1.
 </html>
 ```
 
-### Container.svg
+### Container.svg {#container-svg}
 
-Load an SVG file for each layer you want to display (only Coastline_Airport.svg is loaded).
+表示する各レイヤ用のSVGファイルを読み込む(Coastline_Airport.svgのみを読み込んでいる)。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="122.9800817, -45.398095, 21.97626, 21.0533039" >
  <globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />
 
-<!-- Load the SVG file of Japan's coastline and airport data as a display state -->
+<!-- 日本の海岸線と空港データのSVGファイルを表示状態として読み込む -->
 <animation xlink:href="Coastline_Airport.svg" x="-3000" y="-3000" width="6000" height="6000" title="Japan Coastline and Air Port" class="editable" visibility="visible"/>
 
 </svg>
 ```
 
-### Coastline_Airport.svg
+### Coastline_Airport.svg {#coastline-airport-svg}
 
-- Added airport information to Coastline.svg in Tutorial 1.
-- **Drawing proceeds from the top row**, so first write the background (coastline), then write the point data (additional information).
+- チュートリアル1のCoastline.svgに空港情報を追加。
+  **上の行から順に描画が進む**ので、まず背景（海岸線）を記述、その後にポイントデータ（上乗せ情報）を記述
 
-#### How to write point data (POI)
+#### ポイントデータ(POI)の記述方法 {#how-to-write-point-data}
 
-##### Defining icons using the defs element
+##### defs要素によるアイコンの定義 {#defining-using-defs-element}
 
-- **Within the defs element**, define the icons to be used within that SVG file.
-- Each individual icon is defined using a **g** element placed as its child element.
-  - Assign an ID to the g element to reference the icon.
-  - Describe the actual icon within the g element. Here, an image element is used to employ a bitmap image as the icon.
-- For bitmap icons using the image element:
-  - Specify the icon size using the width and height attributes.
-  - Use the x and y attributes to define the origin (anchor point).
-    - This determines which part of the bitmap icon corresponds to the point geometry's coordinates. For instance, when using an icon shaped like a pin, it is advisable to set the pin's tip as the origin.
-    - Specifies the shift amount of the POI icon's origin relative to the bitmap image's origin (top-left). The shift value is typically negative.
-    - In this sample, for an icon size of 19x27, specifying x="-8" y="-25" sets the origin to (almost) the bottom-left corner, centred.
+- **defs**要素内で、そのSVGファイル内で使用するアイコンを規定します
+- 個々のアイコンはその子要素として設置したg要素で規定します。
+  - g要素にはアイコンを参照するためのIDを与えます。
+  - g要素の中に実際のアイコンを記述します。ここではimage要素を使用してアイコンとしてビットイメージを使用しています。
+- image要素によるビットイメージアイコンでは、
+  - width,height属性でアイコンのサイズを指定します。
+  - x,y属性を使い、原点(アンカーポイント)を指定します。
+    - ビットイメージアイコンのどの部位が、ポイントジオメトリの座標に当たるかを決める点。たとえばピンのような形状のアイコンを使う場合はピンの先端を原点にすると良いでしょう。
+    - ビットイメージの原点(左上)に対して、POIアイコンの原点のシフト量を指定します。シフト量の値は通常マイナスになります。
+    - 本サンプルでは、 アイコンサイズ19x27に対して、x="-8" y="-25"を指定することで、(ほぼ)下隅、中央を原点に指定
 
-##### Placing POI data using the use element
+##### use要素によるPOIデータの配置 {#poi-data-use-element}
 
-- References the icon defined by the **xlink:href** attribute.
-- Coordinates for point data are set in the **transform** attribute for use with the feature described later (Non-scaling Object) (set x and y attributes to 0).
-- Describe metadata in the **content** attribute, separated by commas. This metadata is displayed when the icon is clicked.
-  - Define the airport display image and describe the actual airport information (latitude/longitude, image used, title, information displayed on click).
-  - Using the **property** attribute of the **svg** element (documentElement), metadata attribute names can be specified in CSV format to enable organised display upon clicking.
-  - The number of entries in the CSV for the **property** attribute (metadata names) must match the number of entries in the CSV for the **content** attribute (metadata values).
-
+- **xlink:href**属性で定義したアイコンを参照します。
+- ポイントデータの座標は後述の機能(Non-scaling Object)を使うため**transform**属性に設定します(x,y属性は0にする。)
+- **content**属性にカンマ区切りでメタデータを記述。メタデータはアイコンをクリックすると表示されます。
+  - 空港の表示イメージの定義・実際の空港情報(緯度・経度、使用するイメージ、タイトル、クリック時の表示情報)を記述。
+  - **svg**要素(documentElement)のproperty属性で、メタデータの属性名をcsvで記述すると、クリック時に整理された表示ができます。
+  - **property**属性のCSV(メタデータの名称)の個数と、content属性のCSV(メタデータの値)の個数は一致している必要があります。
 - Note:
-  - By embedding the use element within the **a** element, hyperlinks can be described alongside airline information. In this case, the following functionality is possible:
-  - Clicking the airport image will navigate to another webpage.
-  - The above functionality can be configured for a single airport (a dialogue box will appear after clicking, allowing selection between displaying airline information or navigating to the URL).
+  - use要素をa要素に包含させることで空港情報以外にハイパーリンクも記述できます。この場合、以下の内容が実行可能
+  - 空港イメージをクリックすると他のWebページに遷移する。
+  - 上記の内容を1つの空港に対して、設定することができる(クリック後に、空港情報表示かURL遷移かを選択するダイアログが表示される)
 
-#### Source Code
+##### Non-scaling Object {#non-scaling-object}
+
+- [svg1.2Tinyで規定された、non scaling object](https://www.w3.org/TR/SVGTiny12/coords.html#transform-ref)記法（伸縮しても画面上でのサイズが変化しないオブジェクト）がサポートされています。POI(Pointジオメトリ)の記述にはこれを用います。
+- `transform="ref(svg,x,y)"`　という記述により、このtranansformを持ったオブジェクトはnon scaling objectになり、指定したx,y座標に伸縮しないオブジェクトとして参照先のアイコンが設置されます。
+  - この例では、globalCoordinateSystem要素で、`transform="matrix(100,0,0,-100,0,0)"`が設定されているので、`x = 100 * longitude , y = -100 * latitude` の関係となります。（参考）
+  - 従って、`transform="ref(svg,14179.54536,-4539.8095)"` は、`latitude = 45.398095、longitude = 141.7954536`のポイントデータということになります。
+
+#### ソースコード {#source-code}
 
 <details>
-<summary>Expand to see source code</summary>
+<summary>ソースコードを表示するには展開してください</summary>
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -437,7 +443,7 @@ Load an SVG file for each layer you want to display (only Coastline_Airport.svg 
  <a xlink:href="#svgView(viewBox(global,139,35,3,3))">
   <use transform="ref(svg,13940,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="viewchange 139,35,3,3 noMetadata"/>
  </a>
- 
+
 <!-- Airport information with link: Click on this POI to go to the link. Go to the link in the current tab. -->
  <a xlink:href="tutorial2.html">
   <use transform="ref(svg,13930,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="noScheme noTarget noMetadata"/>
