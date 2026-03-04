@@ -1,10 +1,10 @@
-# Tutorial 3: Displaying a tiled coastline map
+# チュートリアル3 タイリングされた海岸線地図の表示
 
-## Introduction  {#introduction}
+## はじめに  {#introduction}
 
 This tutorial splits the content of Tutorial 1 into multiple tiles and displays them. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html) to see it in action.
 
-### File Structure {#file-structure}
+### ファイル構造 {#file-structure}
 
 The file structure is as follows:
 
