@@ -1,11 +1,11 @@
 # Tutorial 4: Bitmap Image Map Display
 
-## Introduction  {introduction}
+## Introduction  {#introduction}
 
 This is a tutorial that overlays some bitmap image maps onto the contents of Tutorial 1.
 [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html) to see it in action .
 
-### File Structure {file-structure}
+### File Structure {#file-structure}
 
 The file structure is as follows:
 
@@ -19,14 +19,14 @@ The file structure is as follows:
 - Bitmap image SVG file to overlay.
   - This was created using this tool: [a tool that layers bitmap map images onto SVGMap](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/).
 
-## Tutorial {tutorial}
+## Tutorial {#tutorial}
 
-### Files Used {files-used}
+### Files Used {#files-used}
 
 - [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4.zip) of used files
 - Source: [Estimated damage from an earthquake directly beneath the capital, page 7](https://www.bousai.go.jp/kyoiku/bousai-vol/drill/h26/tokyo/tokyo03_kato.pdf#page=4)
 
-### tutorial4.html {tutorial4-html}
+### tutorial4.html {#tutorial4-html}
 
 Basically the same as tutorial2b.html used in Tutorial 2b .
 
@@ -86,7 +86,7 @@ Basically the same as tutorial2b.html used in Tutorial 2b .
 </html>
 ```
 
-### Container.svg {container-svg}
+### Container.svg {#container-svg}
 
 - [As in Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c), the bitmap images bitmapImage.svg and dynamicOSM_r11.svg are loaded as layers.
 - [As with the additional chapters in Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#.E8.BF.BD.E5.8A.A0.EF.BC.9A.E8.83.8C.E6.99.AF.E5.9C.B0.E5.9B.B3.E3.82.92.E9.81.B8.E3.81.B9.E3.82.8B.E3.82.88.E3.81.86.E3.81.AB.E3.81.99.E3.82.8B), you can choose from two background maps (OpenStreetMap and Coastline.svg).
@@ -106,13 +106,13 @@ Basically the same as tutorial2b.html used in Tutorial 2b .
 
 </svg>
 ```
-### bitmapImage.svg {bitmapimage-svg}
+### bitmapImage.svg {#bitmapimage-svg}
 
 - Bitmap image SVG file to overlay.
   - Created using a [tool](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/) that layers bit-image map images into SVGMap.
   - The original bit image is extracted from the document at the beginning of this chapter.
 
-#### Relationship between longitude and latitude and XY coordinates of SVG content {relationship-between-lon-lat-xy-coord}
+#### Relationship between longitude and latitude and XY coordinates of SVG content {#relationship-between-lon-lat-xy-coord}
 
 ```globalCoordinateSystem transform``` Specified by the element attributes (six values ​​of the linear transformation matrix)
 
@@ -128,7 +128,7 @@ Xsvg = longitude
 Ysvg = -latitude
 ```
 
-#### Image element parameters {image-element-parameters}
+#### Image element parameters {#image-element-parameters}
 
 - The bit image is placed using the image element.
   - ```xlink:href="[ビットイメージのURL]"``` URL of the bit image to be placed
@@ -155,10 +155,10 @@ Ysvg = -latitude
 </svg>
 ```
 
-### dynamicOSM_r11.svg (and dynamicOSM_r11.html) {dynamicosm-r11-svg}
+### dynamicOSM_r11.svg (and dynamicOSM_r11.html) {#dynamicosm-r11-svg}
 
 This is the same as [dynamicOSM_r11.svg from Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#dynamicOSM_r11.svg.E3.80.81.28dynamicOSM_r11.html.29).
 
-### Coastline.svg {coastline-svg}
+### Coastline.svg {#coastline-svg}
 
 This is the same one we have been using since [Tutorial 1](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#Coastline.svg).

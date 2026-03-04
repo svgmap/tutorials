@@ -1,10 +1,10 @@
 # Tutorial 3: Displaying a tiled coastline map
 
-## Introduction  {introduction}
+## Introduction  {#introduction}
 
 This tutorial splits the content of Tutorial 1 into multiple tiles and displays them. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html) to see it in action.
 
-### File Structure {file-structure}
+### File Structure {#file-structure}
 
 The file structure is as follows:
 
@@ -32,13 +32,13 @@ The file structure is as follows:
   - [3_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_2.svg)
   - [3_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_3.svg)
 
-## Tutorial {tutorial}
+## Tutorial {#tutorial}
 
-### Files Used {files-used}
+### Files Used {#files-used}
 
 - [ZIP archive](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3.zip) file of used files
 
-### Essential differences from existing frameworks {essential-differences}
+### Essential differences from existing frameworks {#essential-differences}
 
 SVGMap tiling is fundamentally different from other frameworks (openlayers, leaflet, googlemaps, etc.). Therefore, developers who are used to existing frameworks may be confused by the differences in the mechanism, so I would like to explain it here.
 
@@ -52,7 +52,7 @@ In this chapter, we will demonstrate the most basic static tiling using this fun
 
 One of the reasons for this structure of SVGMap is to allow it to be extended and implemented with more advanced and efficient tiling methods, such as those described in the above [reference material](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese).
 
-### Content Structure {content-structure}
+### Content Structure {#content-structure}
 
 ```plaintext
 tutorial1.html
@@ -82,7 +82,7 @@ tutorial1.html
        +-3_2.svg (actual tiled coastline content)
        +-3_3.svg (actual tiled coastline content)
 ```
-### tutorial3.html {tutorial3-html}
+### tutorial3.html {#tutorial3-html}
 
 Basically the same as tutorial1.html used in Tutorial 1.
 
@@ -135,7 +135,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
 </html>
 ```
 
-### Container.svg {container-svg}
+### Container.svg {#container-svg}
 
 - Load an SVG file for each layer you want to display (only Coastline.svg is loaded).
 
@@ -150,9 +150,9 @@ Basically the same as tutorial1.html used in Tutorial 1.
 </svg>
 ```
 
-### Coastline {coastline}
+### Coastline {#coastline}
 
-#### Tiling {tiling}
+#### Tiling {#tiling}
 
 This is an example of tiling using [the animation element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0) of SVGMap content .
 
@@ -165,7 +165,7 @@ Tiling consists of tile content, where the actual data is stored, and container 
     - Tiles are loaded as needed based on this area information (the tiles are automatically loaded when their area is within the area displayed on the screen).
     - Note: ∴Unlike layering, the x, y, width, and height attributes are important in tiling.
 
-#### Placement of each tile {placement-of-each-tile}
+#### Placement of each tile {#placement-of-each-tile}
 
 **Coastline.svg**
 | + | X coordinate small, Small Longitude | .. | .. | X coordinate large, Large Longitude
@@ -182,11 +182,11 @@ Tiling consists of tile content, where the actual data is stored, and container 
 - Note: The Y coordinate is the opposite of the geographic coordinate (latitude and longitude coordinate), and the origin is at the top (north).
   - See the relationship between SVG coordinates and geographic coordinates (latitude and longitude coordinates) using [the globalCoordinateSystem element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E5.BF.85.E9.A0.88.E3.81.AE.E6.8B.A1.E5.BC.B5_:_globalCoordinateSystem.E8.A6.81.E7.B4.A0).
 
-#### About svpMap Tools {about-svgmap-tools}
+#### About svpMap Tools {#about-svgmap-tools}
 
 [svgMapTools](https://github.com/svgmap/svgMapTools/tree/master/tutorials) has the ability to generate tiled SVGMap content from large geographical data (such as shapefiles), but also supports more advanced (highly efficient) tiling (Quad Tree Composite Tiling).
 
-#### Source code {source-code}
+#### Source code {#source-code}
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -216,7 +216,7 @@ Tiling consists of tile content, where the actual data is stored, and container 
 </svg>
 ```
 
-### Split SVG files {split-svg-files}
+### Split SVG files {#split-svg-files}
 
 - 0_0.svg
 Areas without map data.

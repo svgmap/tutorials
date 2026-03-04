@@ -1,10 +1,10 @@
 # Tutorial 2c: OpenStreetMap and POI (airport) display (layering)
 
-## Introduction  {introduction}
+## Introduction  {#introduction}
 
 In this tutorial, we will use OpenStreetMap as the background map to create a more practical page. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2c/tutorial2c.html) to see it in action. This tutorial is the same as Tutorial 2b, except that it uses OpenStreetMap.svg as the background map.
 
-### File Structure {file-structure}
+### File Structure {#file-structure}
 
 The file structure is as follows:
 
@@ -14,13 +14,13 @@ The file structure is as follows:
   - dynamicOSM_r11.svg is a dynamic content (WebAppLayer) linked with JavaScript code. We will not go into that in this chapter, but will focus on practical layering.
     - Note: Dynamic content is explained in more detail in [the WebApp Layer section](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8).
 
-## Tutorial {tutorial}
+## Tutorial {#tutorial}
 
-### Files Used {files-used}
+### Files Used {#files-used}
 
 - [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2c.zip) of used files
 
-### Content Structure {content-structure}
+### Content Structure {#content-structure}
 
 ```plaintext
 tutorial2b.html
@@ -37,15 +37,15 @@ tutorial2b.html
      |
      +-Airport.svg (actual map layer content (airport points))
 ```
-### tutorial2c.html {tutorial2c-html}
+### tutorial2c.html {#tutorial2c-html}
 
 This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
 
-### layerListStyle.css {layerlistsyle-css}
+### layerListStyle.css {#layerlistsyle-css}
 
 This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
 
-### Container.svg {container-svg}
+### Container.svg {#container-svg}
 
 - Load the SVG files for the two layers you want to display [as layers](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0).
   - Coastline.svg
@@ -69,18 +69,18 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 </svg>
 ```
 
-### dynamicOSM_r11.svg, (dynamicOSM_r11.html) {dynamicosm_r11-svg}
+### dynamicOSM_r11.svg, (dynamicOSM_r11.html) {#dynamicosm_r11-svg}
 
 - This is the default OpenStreetMap background map layer that replaces Coastline.svg.
 - This content is not just SVG content, but a WebAppLayer where content is dynamically generated using JavaScript.
   - dynamicOSM_r11.html is the WebApp content containing the javascript and is linked from dynamicOSM_r11.svg.
   - WebAppLayer will be explained in more detail in [Tutorial: WebAppLayer](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8). For now, just think of it as a practical background map layer that can be easily used, where a detailed map will be displayed when zoomed in, by simply replacing Coastline.svg with this.
 
-### Airport.svg {airport-svg}
+### Airport.svg {#airport-svg}
 
 This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
 
-## Added: Allows you to choose background map {added}
+## Added: Allows you to choose background map {#added}
 
 In the previous chapter, we replaced Coastline.svg with dynamicOSM_r11.svg, but by using the layer function, users can choose from multiple background maps from the UI.
 
@@ -92,11 +92,11 @@ You can also use the same method to set up multiple add-on information items and
 
 The difference is the contents of Container.svg
 
-### tutorial2c_add.html {tutorial2c_add-html}
+### tutorial2c_add.html {#tutorial2c_add-html}
 
 [This is the same as the html in the previous chapter](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#tutorial2c.html), except that the linked container svg is Container_add.svg .
 
-### Container_add.svg {container_add-svg}
+### Container_add.svg {#container_add-svg}
 
 **The key point is the animation** element (there are no other differences).
 
@@ -109,7 +109,7 @@ The difference is the contents of Container.svg
     - '''class="basemap switch"'''
 - Set everything except the background map you want to display by default '''visibility="hidden"'''
 
-#### Source code {source-code}
+#### Source code {#source-code}
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -126,6 +126,6 @@ The difference is the contents of Container.svg
 </svg>
 ```
 
-### Coastline.svg {coastline-svg}
+### Coastline.svg {#coastline-svg}
 
 This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)

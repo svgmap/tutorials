@@ -1,10 +1,10 @@
 # チュートリアル2c OpenStreetMapとPOI(空港)表示　(レイヤリング)
 
-## はじめに  {introduction}
+## はじめに  {#introduction}
 
 チュートリアル2bの内容に対して、背景地図にOpenStreetMapを使用し、より実用的なページを作ってみます。実際の動作は [こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2c/tutorial2c.html) をクリック。 このチュートリアルはチュートリアル2bと同じですが、背景地図としてOpenStreetMap.svgを使用する点が異なります。
 
-### ファイル構造 {file-structure}
+### ファイル構造 {#file-structure}
 
 ファイル構造は以下の通りです：
 
@@ -14,13 +14,13 @@
   - dynamicOSM_r11.svgはjavascriptコードが紐付けられた動的なコンテンツ(WebAppLayer)になっています。本章ではその内容は割愛し、実用的なレイヤリングを実践してみます。
     - Note: 動的なコンテンツの詳細は[WebApp Layer編](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8)で解説されています。
 
-## チュートリアル {tutorial}
+## チュートリアル {#tutorial}
 
-### 使用ファイル {files-used}
+### 使用ファイル {#files-used}
 
 - 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2c.zip)
 
-### コンテンツの構造 {content-structure}
+### コンテンツの構造 {#content-structure}
 
 ```plaintext
 tutorial2b.html
@@ -37,15 +37,15 @@ tutorial2b.html
      |
      +-Airport.svg (actual map layer content (airport points))
 ```
-### tutorial2c.html {tutorial2c-html}
+### tutorial2c.html {#tutorial2c-html}
 
 [Tutorial 2Bチュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同じ内容です
 
-### layerListStyle.css {layerlistsyle-css}
+### layerListStyle.css {#layerlistsyle-css}
 
 This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
 
-### Container.svg {container-svg}
+### Container.svg {#container-svg}
 
 - 表示する２つのレイヤ用のSVGファイルを[レイヤーとして](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0)読み込む
   - Coastline.svg
@@ -69,18 +69,18 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 </svg>
 ```
 
-### dynamicOSM_r11.svg、 (dynamicOSM_r11.html) {dynamicosm_r11-svg}
+### dynamicOSM_r11.svg、 (dynamicOSM_r11.html) {#dynamicosm_r11-svg}
 
 - Coastline.svgに代えてデフォルトで表示されるOpenStreetMapの背景地図レイヤーです
 - このコンテンツは、単なるSVGコンテンツではなく、javascriptで動的にコンテンツが生成されるWebAppLayerとなっています。
   - dynamicOSM_r11.htmlは、そのjavascriptが入っているWebAppコンテンツで、 dynamicOSM_r11.svgからリンクされています。
   - WebAppLayerについては[チュートリアル:WebAppLayer編](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8) で詳しく説明します。ここではCoastline.svgからこれに代えるだけで、拡大すると詳細な地図が表示される、実用的な背景地図のレイヤーを簡単に利用することができたと考えていただくだけで大丈夫です。
 
-### Airport.svg {airport-svg}
+### Airport.svg {#airport-svg}
 
 [チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同じ内容です。
 
-## 追加：背景地図を選べるようにする {added}
+## 追加：背景地図を選べるようにする {#added}
 
 前章ではCoastline.svgの代わりにdynamicOSM_r11.svgを置き換えましたが、レイヤー機能を用いればユーザ側でUIから複数ある背景地図を選ぶことができます。
 
@@ -92,11 +92,11 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 
 異なるのはContainer.svgの内容になります。
 
-### tutorial2c_add.html {tutorial2c_add-html}
+### tutorial2c_add.html {#tutorial2c_add-html}
 
 リンク先のコンテナsvgが、Container_add.svgになっていることを除き、[前章のhtml](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#tutorial2c.html)と同じです。
 
-### Container_add.svg {container_add-svg}
+### Container_add.svg {#container_add-svg}
 
 **animation** 要素がポイントです。（他に差異はありません）
 
@@ -109,7 +109,7 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
     - '''class="basemap switch"'''
 - デフォルトで表示状態にしたい背景地図以外は'''visibility="hidden"'''を設定する
 
-#### ソースコード {source-code}
+#### ソースコード {#source-code}
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -126,6 +126,6 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 </svg>
 ```
 
-### Coastline.svg {coastline-svg}
+### Coastline.svg {#coastline-svg}
 
 [チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同じ内容です。
