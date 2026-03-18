@@ -1,46 +1,45 @@
-# Tutorial 3b: Tiling (Creating static tiles with svgMapTools)
+# チュートリアル3b タイリング (svgMapToolsを用いた静的タイルの作成)
 
-## Introduction  {#introduction}
+## はじめに  {#introduction}
 
-In the previous chapter, we used tiles that had already been created, but here we will use svgMapTools to create and display tile data from a shapefile.
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3b/tutorial3b.html) to see it in action.
+前章ではすでに作成済みのタイルを用いていましたが、ここでは [svgMapTools](https://github.com/svgmap/svgMapTools)を用いて、shapefileからタイルデータを作成し表示してみます。実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3b/tutorial3b.html)をクリック。
 
-### File Structure {#file-structure}
+### ファイル構造 {#file-structure}
 
-The file structure is as follows:
+ファイル構造は以下の通りです：
 
-- The [tutorial3b](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/) directory contains the following files:
+- ファイル構成は[tutorial3bディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/)ディレクトリに以下のファイルがあります。
   - https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/
-- Using svgMapTools, some of the Global Map Japan data was converted into tiled SVGMap content.
-  - For information on the tiling performed by svgMapTools (Quad Tree Composite Tiling), see [this document](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese).
-- Display converted content as a layer
+- svgMapToolsを使って、地球地図 日本のデータのうちいくつかをタイリングされたSVGMapコンテンツに変換。
+  - svgMapToolsが行うタイリング(Quad Tree Composite Tiling)については、[こちらの資料](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese)を参照。
+- 変換したコンテンツを、レイヤーとして表示
 
-## Tutorial {#tutorial}
+## チュートリアル {#tutorial}
 
-### Files Used {#files-used}
+### 使用ファイル {#files-used}
 
-- [ZIP archive](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b.zip) file of used files
+- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b.zip)
 
-### Preparing tiled content {#preparing-tiled-content}
+### タイリングされたコンテンツの準備 {#preparing-tiled-content}
 
-- In this chapter, we will use [svgMapTools](https://github.com/svgmap/svgMapTools/) to prepare tiled map content from a shapefile and display it.
-Therefore, please [first follow the tutorial that includes setting up svgMapTools](https://github.com/svgmap/svgMapTools/tree/master/tutorials).
-- In this tutorial, we will display data from [the Geospatial Information Authority of Japan's Global Map of Japan (file format: shapefile, vector geographic data)](https://www.gsi.go.jp/kankyochiri/gm_jpn.html).
-  - This time, we will display the coastline (coasstl), road (roadl), and urban area (surfaces (builtupa) and points (builtupp)) data as layers.
+- この章では、[svgMapTools](https://github.com/svgmap/svgMapTools/) を用いて、shapefileからタイリングされた地図コンテンツを準備し、それを表示します。
+そのため、svgMapToolsの設定を含む[チュートリアルを先ず実施](https://github.com/svgmap/svgMapTools/tree/master/tutorials)してください。
+- 本チュートリアルでは、[国土地理院の地球地図](https://www.gsi.go.jp/kankyochiri/gm_jpn.html)日本のデータ（ファイル形式：shapefile、ベクトル地理データ）を表示してみます。
+  - 今回は、海岸線(coasstl)、道路(roadl)、市街地(面(builtupa)と点(builtupp))のデータを　それぞれレイヤーとして表示してみます。
 
-#### Configuring svgMapTools {#configuring-svgmaptools}
+#### svgMapToolsの設定 {#configuring-svgmaptools}
 
-- Complete [the tutorial](https://github.com/svgmap/svgMapTools/tree/master/tutorials) including setting up svgMapTools
+- svgMapToolsの設定を含む[チュートリアル](https://github.com/svgmap/svgMapTools/tree/master/tutorials)を実施
 
-#### Download source data {#download-source-data}
+#### ソースデータのダウンロード {#download-source-data}
 
-- Download and unzip [the zip file containing all layers](https://www1.gsi.go.jp/geowww/globalmap-gsi/download/data/gm-japan/gm-jpn-all_u_2_2.zip) from [the Global Map Japan website](https://www.gsi.go.jp/kankyochiri/gm_jpn.html).
+- [地球地図日本サイト](https://www1.gsi.go.jp/geowww/globalmap-gsi/download/data/gm-japan/gm-jpn-all_u_2_2.zip) から、 [全レイヤの入ったzipファイル](https://www.gsi.go.jp/kankyochiri/gm_jpn.html)をダウンロードして解凍
 
-#### Transform data and save content {#transform-data-and-save-content}
+#### データを変換してコンテンツを保存 {#transform-data-and-save-content}
 
-Generates tiled content for an SVGMap from a Shapefile.
+Shapefileから、SVGMapのタイリングされたコンテンツを生成します。
 
-Below is an example run on Windows.
+以下はWindowsで実行した例です。
 
 - ```cd [PATH_TO_DATA]```
 - ```mkdir roadl```
@@ -53,51 +52,51 @@ Below is an example run on Windows.
 - ```Shape2ImageSVGMap [PATH_TO_DATA]\roadl\roadl_jpn.svg -sumUp 16 -antiAlias [PATH_TO_DATA]\roadl_jpn.shp "#00ff00" "#00ff00" 0 2```
 - ```Shape2SVGMap.bat -micrometa2 -level 3 -limit 200 -strokefix 2 -color "#ff0000" [PATH_TO_DATA]\builtupa_jpn.shp [PATH_TO_DATA]\builtup\builtupa_jpn.svg```
 - ```Shape2SVGMap.bat -micrometa2 -level 3 -limit 200 -strokefix 2 -color "#ff0000" [PATH_TO_DATA]\builtupp_jpn.shp [PATH_TO_DATA]\builtup\builtupp_jpn.svg```
-- ```Transfer all contents of [PATH_TO_DATA]\coastl, [PATH_TO_DATA]\roadl, [PATH_TO_DATA]\builtup to the host.```
+- ```[PATH_TO_DATA]\coastl, [PATH_TO_DATA]\roadl, [PATH_TO_DATA]\builtupの内容を、全てホストに転送```
 
 Note:
 
-- [PATH_TO_TOOLS] is the tools directory of svgMapTools
-- [PATH_TO_DATA] is the directory where you extracted the downloaded data
-- builtupp_jpn and builtupa_jpn do not generate bit image tiles for small scales because the data size is not large (tiling is not actually necessary).
+- [PATH_TO_TOOLS]はsvgMapToolsのtoolsディレクトリ
+- [PATH_TO_DATA]はダウンロードしたデータを解凍したディレクトリ
+- builtupp_jpnおよびbuiltupa_jpnは、データサイズが大きくないので、小縮尺用のビットイメージタイルを生成していません。（タイリングも実際には不要です）
 
 ### tutorial3b.html {#tutorial3b-html}
 
-It is essentially the same as [tutorial2b.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html) used in [Tutorial 2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b).
+基本的に、[Tutorial 2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b) で使用した [tutorial2b.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同様です。
 
 ### Container.svg {#container-svg}
 
-- It is essentially the same as [Container.svg](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#Container.svg) from [Tutorial 2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b).
-- However, this time the coastline layer, road layer, and urban area (surface/point) layer are all tiled data.
-- **The animation** elements representing each layer refer to the root file of the tiled SVGMap content generated by svgMapTools.
-- To make the vector data clickable, add **clickable** to **the class attribute**.
-- Additionally, OpenStreetMap has been added as a hidden layer at the bottom.
+- [チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b)の[Container.svg](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#Container.svg)と基本的に違いはありません。 
+- ただし、今回は海岸線レイヤー、道路レイヤー、市街地(面・点)レイヤーとも、タイリングされたデータになっています。
+- 各レイヤーを表す**animation要素**の参照先は、svgMapToolsで生成されたタイリングされたSVGMapコンテンツのルートのファイルになります。
+- ベクトルデータをクリッカブルにするために、**class**属性に、**clickable**を加えています。
+- 加えて、OpenStreetMapも非表示状態のレイヤーとして一番下に追加してあります。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="122.9800817, -45.398095, 21.97626, 21.0533039" >
  <globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />
 
-<!-- Background map OpenStreetMap (hidden)-->
+<!-- 背景地図 OpenStreetMap (非表示状態)-->
 <animation xlink:href="dynamicOSM_r11.svg" x="-3000" y="-3000" width="6000" height="6000" title="OpenStreetMap" class="basemap switch" visibility="hidden"/>
 
-<!-- Global Map Japan Coastline -->
-<animation xlink:href="coastl/coastl_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="Coastline" class="Global Map Japan clickable" visibility="visible"/>
+<!-- 地球地図日本 海岸線-->
+<animation xlink:href="coastl/coastl_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="海岸線" class="地球地図日本 clickable" visibility="visible"/>
 
-<!-- Global Map Japan Road Lines -->
-<animation xlink:href="roadl/roadl_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="Road" class="Global Map Japan clickable" visibility="visible"/>
+<!-- 地球地図日本 道路線-->
+<animation xlink:href="roadl/roadl_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="道路" class="地球地図日本 clickable" visibility="visible"/>
 
-<!-- Global Map Japan Urban Area (Area)-->
-<animation xlink:href="builtup/builtupa_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="Urban Area (Area)" class="Global Map Japan clickable" visibility="visible"/>
+<!-- 地球地図日本 市街地(面)-->
+<animation xlink:href="builtup/builtupa_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="市街地(面)" class="地球地図日本 clickable" visibility="visible"/>
 
-<!-- Global Map Japan Urban Area (Point)-->
-<animation xlink:href="builtup/builtupp_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="Urban Area (Dot)" class="Global Map Japan clickable" visibility="visible"/>
+<!-- 地球地図日本 市街地(点)-->
+<animation xlink:href="builtup/builtupp_jpn.svg" x="-3000" y="-3000" width="6000" height="6000" title="市街地(点)" class="地球地図日本 clickable" visibility="visible"/>
 </svg>
 ```
-### The structure of tiled content generated by svgMapTools {#structure-of-tiled-content}
+### svgMapToolsが生成するタイリングされたコンテンツの構造 {#structure-of-tiled-content}
 
-- All vector data (.svg format - for large-scale display) and raster data (.png format - for small-scale display) are referenced hierarchically from the layer's root content (in this example, coastline data, coastl_jpn.svg).
-- Among .svg format data, those with the file name *cont* contain no vector graphics data and only reference data, referencing child and descendant content.
+- レイヤーのルートとなるコンテンツ(この例では海岸線データで、coastl_jpn.svg)から、階層的に全てのベクトルデータ(.svg形式～大縮尺表示用)とラスターデータ(.png形式～小縮尺表示用)が参照されています。
+- .svg形式のデータのうち、ファイル名が*cont*のものはベクトルグラフィックスデータはなく参照データだけとなっており、子・孫のコンテンツが参照されています。
 
 ```plaintext
 coastl_jpn.svg

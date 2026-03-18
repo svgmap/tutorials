@@ -2,19 +2,19 @@
 
 ## はじめに  {#introduction}
 
-This tutorial splits the content of Tutorial 1 into multiple tiles and displays them. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html) to see it in action.
+チュートリアル1の内容を複数のタイルに分割して表示するチュートリアルです。実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html)をクリック。
 
 ### ファイル構造 {#file-structure}
 
-The file structure is as follows:
+ファイル構造は以下の通りです：
 
-- [The tutorial3 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/) contains the following files.
+- [tutorial3 ディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/) には以下のファイルが含まれています。
   - [tutorial3.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html)
-    - HTML for Tutorial 3. Same content as tutrial1.html.
+    - チュートリアル3用のhtml。tutrial1.htmlと同様の内容。
   - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/Container.svg)
   - [Coastline.svg](https://www.svgmap.org//devinfo/devkddi/tutorials/tutorial3/Coastline.svg)
-    - An SVG that bundles the following 4x4 (total 16) split files.
-    - For information on tiling, see [the SVGMap tiling architecture](https://www.slideshare.net/totipalmate/tiling-51301496).
+    - 以下の4×4(全16)分割したファイルを束ねるsvg。
+    - タイリングについては、[SVGMapのタイリングアーキテクチャ](https://www.slideshare.net/totipalmate/tiling-51301496)を参照。
   - [0_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_0.svg)
   - [0_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_1.svg)
   - [0_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_2.svg)
@@ -32,103 +32,103 @@ The file structure is as follows:
   - [3_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_2.svg)
   - [3_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_3.svg)
 
-## Tutorial {#tutorial}
+## チュートリアル {#tutorial}
 
-### Files Used {#files-used}
+### 使用ファイル {#files-used}
 
-- [ZIP archive](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3.zip) file of used files
+- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3.zip)
 
-### Essential differences from existing frameworks {#essential-differences}
+### 既存のフレームワークとの本質的違い {#essential-differences}
 
-SVGMap tiling is fundamentally different from other frameworks (openlayers, leaflet, googlemaps, etc.). Therefore, developers who are used to existing frameworks may be confused by the differences in the mechanism, so I would like to explain it here.
+SVGMapのタイリングは他のフレームワーク(openlayersやleaflet,googlemapsなど)と本質的に考え方が異なっています。そのため既存のフレームワークに慣れた開発者は、その仕組みの違いに戸惑うかもしれませんので、ここで説明したいと思います。
 
-Other map frameworks assume pre-defined tiling rules (such as [TMS](https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%83%AB%E3%83%9E%E3%83%83%E3%83%97%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9)) **and these rules are hard-coded into the framework**. The system is designed to only specify parameters for accessing a server built based on those rules. While it is easy to introduce tiled content by simply setting parameters, there are issues with flexibility.
+他の地図フレームワークはあらかじめ決め打ちされたタイリング規則([TMS](https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%83%AB%E3%83%9E%E3%83%83%E3%83%97%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9)など)を前提とし**フレームワークにこの規則がハードコード**されています。その規則に基づいて構築されたサーバへのアクセスのためのパラメータだけを指定する仕組みとなっています。パラメータを設定すればタイリングされたコンテンツを導入できるので簡単ですが柔軟性に課題があります。
 
-On the other hand, SVGMap tiling is more primitive and does not have built-in tiling rules (although this can easily be implemented as a WebApp Layer, as explained in [Tutorial 5](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB5)), but instead provides the more basic functionality needed to make tiling work, allowing for a wide variety of tiling strategies to be achieved.
+一方、SVGMapのタイリングはよりプリミティブなもので、タイリング規則は内蔵されていません。(ただしそれは[チュートリアル5](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB5)で解説するWebApp Layerとして容易に実装可能です)。それに対して、タイリングの動作を起こすために必要な より基本的な機能が提供され、これを利用して多様なタイリング方式が実現可能です。
 
-In this chapter, we will demonstrate the most basic static tiling using this function. Static tiling is achieved by preparing an SVG file with inline layout information for the tiled data, and the viewer matching the viewport with its container to obtain the necessary tiles.
+本章では、この機能を用いた最も基本的な静的タイリングを実践してみます。タイル分割ざれたデータの配置情報をインラインで展開したsvgを用意し、ビューアはビューポートとそのコンテナを照合して必要なタイルを取得することで静的なタイリング動作が実現されます。
 
-[For](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-in-english) an illustration of how this works, see [pages 14](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese/14) to [20](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese/20) of [this more advanced guide](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese).
+この仕組みの図解は、[こちらのより高度な解説資料](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-in-english) の の[14ページ](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese/14) から [20ページ](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese/20) までを参照してください。[(英語版の資料はこちら)](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese).
 
-One of the reasons for this structure of SVGMap is to allow it to be extended and implemented with more advanced and efficient tiling methods, such as those described in the above [reference material](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese).
+SVGMapがこのような構成をとっている理由の一つは、上記の [解説資料](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese)にあるような、より高度で効率的なタイリング方式を拡張・実装可能にすることです。
 
-### Content Structure {#content-structure}
+### コンテンツの構造 {#content-structure}
 
 ```plaintext
 tutorial1.html
  |
- +-img/zoomup.png, img/zoomdown.png, img/gps.png, img/Xcursor.png (images of map operation UI)
+ +-img/zoomup.png, img/zoomdown.png, img/gps.png, img/Xcursor.png (地図操作UIのイメージ類)
  |
- +-js/SVGMapLv0.1_r17.js, js/SVGMapLv0.1_LayerUI2_r4.js (Javascript library for displaying SVGMap)
+ +-js/SVGMapLv0.1_r17.js, js/SVGMapLv0.1_LayerUI2_r4.js (SVGMapを表示するjavascriptライブラリ)
    |
-   +-Contaiber.svg (Loads an SVG file that serves as a bundle of various data (layers))
+   +-Contaiber.svg (様々なデータ(レイヤー)を束ねるための役割を持つ一個のSVGファイルを読み込む)
      |
-     +-Coastline.svg (Coastline layer: bundles tiled coastline content)
+     +-Coastline.svg (海岸線レイヤー：タイル分割された海岸線コンテンツを束ねている）
        |
-       +-0_0.svg (actual tiled coastline content)
-       +-0_1.svg (actual tiled coastline content)
-       +-0_2.svg (actual tiled coastline content)
-       +-0_3.svg (actual tiled coastline content)
-       +-1_0.svg (actual tiled coastline content)
-       +-1_1.svg (actual tiled coastline content)
-       +-1_2.svg (actual tiled coastline content)
-       +-1_3.svg (actual tiled coastline content)
-       +-2_0.svg (actual tiled coastline content)
-       +-2_1.svg (actual tiled coastline content)
-       +-2_2.svg (actual tiled coastline content)
-       +-2_3.svg (actual tiled coastline content)
-       +-3_0.svg (actual tiled coastline content)
-       +-3_1.svg (actual tiled coastline content)
-       +-3_2.svg (actual tiled coastline content)
-       +-3_3.svg (actual tiled coastline content)
+       +-0_0.svg (タイル分割された実際の海岸線コンテンツ）
+       +-0_1.svg (タイル分割された実際の海岸線コンテンツ）
+       +-0_2.svg (タイル分割された実際の海岸線コンテンツ）
+       +-0_3.svg (タイル分割された実際の海岸線コンテンツ）
+       +-1_0.svg (タイル分割された実際の海岸線コンテンツ）
+       +-1_1.svg (タイル分割された実際の海岸線コンテンツ）
+       +-1_2.svg (タイル分割された実際の海岸線コンテンツ）
+       +-1_3.svg (タイル分割された実際の海岸線コンテンツ）
+       +-2_0.svg (タイル分割された実際の海岸線コンテンツ）
+       +-2_1.svg (タイル分割された実際の海岸線コンテンツ）
+       +-2_2.svg (タイル分割された実際の海岸線コンテンツ）
+       +-2_3.svg (タイル分割された実際の海岸線コンテンツ）
+       +-3_0.svg (タイル分割された実際の海岸線コンテンツ）
+       +-3_1.svg (タイル分割された実際の海岸線コンテンツ）
+       +-3_2.svg (タイル分割された実際の海岸線コンテンツ）
+       +-3_3.svg (タイル分割された実際の海岸線コンテンツ）
 ```
 ### tutorial3.html {#tutorial3-html}
 
-Basically the same as tutorial1.html used in Tutorial 1.
+基本的に、チュートリアル1で使用したtutorial1.htmlと同様。
 
-- Loads the SVGMap core program file (SVGMapLv0.1_r18module.js) and makes various SVGMap APIs available.
-- Define the map display area (using a DIV) and load an SVG file (Containers.svg) that contains the layers to be displayed there (layers that are automatically made visible in the SVGMap core program above will be displayed).
-- Defines the display of the zoom up, zoom down, and GPS buttons and their behavior when clicked (calling the respective APIs of the SVGMap core program).
-  - Zoom up button: Zooms up the map by calling the svgMap.zoomup() API.
-  - Zoom down button: Zooms down the map by calling the svgMap.zoomdown() API.
-  - GPS button: Calls the svgMap.gps() API to zoom in on the current location (the location of your PC or smartphone, if it can be determined).
-- A cross mark indicating the center is displayed.
-- Displays the latitude and longitude on the map indicated by the cross mark above (actually, displays the latitude and longitude of the center of the map when moving the map).
+- SVGMapのコアプログラムファイル(SVGMapLv0.1_r18module.js)を読み込み、SVGMapの各種APIを利用可能にする。
+- 地図表示部分を(DIVで)定義し、そこに表示するレイヤをまとめたSVGファイル(Containers.svg)を読み込む(上記SVGMapのコアプログラムにて自動的にVisibleになっているレイヤが表示される)。
+- ズームアップ・ズームダウン・GPSの各ボタンの表示とクリック時の動作(SVGMapのコアプログラムのそれぞれのAPIを呼び出す)を定義。
+  - ズームアップボタン:svgMap.zoomup() APIを呼び出すことで地図をズームアップする。
+  - ズームダウンボタン:svgMap.zoomdown() APIを呼び出すことで地図をズームダウンする。
+  - GPSボタン:svgMap.gps() APIを呼び出すことで、現在地(PCやスマートフォンの位置、特定できる場合のみ)を中心にズームアップ表示する。
+- 中心を表す十字マークを表示。
+- 上記十字マークが示している地図上の緯度・経度の表示(実際には、地図の移動時に地図の中心の緯度・経度を表示する)。
 
 ```html
 <!DOCTYPE html>
 <html>
 <title>SVGMapLevel0.1-Rev14-Draft Tutorial3 Coastline Tiling</title>
-<!-- viewport defines the map display area as the entire screen -->
+<!-- viewport 地図表示領域を画面全体とする定義 -->
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- Loading SVGMap's core API -->
+<!-- SVGMapのコアAPIの読み込み -->
 <script type="module">
   import { svgMap } from 'https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js';
   window.svgMap=svgMap
 </script>
 
 <body bgcolor="#ffffff" style="overflow:hidden;" >
-<!-- Loading a container file (Container.svg) containing multiple map SVG files (only one file in this tutorial) -->
+<!-- 地図SVGファイルを複数含む(このチュートリアルでは1ファイルのみ)コンテナファイル(Container.svg)の読み込み -->
  <div id="mapcanvas" data-src="Container.svg"></div>
  <div id="gui">
-<!-- Zoom up button -->
+<!-- ズームアップボタン -->
   <img id="zoomupButton" style="left: 5px; top: 5px; position: absolute;" src="./img/zoomup.png" onclick="svgMap.zoomup()" width="20" height="20" />
-<!-- Zoom down button -->
+<!-- ズームダウンボタン -->
   <img id="zoomdownButton" style="left: 5px; top: 25px; position: absolute;" src="./img/zoomdown.png" onclick="svgMap.zoomdown()" width="20" height="20" />
-<!-- GPS button -->
+<!-- GPSボタン -->
   <img id="gpsButton" style="left: 5px; top: 45px; position: absolute;" src="./img/gps.png" onclick="svgMap.gps()" width="20" height="20" />
-<!-- Title to display in the top right corner of the screen -->
+<!-- 画面右上に表示するタイトル -->
   <font color="blue" style="right: 5px; top: 5px; position: absolute;" >SVGMapLevel0.1 Rev14 Draft : Tutorial3 Coastline Tiling</font>
-<!-- Display at the bottom right of the screen -->
+<!-- 画面右下に表示する -->
   <font color="blue" style="right: 5px; bottom: 5px; position: absolute;" size="-2" >by SVGMap tech.</font>
-<!-- Cross mark displayed in the center -->
+<!-- 中央に表示される十字マーク -->
   <img id="centerSight" style="opacity:0.5" src="./img/Xcursor.png" width="15" height="15"/>
-<!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (title) -->
+<!-- 画面左下に表示される十字マークの緯度・経度(タイトル) -->
   <font id="posCmt" size="-2" color="brown" style="left: 5px; bottom: 5px; position: absolute;">Lat,Lng:</font>
-<!-- Latitude and longitude of the cross mark displayed at the bottom left of the screen (initial display of actual values) -->
+<!-- 画面左下に表示される十字マークの緯度・経度(実際の値の初期表示) -->
   <font id="centerPos" size="-2" color="brown" style="left: 50px; bottom: 5px; position: absolute;" >lat , lng</font>
  </div>
 </body>
@@ -137,14 +137,14 @@ Basically the same as tutorial1.html used in Tutorial 1.
 
 ### Container.svg {#container-svg}
 
-- Load an SVG file for each layer you want to display (only Coastline.svg is loaded).
+- 表示する各レイヤ用のSVGファイルを読み込む(Coastline.svgのみを読み込んでいる)。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="122.9800817, -45.398095, 21.97626, 21.0533039" >
  <globalCoordinateSystem srsName="http://purl.org/crs/84" transform="matrix(1,0,0,-1,0,0)" />
 
-<!-- Load the SVG file of Japan's coastline data as a display state -->
+<!-- 日本の海岸線データのSVGファイルを表示状態として読み込む -->
 <animation xlink:href="Coastline.svg" x="-3000" y="-3000" width="6000" height="6000" title="Japan Coastline" class="editable" visibility="visible"/>
 
 </svg>
@@ -152,41 +152,41 @@ Basically the same as tutorial1.html used in Tutorial 1.
 
 ### Coastline {#coastline}
 
-#### Tiling {#tiling}
+#### タイリング {#tiling}
 
-This is an example of tiling using [the animation element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0) of SVGMap content .
+SVGMapコンテンツの [animation要素](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0)によるタイリングを実施している例になります。
 
-Tiling consists of tile content, where the actual data is stored, and container content (this file) that integrates it.
+タイリングは、実際のデータが保存されているタイルコンテンツと、それを統合するコンテナコンテンツ(このファイル)から構成されます。
 
-- In this example, the container content integrates each SVGMap file divided into 4x4 (16) tiles.
-- Referencing all 16 tiles using the animation element
-  - Write the link to the tile content in the xlink:href attribute
-  - Describe the area where the tile exists in the x, y, width, and height attributes
-    - Tiles are loaded as needed based on this area information (the tiles are automatically loaded when their area is within the area displayed on the screen).
-    - Note: ∴Unlike layering, the x, y, width, and height attributes are important in tiling.
+- この例では、4×4(16)にタイル分割したそれぞれのSVGMapファイルを統合しているコンテナコンテンツ。
+- **animation要素**を使用して16個全てのタイルを参照
+  - xlink:href属性にタイルコンテンツのリンクを記述
+  - x,y,width,height属性にタイルの存在領域を記述
+    - この存在領域情報をもとに必要に応じてタイルが読み込まれます(画面で表示している領域にタイルの存在領域が入ると自動的に読み込まれる)
+    - Note: ∴レイヤリングと異なり、タイリングでのx,y,width,height属性は重要な意味を持ちます。
 
-#### Placement of each tile {#placement-of-each-tile}
+#### 各タイルの配置 {#placement-of-each-tile}
 
 **Coastline.svg**
-| + | X coordinate small, Small Longitude | .. | .. | X coordinate large, Large Longitude
+| + | X座標小 経度小 | .. | .. | X座標小 経度小
 |---|---|---|---|---|
-| Small Y coordinate, large latitude | 0_0.svg | 1_0.svg | 2_0.svg | 3_0.svg
+| Y座標小、緯度大 | 0_0.svg | 1_0.svg | 2_0.svg | 3_0.svg
 | .. | 	0_1.svg | 1_1.svg | 2_1.svg | 3_1.svg
 | .. | 0_2.svg | 1_2.svg | 2_2.svg | 3_2.svg
-| Large Y coordinate, small latitude | 0_3.svg | 1_2.svg | 2_2.svg | 3_2.svg
+| Y座標大、緯度小 | 0_3.svg | 1_2.svg | 2_2.svg | 3_2.svg
 
-- Width and height of each tile: width,height attribute values: width="659.2878" height="631.5991"
-- Origin of each tile (coordinates of the upper left corner of the tile): x, y attribute values
+- 各タイルの幅、高さ：width,height属性値：width="659.2878" height="631.5991"
+- 各タイルの原点（タイル左上隅の座標）：x,y属性値
   - x：12078.24557, 12737.53337, 13396.82117, 14056.10897
   - y: -4750.342539, -4118.743422, -3487.144305, -2855.545188
-- Note: The Y coordinate is the opposite of the geographic coordinate (latitude and longitude coordinate), and the origin is at the top (north).
-  - See the relationship between SVG coordinates and geographic coordinates (latitude and longitude coordinates) using [the globalCoordinateSystem element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E5.BF.85.E9.A0.88.E3.81.AE.E6.8B.A1.E5.BC.B5_:_globalCoordinateSystem.E8.A6.81.E7.B4.A0).
+- 注意点：Y座標は地理座標(緯度経度座標)と逆向き、原点位置が上端(北)
+  - [globalCoordinateSystem要素](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E5.BF.85.E9.A0.88.E3.81.AE.E6.8B.A1.E5.BC.B5_:_globalCoordinateSystem.E8.A6.81.E7.B4.A0)によるSVG座標と地理座標(緯度経度座標)との関係を参照
 
-#### About svpMap Tools {#about-svgmap-tools}
+#### svgMapToolsについて {#about-svgmap-tools}
 
-[svgMapTools](https://github.com/svgmap/svgMapTools/tree/master/tutorials) has the ability to generate tiled SVGMap content from large geographical data (such as shapefiles), but also supports more advanced (highly efficient) tiling (Quad Tree Composite Tiling).
+[svgMapTools](https://github.com/svgmap/svgMapTools/tree/master/tutorials)は大きな地理情報(shapefileなど)からタイリングされたSVGMapコンテンツを生成する機能を持っています。ただし　より高度（高効率）なタイル分割（Quad Tree Composite Tiling）にも対応しています。
 
-#### Source code {#source-code}
+#### ソースコード {#source-code}
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -216,10 +216,10 @@ Tiling consists of tile content, where the actual data is stored, and container 
 </svg>
 ```
 
-### Split SVG files {#split-svg-files}
+### 分割されたSVGファイル {#split-svg-files}
 
 - 0_0.svg
-Areas without map data.
+地図データのない部分
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -229,7 +229,7 @@ Areas without map data.
 ```
 
 - 0_1.svg
-Areas without map data.
+地図データのない部分。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -239,7 +239,7 @@ Areas without map data.
 ```
 
 - 0_2.svg
-Areas without map data.
+地図データのない部分。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -367,7 +367,7 @@ Areas without map data.
 </details>
 
 - 1_0.svg
-Areas without map data.
+地図データのない部分。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -2840,7 +2840,7 @@ Areas without map data.
 </details>
 
 - 2_3.svg
-Areas without map data.
+地図データのない部分。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -3289,7 +3289,7 @@ Areas without map data.
 </details>
 
 - 3_2.svg
-Areas without map data.
+地図データのない部分。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -3299,7 +3299,7 @@ Areas without map data.
 ```
 
 - 3_3.svg
-Areas without map data.
+地図データのない部分。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 

@@ -1,85 +1,84 @@
-# Tutorial 4: Bitmap Image Map Display
+# チュートリアル4 Bitmapイメージ地図表示
 
-## Introduction  {#introduction}
+## はじめに  {#introduction}
 
-This is a tutorial that overlays some bitmap image maps onto the contents of Tutorial 1.
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html) to see it in action .
+チュートリアル1の内容に一部のBitmapイメージ地図を重ねて表示するチュートリアルです。実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)をクリック。
 
-### File Structure {#file-structure}
+### ファイル構造 {#file-structure}
 
 The file structure is as follows:
 
-- [The tutrial4 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html) contains the following files.
+- ファイル構成は[tutrial4ディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)ディレクトリに以下のファイルがあります。
   - [tutorial4.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)
-    - HTML for Tutorial 4. Same content as tutrial1.html.
+    - チュートリアル4用のhtml。tutrial1.htmlと同様の内容。
   - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/Container.svg)
-    - Load the bitmap image bitmapImage.svg to be displayed over the Coastline.svg file, which is the same as in Tutorial 1.
+    - チュートリアル1と同様のCoastline.svgと重ね合わせて表示するビットマップイメージのbitmapImage.svgを読み込む
   - [dynamicOSM_r11.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/dynamicOSM_r11.svg)
-    - The same OpenStreetMap layer as in Tutorial 2c
-- Bitmap image SVG file to overlay.
-  - This was created using this tool: [a tool that layers bitmap map images onto SVGMap](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/).
+    - チュートリアル2cと同様のOpenStreetMapレイヤー
+- 重ね合わせるビットマップイメージSVGファイル。
+  - こちらのツールを使用して作成したもの。[ビットイメージの地図画像をSVGMapのレイヤー化するツール](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/).
 
-## Tutorial {#tutorial}
+## チュートリアル {#tutorial}
 
-### Files Used {#files-used}
+### 使用ファイル {#files-used}
 
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4.zip) of used files
-- Source: [Estimated damage from an earthquake directly beneath the capital, page 7](https://www.bousai.go.jp/kyoiku/bousai-vol/drill/h26/tokyo/tokyo03_kato.pdf#page=4)
+- 実際の動作は[こちら](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4.zip)をクリック。
+- 出典：[首都直下地震の被害想定 7ページ](https://www.bousai.go.jp/kyoiku/bousai-vol/drill/h26/tokyo/tokyo03_kato.pdf#page=4)
 
 ### tutorial4.html {#tutorial4-html}
 
-Basically the same as tutorial2b.html used in Tutorial 2b .
+基本的に[チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b)で使用したtutorial2b.htmlと同様。
 
-- Loads the SVGMap core program file (SVGMapLv0.1_r18module.js) and makes various SVGMap APIs available.
-- Load CSS for layer list UI
-- Define the map display area (using a DIV) and load an SVG file (Containers.svg) that contains the layers to be displayed there (layers that are automatically made visible in the SVGMap core program above will be displayed).
-- Defines the display of the zoom up, zoom down, and GPS buttons and their behavior when clicked (calling the respective APIs of the SVGMap core program).
-  - Zoom up button: Zooms up the map by calling the svgMap.zoomup() API.
-  - Zoom down button: Zooms down the map by calling the svgMap.zoomdown() API.
-  - GPS button: Calls the svgMap.gps() API to zoom in on the current location (the location of your PC or smartphone, if it can be determined).
-- A cross mark indicating the center is displayed.
-- Displays the latitude and longitude on the map indicated by the cross mark above (actually, displays the latitude and longitude of the center of the map when moving the map).
-- Place a div element (id="layerList") for the layer list UI.
+- SVGMapのコアプログラムファイル(SVGMapLv0.1_r18module.js)を読み込み、SVGMapの各種APIを利用可能にする。
+- レイヤーリストUI用のCSSを読み込み
+- 地図表示部分を(DIVで)定義し、そこに表示するレイヤをまとめたSVGファイル(Containers.svg)を読み込む(上記SVGMapのコアプログラムにて自動的にVisibleになっているレイヤが表示される)。
+- ズームアップ・ズームダウン・GPSの各ボタンの表示とクリック時の動作(SVGMapのコアプログラムのそれぞれのAPIを呼び出す)を定義。
+  - ズームアップボタン:svgMap.zoomup() APIを呼び出すことで地図をズームアップする。
+  - ズームダウンボタン:svgMap.zoomdown() APIを呼び出すことで地図をズームダウンする。
+  - GPSボタン:svgMap.gps() APIを呼び出すことで、現在地(PCやスマートフォンの位置、特定できる場合のみ)を中心にズームアップ表示する。
+- 中心を表す十字マークを表示。
+- 上記十字マークが示している地図上の緯度・経度の表示(実際には、地図の移動時に地図の中心の緯度・経度を表示する)。
+- レイヤーリストUI用のdiv要素(id="layerList"を設置)
 
 ```html
 <!DOCTYPE html>
 <html>
 <title>SVGMapLevel0.1-Rev14-Draft Tutorial4 BitmapImageSVG</title>
-<!-- viewport Defines the entire screen as the display area -->
+<!-- viewport 知表示領域を画面全体とする定義 -->
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- Loading SVGMap's core API -->
+<!-- SVGMapのコアAPIの読み込み -->
 <script type="module">
   import { svgMap } from 'https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/SVGMapLv0.1_r18module.js';
   window.svgMap=svgMap
 </script>
 
-<!-- Loading stylesheet for layer list UI -->
+<!-- レイヤーリストUIのスタイルシート読み込み -->
 <link href="./js/layerListStyle.css" rel="stylesheet" type="text/css">
 
 <body bgcolor="#ffffff" style="overflow:hidden;" >
-<!-- Loading a container file (Container.svg) containing multiple map SVG files -->
+<!-- 地図SVGファイルを複数含むコンテナファイル(Container.svg)の読み込み -->
  <div id="mapcanvas" data-src="Container.svg"></div>
  <div id="gui">
-<!-- Zoom up button -->
+<!-- ズームアップボタン -->
   <img id="zoomupButton" style="left: 5px; top: 5px; position: absolute;" src="./img/zoomup.png" onclick="svgMap.zoomup()" width="20" height="20" />
-<!-- Zoom down button -->
+<!-- ズームダウンボタン -->
   <img id="zoomdownButton" style="left: 5px; top: 25px; position: absolute;" src="./img/zoomdown.png" onclick="svgMap.zoomdown()" width="20" height="20" />
-<!-- GPS button -->
+<!-- GPSボタン -->
   <img id="gpsButton" style="left: 5px; top: 45px; position: absolute;" src="./img/gps.png" onclick="svgMap.gps()" width="20" height="20" />
-<!-- Title to display in the top right corner of the screen -->
+<!-- 画面右上に表示するタイトル -->
   <font color="blue" style="right: 5px; top: 5px; position: absolute;" >SVGMapLevel0.1 Rev14 Draft : Tutorial4 BitmapImageSVG</font>
-<!-- Display at the bottom right of the screen -->
+<!-- 画面右下に表示する -->
   <font color="blue" style="right: 5px; bottom: 5px; position: absolute;" size="-2" >by SVGMap tech.</font>
-<!-- Cross mark displayed in the center -->
+<!-- 中央に表示される十字マーク -->
   <img id="centerSight" style="opacity:0.5" src="./img/Xcursor.png" width="15" height="15"/>
-<!-- Latitude and longitude of the cross mark displayed in the bottom left of the screen (title) -->
+<!-- 画面左下に表示される十字マークの緯度・経度(タイトル) -->
   <font id="posCmt" size="-2" color="brown" style="left: 5px; bottom: 5px; position: absolute;">Lat,Lng:</font>
-<!-- Latitude and longitude of the cross mark displayed at the bottom left of the screen (initial display of actual values) -->
+<!-- 画面左下に表示される十字マークの緯度・経度(実際の値の初期表示) -->
   <font id="centerPos" size="-2" color="brown" style="left: 50px; bottom: 5px; position: absolute;" >lat , lng</font>
-<!-- Show layer list UI -->
+<!-- レイヤーリストUIの表示 -->
   <div id="layerList" style="left :30px; top: 10px; width:300px;height:90%; position: absolute; "></div>
  </div>
 </body>
@@ -88,8 +87,8 @@ Basically the same as tutorial2b.html used in Tutorial 2b .
 
 ### Container.svg {#container-svg}
 
-- [As in Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c), the bitmap images bitmapImage.svg and dynamicOSM_r11.svg are loaded as layers.
-- [As with the additional chapters in Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#.E8.BF.BD.E5.8A.A0.EF.BC.9A.E8.83.8C.E6.99.AF.E5.9C.B0.E5.9B.B3.E3.82.92.E9.81.B8.E3.81.B9.E3.82.8B.E3.82.88.E3.81.86.E3.81.AB.E3.81.99.E3.82.8B), you can choose from two background maps (OpenStreetMap and Coastline.svg).
+- [チュートリアル2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c)と同様に、ビットマップイメージのbitmapImage.svg、dynamicOSM_r11.svgをレイヤーとして読み込んでいます。
+- [チュートリアル2c追加の章と](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#.E8.BF.BD.E5.8A.A0.EF.BC.9A.E8.83.8C.E6.99.AF.E5.9C.B0.E5.9B.B3.E3.82.92.E9.81.B8.E3.81.B9.E3.82.8B.E3.82.88.E3.81.86.E3.81.AB.E3.81.99.E3.82.8B)と同様に背景地図を2つ(OpenStreetMapとCoastline.svg)選べるようにしています。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,35 +107,35 @@ Basically the same as tutorial2b.html used in Tutorial 2b .
 ```
 ### bitmapImage.svg {#bitmapimage-svg}
 
-- Bitmap image SVG file to overlay.
-  - Created using a [tool](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/) that layers bit-image map images into SVGMap.
-  - The original bit image is extracted from the document at the beginning of this chapter.
+- 重ね合わせるビットマップイメージSVGファイル。
+  - ビットイメージの地図画像をSVGMapのレイヤー化するツールを使用して作成。[こちらのツール](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/)
+  - オリジナルのビットイメージは本章冒頭記載の文書から抽出
 
-#### Relationship between longitude and latitude and XY coordinates of SVG content {#relationship-between-lon-lat-xy-coord}
+#### 経度緯度とSVGコンテンツのXY座標との関係 {#relationship-between-lon-lat-xy-coord}
 
-```globalCoordinateSystem transform``` Specified by the element attributes (six values ​​of the linear transformation matrix)
-
-```
-Xsvg = a * longitude + c * latitude + e 
-Ysvg = b * latitude + d * latitude + f
-```
-
-Since the values ​​of the linear transformation matrices a, b, c, d, e, and f are 1, 0, 0, -1, 0, 0 respectively,
+```globalCoordinateSystem``` 要素の ```transform``` 属性（一次変換マトリクスの６つの値）で指定されます
 
 ```
-Xsvg = longitude 
-Ysvg = -latitude
+Xsvg = a * 経度 + c * 緯度 + e 
+Ysvg = b * 緯度 + d * 緯度 + f
 ```
 
-#### Image element parameters {#image-element-parameters}
+一次変換マトリクスa,b,c,d,e,fの値がそれぞれ1,0,0,-1,0,0であることから、
 
-- The bit image is placed using the image element.
-  - ```xlink:href="[ビットイメージのURL]"``` URL of the bit image to be placed
-  - ```x="139.1063918412553"``` X origin of placement = western longitude (139.10°)
-  - ```y="-35.90355823638255"``` X origin to place = negative value of northernmost latitude (35.903°)
-  - ```width="0.8140711890480361"``` Width (0.81° longitude)
-  - ```height="0.41815015611484085"``` Height (0.41° latitude)
-  - ```preserveAspectRatio="none"``` Even if the aspect ratio of the actual size of the bit image is changed, it will be placed exactly in the specified area ([Reference: SVG spec](https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute))
+```
+Xsvg = 経度
+Ysvg = -緯度
+```
+
+#### image要素のパラメータ {#image-element-parameters}
+
+- image要素によってビットイメージを配置しています
+  - ```xlink:href="[ビットイメージのURL]"``` 配置するビットイメージのURL
+  - ```x="139.1063918412553"``` 配置するX原点＝西端の経度（139.10..°）
+  - ```y="-35.90355823638255"``` 配置するX原点＝北端の緯度（35.903..°）をマイナスにした値
+  - ```width="0.8140711890480361"``` 幅（経度で0.81°）
+  - ```height="0.41815015611484085"``` 高さ (緯度で0.41°）
+  - ```preserveAspectRatio="none"``` ビットイメージの実際のサイズのアスペクト比を変えてでも上記指定領域にぴったりと配置する　([参考：SVG spec](https://www.w3.org/TR/SVG2/coords.html#PreserveAspectRatioAttribute))
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -155,10 +154,10 @@ Ysvg = -latitude
 </svg>
 ```
 
-### dynamicOSM_r11.svg (and dynamicOSM_r11.html) {#dynamicosm-r11-svg}
+### dynamicOSM_r11.svg (およびdynamicOSM_r11.html) {#dynamicosm-r11-svg}
 
-This is the same as [dynamicOSM_r11.svg from Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#dynamicOSM_r11.svg.E3.80.81.28dynamicOSM_r11.html.29).
+[チュートリアル2cのdynamicOSM_r11.svg](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#dynamicOSM_r11.svg.E3.80.81.28dynamicOSM_r11.html.29)と同じものです。
 
 ### Coastline.svg {#coastline-svg}
 
-This is the same one we have been using since [Tutorial 1](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#Coastline.svg).
+[チュートリアル1](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#Coastline.svg)から使ってきているものと同じです。

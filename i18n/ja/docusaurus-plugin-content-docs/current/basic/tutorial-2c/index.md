@@ -106,8 +106,8 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
   - 背景地図に共通のクラス名を設定しておく
     - クラス名で指定した名前がレイヤーリストUIに現れるグループの名前になります。
   - さらに、UIでどちらかの背景地図だけが選ばれるようにクラス名にswitchも追加する。(同時に両方とも表示できるようにしたい場合はswitchを追加しない)
-    - '''class="basemap switch"'''
-- デフォルトで表示状態にしたい背景地図以外は'''visibility="hidden"'''を設定する
+    - ```class="basemap switch"```
+- デフォルトで表示状態にしたい背景地図以外は```visibility="hidden"```を設定する
 
 #### ソースコード {#source-code}
 

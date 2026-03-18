@@ -2,7 +2,7 @@
 
 ## Introduction  {#introduction}
 
-In the previous chapter, we used tiles that had already been created, but here we will use svgMapTools to create and display tile data from a shapefile.
+In the previous chapter, we used tiles that had already been created, but here we will use [svgMapTools](https://github.com/svgmap/svgMapTools) to create and display tile data from a shapefile.
 [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3b/tutorial3b.html) to see it in action.
 
 ### File Structure {#file-structure}

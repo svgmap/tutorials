@@ -28,7 +28,7 @@ The file structure is as follows:
 
 ### tutorial4.html {#tutorial4-html}
 
-Basically the same as tutorial2b.html used in Tutorial 2b .
+Basically the same as [tutorial2b.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b) used in Tutorial 2b .
 
 - Loads the SVGMap core program file (SVGMapLv0.1_r18module.js) and makes various SVGMap APIs available.
 - Load CSS for layer list UI
