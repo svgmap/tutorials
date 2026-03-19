@@ -12,4 +12,4 @@ The tutorial site is built using [Docusaurus](https://docusaurus.io/). Currently
 
 ### 🌎 i18n / Translations
 
-Currently, i18n translations are handled using [Docusaurus' built-in i18n support](https://docusaurus.io/docs/i18n/introduction). As mentioned earlier, the only supported languages (at the moment) are Japanese and English.  translations for tutorial [](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#i18n).
+Currently, i18n translations are handled using [Docusaurus' built-in i18n support](https://docusaurus.io/docs/i18n/introduction). As mentioned earlier, the only supported languages (at the moment) are Japanese and English. Technical specifications for how translations are managed and handled [can be found in the Docusaurus documentation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#i18n).
