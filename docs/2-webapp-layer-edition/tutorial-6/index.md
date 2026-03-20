@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Tutorial 6: WebApp Layer geoJSON
 
 ## Introduction  {#introduction}

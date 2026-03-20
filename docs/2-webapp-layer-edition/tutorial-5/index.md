@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Tutorial 5: WebApp Layer - Tile Pyramid
 
 ## Introduction  {#introduction}
