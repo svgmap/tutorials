@@ -254,7 +254,7 @@ Explained in [Tutorial 3](../tutorial-3/index.md).
 
 ##### Other enhancements {#other-enhancements}
 
-- Non-scaling object (representation of Point Geometry) explained in [Tutorial 2](../tutorial-2a/index.md/#)
+- Non-scaling object (representation of Point Geometry) explained in [Tutorial 2](../tutorial-2a/index.md/#non-scaling-object)
 
 ### Coastline.svg {#coastline-svg}
 
