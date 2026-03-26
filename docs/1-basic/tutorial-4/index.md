@@ -3,27 +3,27 @@
 ## Introduction  {#introduction}
 
 This is a tutorial that overlays some bitmap image maps onto the contents of Tutorial 1.
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html) to see it in action .
+[Click here](https://svgmap.org/examples/tutorials/tutorial4/tutorial4.html) to see it in action .
 
 ### File Structure {#file-structure}
 
 The file structure is as follows:
 
-- [The tutrial4 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html) contains the following files.
-  - [tutorial4.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)
+- [The tutrial4 directory](https://www.svgmap.org/examples/tutorials/tutorial4/tutorial4.html) contains the following files.
+  - [tutorial4.html](https://www.svgmap.org/examples/tutorials/tutorial4/tutorial4.html)
     - HTML for Tutorial 4. Same content as tutrial1.html.
-  - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/Container.svg)
+  - [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial4/Container.svg)
     - Load the bitmap image bitmapImage.svg to be displayed over the Coastline.svg file, which is the same as in Tutorial 1.
-  - [dynamicOSM_r11.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/dynamicOSM_r11.svg)
+  - [dynamicOSM_r11.svg](https://www.svgmap.org/examples/tutorials/tutorial4/dynamicOSM_r11.svg)
     - The same OpenStreetMap layer as in Tutorial 2c
 - Bitmap image SVG file to overlay.
-  - This was created using this tool: [a tool that layers bitmap map images onto SVGMap](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/).
+  - This was created using this tool: [a tool that layers bitmap map images onto SVGMap](https://svgmap.org/examples/lvl0.1/bitimage2geoInfo/mapPage/).
 
 ## Tutorial {#tutorial}
 
 ### Files Used {#files-used}
 
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4.zip) of used files
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial4.zip) of used files
 - Source: [Estimated damage from an earthquake directly beneath the capital, page 7](https://www.bousai.go.jp/kyoiku/bousai-vol/drill/h26/tokyo/tokyo03_kato.pdf#page=4)
 
 ### tutorial4.html {#tutorial4-html}
@@ -109,7 +109,7 @@ Basically the same as [tutorial2b.html](https://www.svgmap.org/wiki/index.php?ti
 ### bitmapImage.svg {#bitmapimage-svg}
 
 - Bitmap image SVG file to overlay.
-  - Created using a [tool](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/) that layers bit-image map images into SVGMap.
+  - Created using a [tool](https://svgmap.org/examples/lvl0.1/bitimage2geoInfo/mapPage/) that layers bit-image map images into SVGMap.
   - The original bit image is extracted from the document at the beginning of this chapter.
 
 #### Relationship between longitude and latitude and XY coordinates of SVG content {#relationship-between-lon-lat-xy-coord}

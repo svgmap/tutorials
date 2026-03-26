@@ -2,14 +2,14 @@
 
 ## はじめに  {#introduction}
 
-チュートリアル2bの内容に対して、背景地図にOpenStreetMapを使用し、より実用的なページを作ってみます。実際の動作は [こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2c/tutorial2c.html) をクリック。 このチュートリアルはチュートリアル2bと同じですが、背景地図としてOpenStreetMap.svgを使用する点が異なります。
+チュートリアル2bの内容に対して、背景地図にOpenStreetMapを使用し、より実用的なページを作ってみます。実際の動作は [こちら](https://svgmap.org/examples/tutorials/tutorial2c/tutorial2c.html) をクリック。 このチュートリアルはチュートリアル2bと同じですが、背景地図としてOpenStreetMap.svgを使用する点が異なります。
 
 ### ファイル構造 {#file-structure}
 
 ファイル構造は以下の通りです：
 
 - tutorial2cディレクトリには以下のファイルが含まれています。
-  - [tutorial2c.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2c/tutorial2c.html)
+  - [tutorial2c.html](https://www.svgmap.org/examples/tutorials/tutorial2c/tutorial2c.html)
 - Container.svgで参照している背景地図を、Coastline.svgからdynamicOSM_r11.svgに置き換えています。
   - dynamicOSM_r11.svgはjavascriptコードが紐付けられた動的なコンテンツ(WebAppLayer)になっています。本章ではその内容は割愛し、実用的なレイヤリングを実践してみます。
     - Note: 動的なコンテンツの詳細は[WebApp Layer編](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8)で解説されています。
@@ -18,7 +18,7 @@
 
 ### 使用ファイル {#files-used}
 
-- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2c.zip)
+- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/tutorial2c.zip)
 
 ### コンテンツの構造 {#content-structure}
 
@@ -86,9 +86,9 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 
 また、同じ方法で、上乗せ情報を複数設置し、切り替えて利用できるようにすることもできます。
   
-- 実際の動作は[こちら](http://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2c/tutorial2c_add.html)をクリック。
+- 実際の動作は[こちら](http://svg2.mbsrv.net/examples/tutorials/tutorial2c/tutorial2c_add.html)をクリック。
   - 画面左上のレイヤーリストUIをクリックすると、2個の背景地図が選べるようになっています。
-- 使用ファイルは[こちら](https://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2c/)
+- 使用ファイルは[こちら](https://svg2.mbsrv.net/examples/tutorials/tutorial2c/)
 
 異なるのはContainer.svgの内容になります。
 

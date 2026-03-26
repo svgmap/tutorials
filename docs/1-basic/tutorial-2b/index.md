@@ -4,19 +4,19 @@
 
 This tutorial demonstrates how to separate POI (airport) and coastline maps into distinct files and display them using layering.
 
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2b/tutorial2b.html) to see it in action.
+[Click here](https://svgmap.org/examples/tutorials/tutorial2b/tutorial2b.html) to see it in action.
 
 ### File Structure
 
-The [tutorial2b directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/) contains the following files. The file structure is as follows:
+The [tutorial2b directory](https://www.svgmap.org/examples/tutorials/tutorial2b/) contains the following files. The file structure is as follows:
 
-- [tutorial2b.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/tutorial2b.html)
+- [tutorial2b.html](https://www.svgmap.org/examples/tutorials/tutorial2b/tutorial2b.html)
   - HTML for Tutorial 2b. Compared to tutorial1.html, it incorporates a layer list and On/Off UI (the div element with id="layerList").
-- [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Container.svg)
+- [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial2b/Container.svg)
   - Loads the SVG files for each layer to be displayed (loads two files/layers: Airport.svg and Coastline.svg).
-- [Airport.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Airport.svg)
+- [Airport.svg](https://www.svgmap.org/examples/tutorials/tutorial2b/Airport.svg)
   - Airport information added as a separate file.
-- [Coastline.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Coastline.svg)
+- [Coastline.svg](https://www.svgmap.org/examples/tutorials/tutorial2b/Coastline.svg)
   - Coastline.svg from Tutorial 1
 
 ## Tutorial
@@ -25,7 +25,7 @@ Implementing layering enables users to toggle the visibility of each layer as re
 
 ### Files Used
 
-[ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b.zip) of used files.
+[ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial2b.zip) of used files.
 
 ### Content Structure
 
@@ -383,7 +383,7 @@ This SVG file was created by extracting only the airport point section from the 
   <use transform="ref(svg,13960,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="url noTarget noMetadata"/> 
  </a> 
 <!-- Airport information with link: Click this POI to go to the link destination (changes the display position on the current map. Specify the full URL). Display the link destination in a new tab --> 
- <a xlink:href="http://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null"> 
+ <a xlink:href="http://svg2.mbsrv.net/examples/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null"> 
   <use transform="ref(svg,13950,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="URL+hash target noMetadata"/> 
  </a> 
 <!-- Airport information with link: Click on this POI to go to the link (changes the display position on the current map. Appends the href content to the current URL). Go to the link within the current tab. --> 

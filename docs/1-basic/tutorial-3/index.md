@@ -2,41 +2,41 @@
 
 ## Introduction  {#introduction}
 
-This tutorial splits the content of Tutorial 1 into multiple tiles and displays them. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html) to see it in action.
+This tutorial splits the content of Tutorial 1 into multiple tiles and displays them. [Click here](https://svgmap.org/examples/tutorials/tutorial3/tutorial3.html) to see it in action.
 
 ### File Structure {#file-structure}
 
 The file structure is as follows:
 
-- [The tutorial3 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/) contains the following files.
-  - [tutorial3.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html)
+- [The tutorial3 directory](https://www.svgmap.org/examples/tutorials/tutorial3/) contains the following files.
+  - [tutorial3.html](https://www.svgmap.org/examples/tutorials/tutorial3/tutorial3.html)
     - HTML for Tutorial 3. Same content as tutrial1.html.
-  - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/Container.svg)
-  - [Coastline.svg](https://www.svgmap.org//devinfo/devkddi/tutorials/tutorial3/Coastline.svg)
+  - [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial3/Container.svg)
+  - [Coastline.svg](https://www.svgmap.org//examples/tutorials/tutorial3/Coastline.svg)
     - An SVG that bundles the following 4x4 (total 16) split files.
     - For information on tiling, see [the SVGMap tiling architecture](https://www.slideshare.net/totipalmate/tiling-51301496).
-  - [0_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_0.svg)
-  - [0_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_1.svg)
-  - [0_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_2.svg)
-  - [0_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_3.svg)
-  - [1_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_0.svg)
-  - [1_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_1.svg)
-  - [1_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_2.svg)
-  - [1_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_3.svg)
-  - [2_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/2_0.svg)
-  - [2_1.svg](https://www.svgmap.org//devinfo/devkddi/tutorials/tutorial3/2_1.svg)
-  - [2_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/2_2.svg)
-  - [2_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/2_3.svg)
-  - [3_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_0.svg)
-  - [3_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_1.svg)
-  - [3_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_2.svg)
-  - [3_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_3.svg)
+  - [0_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_0.svg)
+  - [0_1.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_1.svg)
+  - [0_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_2.svg)
+  - [0_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_3.svg)
+  - [1_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_0.svg)
+  - [1_1.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_1.svg)
+  - [1_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_2.svg)
+  - [1_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_3.svg)
+  - [2_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/2_0.svg)
+  - [2_1.svg](https://www.svgmap.org//examples/tutorials/tutorial3/2_1.svg)
+  - [2_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/2_2.svg)
+  - [2_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/2_3.svg)
+  - [3_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_0.svg)
+  - [3_1.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_1.svg)
+  - [3_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_2.svg)
+  - [3_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_3.svg)
 
 ## Tutorial {#tutorial}
 
 ### Files Used {#files-used}
 
-- [ZIP archive](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3.zip) file of used files
+- [ZIP archive](https://www.svgmap.org/examples/tutorials/tutorial3.zip) file of used files
 
 ### Essential differences from existing frameworks {#essential-differences}
 

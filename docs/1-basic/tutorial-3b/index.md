@@ -3,14 +3,14 @@
 ## Introduction  {#introduction}
 
 In the previous chapter, we used tiles that had already been created, but here we will use [svgMapTools](https://github.com/svgmap/svgMapTools) to create and display tile data from a shapefile.
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3b/tutorial3b.html) to see it in action.
+[Click here](https://svgmap.org/examples/tutorials/tutorial3b/tutorial3b.html) to see it in action.
 
 ### File Structure {#file-structure}
 
 The file structure is as follows:
 
-- The [tutorial3b](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/) directory contains the following files:
-  - https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/
+- The [tutorial3b](https://www.svgmap.org/examples/tutorials/tutorial3b/) directory contains the following files:
+  - https://www.svgmap.org/examples/tutorials/tutorial3b/
 - Using svgMapTools, some of the Global Map Japan data was converted into tiled SVGMap content.
   - For information on the tiling performed by svgMapTools (Quad Tree Composite Tiling), see [this document](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese).
 - Display converted content as a layer
@@ -19,7 +19,7 @@ The file structure is as follows:
 
 ### Files Used {#files-used}
 
-- [ZIP archive](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b.zip) file of used files
+- [ZIP archive](https://www.svgmap.org/examples/tutorials/tutorial3b.zip) file of used files
 
 ### Preparing tiled content {#preparing-tiled-content}
 

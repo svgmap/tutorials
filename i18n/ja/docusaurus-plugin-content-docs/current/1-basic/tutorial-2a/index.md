@@ -4,17 +4,17 @@
 
 チュートリアル1の内容に空港のPOI([Point of interest](https://ja.wikipedia.org/wiki/Point_of_interest))を表示するチュートリアルです。
 
-実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html)をクリック。
+実際の動作は[こちら](https://svgmap.org/examples/tutorials/tutorial2/tutorial2.html)をクリック。
 
 ### ファイル構造 {#file-structure}
 
-ファイル構成は[tutorial2ディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2)に以下のファイルがあります。
+ファイル構成は[tutorial2ディレクトリ](https://www.svgmap.org/examples/tutorials/tutorial2)に以下のファイルがあります。
 
-- [tutorial2.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html)
+- [tutorial2.html](https://www.svgmap.org/examples/tutorials/tutorial2/tutorial2.html)
   - チュートリアル2用のhtml。tutrial1.htmlと同様の内容。
 - Container.svg
   - 表示する各レイヤ用のSVGファイルを読み込む(Coastline_Airport.svgのみを読み込んでいる)
-- [Coastline_Airport.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2/Coastline_Airport.svg)
+- [Coastline_Airport.svg](https://www.svgmap.org/examples/tutorials/tutorial2/Coastline_Airport.svg)
   - チュートリアル1のCoastline.svgに空港情報を追加。
   - 空港の表示イメージの定義・実際の空港情報(緯度・経度、使用するイメージ、タイトル、クリック時の表示情報)を記述。
   - 空港情報以外にhttpリンクも記述できる。この場合、以下の内容が実行可能になる。
@@ -26,7 +26,7 @@
 
 ### 使用ファイル {#files-used}
 
-使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip)
+使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/tutorial2.zip)
 
 ### コンテンツの構造 {#content-structure}
 
@@ -436,7 +436,7 @@ tutorial2.html
   <use transform="ref(svg,13960,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="url noTarget noMetadata"/>
  </a>
 <!-- Airport information with link: Click this POI to go to the link (changes the display position on the current map. Specify the full URL). Open the link in a new tab -->
- <a xlink:href="http://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null">
+ <a xlink:href="http://svg2.mbsrv.net/examples/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null">
   <use transform="ref(svg,13950,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="URL+hash target noMetadata"/>
  </a>
 <!-- Airport information with link: Clicking on this POI will take you to the link (changes the display position on the current map. Appends the href content to the current URL). Go to the link in the current tab. -->

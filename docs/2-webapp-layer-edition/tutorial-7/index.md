@@ -8,11 +8,11 @@ sidebar_position: 7
 
 This tutorial demonstrates how to load a tiled CSV Point geometry file into a web application using asynchronous loading, convert it to an SVGMap DOM using the SVGMap framework library, and then display it.
 
-- To see the actual operation, click on [tiling1.html](https://svgmap.org/devinfo/devkddi/tutorials/tiling1/tiling1.html).
+- To see the actual operation, click on [tiling1.html](https://svgmap.org/examples/tutorials/tiling1/tiling1.html).
 
 ### Source Code {#source-code}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/tiling1/)
+- [Source code directory](https://svgmap.org/examples/tutorials/tiling1/)
 - tiling1.html: Loading of related libraries (SVGMapGIS)
 - Container.svg: Setting up clickable layering ( almost the same as [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6))
 - simpleTiling.svg: Almost identical to webApp [tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6), which manipulates layers with a UI.
@@ -26,8 +26,8 @@ This tutorial demonstrates how to load a tiled CSV Point geometry file into a we
 
 This approach avoids using dynamic mechanisms like a DBMS in the backend, instead tiling relatively large vector data (in this case, point geometry data) to create content that can be comfortably used as a WebMap/GIS. This type of design is called [vector tiling](https://en.wikipedia.org/wiki/Vector_tiles) in the GIS world, but it's more commonly known as a [Jamstack pattern](https://en.wikipedia.org/wiki/Jamstack).
 
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tiling1/tiling1.html) to see how it works .
-The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tiling1.zip).
+- [Click here](https://svgmap.org/examples/tutorials/tiling1/tiling1.html) to see how it works .
+- The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/tiling1.zip).
 
 #### Note
 
@@ -106,7 +106,7 @@ Sarahama Sports Center, 248-1,3,3,9999
 
 #### CSV Tiling
 
-- [I've prepared a file called simpleTiling.py](https://svgmap.org/devinfo/devkddi/tutorials/tiling1/simpleTiling.py), so we'll use that.
+- [I've prepared a file called simpleTiling.py](https://svgmap.org/examples/tutorials/tiling1/simpleTiling.py), so we'll use that.
 - tilesCreate a directory in the working directory.
 - command:　```python simpleTiling.py P27-13.csv 0 1```
 	- Reference: [Installing Python for Windows](https://www.python.jp/install/windows/install.html)

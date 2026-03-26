@@ -2,41 +2,41 @@
 
 ## はじめに  {#introduction}
 
-チュートリアル1の内容を複数のタイルに分割して表示するチュートリアルです。実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html)をクリック。
+チュートリアル1の内容を複数のタイルに分割して表示するチュートリアルです。実際の動作は[こちら](https://svgmap.org/examples/tutorials/tutorial3/tutorial3.html)をクリック。
 
 ### ファイル構造 {#file-structure}
 
 ファイル構造は以下の通りです：
 
-- [tutorial3 ディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/) には以下のファイルが含まれています。
-  - [tutorial3.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/tutorial3.html)
+- [tutorial3 ディレクトリ](https://www.svgmap.org/examples/tutorials/tutorial3/) には以下のファイルが含まれています。
+  - [tutorial3.html](https://www.svgmap.org/examples/tutorials/tutorial3/tutorial3.html)
     - チュートリアル3用のhtml。tutrial1.htmlと同様の内容。
-  - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/Container.svg)
-  - [Coastline.svg](https://www.svgmap.org//devinfo/devkddi/tutorials/tutorial3/Coastline.svg)
+  - [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial3/Container.svg)
+  - [Coastline.svg](https://www.svgmap.org//examples/tutorials/tutorial3/Coastline.svg)
     - 以下の4×4(全16)分割したファイルを束ねるsvg。
     - タイリングについては、[SVGMapのタイリングアーキテクチャ](https://www.slideshare.net/totipalmate/tiling-51301496)を参照。
-  - [0_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_0.svg)
-  - [0_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_1.svg)
-  - [0_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_2.svg)
-  - [0_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/0_3.svg)
-  - [1_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_0.svg)
-  - [1_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_1.svg)
-  - [1_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_2.svg)
-  - [1_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/1_3.svg)
-  - [2_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/2_0.svg)
-  - [2_1.svg](https://www.svgmap.org//devinfo/devkddi/tutorials/tutorial3/2_1.svg)
-  - [2_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/2_2.svg)
-  - [2_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/2_3.svg)
-  - [3_0.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_0.svg)
-  - [3_1.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_1.svg)
-  - [3_2.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_2.svg)
-  - [3_3.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3/3_3.svg)
+  - [0_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_0.svg)
+  - [0_1.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_1.svg)
+  - [0_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_2.svg)
+  - [0_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/0_3.svg)
+  - [1_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_0.svg)
+  - [1_1.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_1.svg)
+  - [1_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_2.svg)
+  - [1_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/1_3.svg)
+  - [2_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/2_0.svg)
+  - [2_1.svg](https://www.svgmap.org//examples/tutorials/tutorial3/2_1.svg)
+  - [2_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/2_2.svg)
+  - [2_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/2_3.svg)
+  - [3_0.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_0.svg)
+  - [3_1.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_1.svg)
+  - [3_2.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_2.svg)
+  - [3_3.svg](https://www.svgmap.org/examples/tutorials/tutorial3/3_3.svg)
 
 ## チュートリアル {#tutorial}
 
 ### 使用ファイル {#files-used}
 
-- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3.zip)
+- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/tutorial3.zip)
 
 ### 既存のフレームワークとの本質的違い {#essential-differences}
 

@@ -4,19 +4,19 @@
 
 チュートリアル2aの内容に対して、POI(空港)と海岸線地図を別ファイルに分け、レイヤリング表示するチュートリアルです。
 
-実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2b/tutorial2b.html)をクリック。
+実際の動作は[こちら](https://svgmap.org/examples/tutorials/tutorial2b/tutorial2b.html)をクリック。
 
 ### ファイル構造 {#file-structure}
 
-ファイル構成は[tutorial2bディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/)に以下のファイルがあります。
+ファイル構成は[tutorial2bディレクトリ](https://www.svgmap.org/examples/tutorials/tutorial2b/)に以下のファイルがあります。
 
-- [tutorial2b.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/tutorial2b.html)
+- [tutorial2b.html](https://www.svgmap.org/examples/tutorials/tutorial2b/tutorial2b.html)
   - チュートリアル2b用のhtml。tutrial1.htmlに対して、レイヤーリスト・On/Off UIを設置している。(id="layerList"のdiv要素)
-- [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Container.svg)
+- [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial2b/Container.svg)
   - 表示する各レイヤ用のSVGファイルを読み込む（Airport.svgと、Coastline.svgの２個のファイル(レイヤ)を読み込んでいる）
-- [Airport.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Airport.svg)
+- [Airport.svg](https://www.svgmap.org/examples/tutorials/tutorial2b/Airport.svg)
   - 空港情報を別ファイルとして追加。
-- [Coastline.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b/Coastline.svg)
+- [Coastline.svg](https://www.svgmap.org/examples/tutorials/tutorial2b/Coastline.svg)
   - チュートリアル1のCoastline.svg
 
 ## チュートリアル {#tutorial}
@@ -25,7 +25,7 @@
 
 ### 使用ファイル {#files-used}
 
-使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2b.zip)
+使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/tutorial2b.zip)
 
 ### コンテンツの構造 {#content-structure}
 
@@ -436,7 +436,7 @@ Coastline.svgは[チュートリアル1#Coastline.svg](../tutorial-1/#coastline-
   <use transform="ref(svg,13960,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="url noTarget noMetadata"/>
  </a>
 <!-- リンク付きの空港情報:このPOIをクリックするとリンク先に移動する(現在の地図で表示位置を変更する。フルURL指定)。別タブにてリンク先を表示する -->
- <a xlink:href="http://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null">
+ <a xlink:href="http://svg2.mbsrv.net/examples/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null">
   <use transform="ref(svg,13950,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="URL+hash target  noMetadata"/>
  </a>
 <!-- リンク付きの空港情報:このPOIをクリックするとリンク先に移動する(現在の地図で表示位置を変更する。現在のURLにhrefの内容を追加)。現在位のタブ内でリンク先に移動する。 -->

@@ -6,12 +6,12 @@ We will connect a service that dynamically generates and distributes vector data
 
 Here we will integrate [the Geoname Service API](https://www.nrcan.gc.ca/maps-tools-and-publications/maps/geographical-names-canada/application-programming-interface-api/9249) (Canadian place name data service) provided by Natural Resources Canada .
 
-- To see it in action, click on [vectorService1.html](https://svgmap.org/devinfo/devkddi/tutorials/vectorService1/vectorService1.html).
+- To see it in action, click on [vectorService1.html](https://svgmap.org/examples/tutorials/vectorService1/vectorService1.html).
   - (Note: It may take some time for the service to generate and distribute the data.)
 
 ## Source Code {#source-code}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/vectorService1/)
+- [Source code directory](https://svgmap.org/examples/tutorials/vectorService1/)
 - Gets the display area parameters each time you scroll.
 - Use these parameters to construct a query URL to the service based on [your specifications](https://www.nrcan.gc.ca/maps-tools-and-publications/maps/geographical-names-canada/application-programming-interface-api/9249) and retrieve the CSV.
 - Visualize point data as an SVG use element.
@@ -23,8 +23,8 @@ This example integrates a service that dynamically generates and distributes vec
 
 [The service to be combined is the Geoname Service API](https://www.nrcan.gc.ca/maps-tools-and-publications/maps/geographical-names-canada/application-programming-interface-api/9249) (Canadian geographic name data service) provided by Natural Resources Canada .
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/vectorService1/vectorService1.html) to see it in action .
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/vectorService1.zip) of used files
+- [Click here](https://svgmap.org/examples/tutorials/vectorService1/vectorService1.html) to see it in action .
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/vectorService1.zip) of used files
 
 ### vectorService1.html {#vector-service-1}
 
@@ -101,18 +101,18 @@ CSV data based on the query parameters will be returned. The first line is the s
   - ```svgMap.getGeoViewBox()``` : Get the geographical display area
   - ```getCanadianGeoNamesReq()``` : Construct a query to the service based on the display area
   - ```await getCsv()``` : Asynchronously retrieve and parse CSV using a query
-    - ```line.split(...)``` : Parsing with double quotation escape based on this article
+    - ```line.split(...)``` : Parsing with double quotation escape [based on this article](https://www.ipentec.com/document/csharp-read-csv-file-by-regex)
   - ```drawPoints()``` : Visualize the retrieved data. In this example, we create an SVG use element directly from the CSV and visualize it.
     - ```svgImage``` : The SVGMap document object for the layer embedded in the webApp associated with the layer
-      - Reference: Manual#svgImage
+      -	Reference: [Manual #svgImage](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#metadata.E3.83.95.E3.83.AC.E3.83.BC.E3.83.A0.E3.83.AF.E3.83.BC.E3.82.AF)
     - ```schema``` : Place a schema in the property of the document element of the associated layer's SVGMap content
-      - Reference: SVGMap.js metadata framework
-    - ```"transform", `ref(svg,${lng},${-lat})` ```: Using TransformRef  in svg1.2 , we have placed an icon that does not change size.
-      - Reference: Supported attributes
+      - Reference: [SVGMap.js metadata framework](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#metadata.E3.83.95.E3.83.AC.E3.83.BC.E3.83.A0.E3.83.AF.E3.83.BC.E3.82.AF)
+    - ```"transform", `ref(svg,${lng},${-lat})` ```: Using [TransformRef](https://www.w3.org/TR/SVGTiny12/single-page.html#coords-transform-ref)  in svg1.2 , we have placed an icon that does not change size.
+      - Reference: [Supported attributes](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E5.B1.9E.E6.80.A7)
     - ```"content"``` : Metadata is set in CSV format
     - ```"xlink:href", "#p0"``` : Refer to the symbol (red circle) with id:p0 in the defs element
     - ```svgMap.refreshScreen();``` : Redraw the SVGMap content once the DOM is created
-      - Reference: Redraw Limit
+      - Reference: [Redraw Limit](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E5.86.8D.E6.8F.8F.E7.94.BB.E3.81.AE.E5.88.B6.E9.99.90)
 
 CanadianGeoNames.html
 

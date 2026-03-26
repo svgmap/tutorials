@@ -4,12 +4,12 @@
 
 [Using the WebApp Layer mechanism](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0), you can connect to a web service and dynamically display map content according to the display area. We will use the same [GEBCO Web Service as in Tutorial 12](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/).
 
-- Click on [wms2.html](https://svgmap.org/devinfo/devkddi/tutorials/wms2/wms2.html) to see it in action .
+- Click on [wms2.html](https://svgmap.org/examples/tutorials/wms2/wms2.html) to see it in action .
     - (Note: It may take some time for the WMS to generate and distribute the map.)
 
 ## Source Code Directory {#source-code-directory}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/wms2/)
+- [Source code directory](https://svgmap.org/examples/tutorials/wms2/)
 - Gets the display area parameters each time you scroll.
 - Use this parameter to construct a query URL to the WMS.
 - The image element places the data retrieved from the WMS.
@@ -19,18 +19,18 @@
 
 We will use a [WMS (Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service) to implement a layer as a [WebApp Layer](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0) that can display a map of the displayed area in response to elastic scrolling . As a WMS, we will continue to use [the GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) from [Tutorial 12](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12).
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/wms2/wms2.html) to see it in action.
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/wms2.zip) of used files
+- [Click here](https://svgmap.org/examples/tutorials/wms2/wms2.html) to see it in action.
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/wms2.zip) of used files
 
-### [wms2.html](https://svgmap.org/devinfo/devkddi/tutorials/wms2/wms2.html) {#wms2-html}
-
-There's nothing particularly different from before.
-
-### [Container.svg](https://svgmap.org/devinfo/devkddi/tutorials/wms2/Container.svg) {#container-svg}
+### [wms2.html](https://svgmap.org/examples/tutorials/wms2/wms2.html) {#wms2-html}
 
 There's nothing particularly different from before.
 
-### [wms_dynamic.svg](https://svgmap.org/devinfo/devkddi/tutorials/wms2/wms_dynamic.svg) {#wms-dynamic-svg}
+### [Container.svg](https://svgmap.org/examples/tutorials/wms2/Container.svg) {#container-svg}
+
+There's nothing particularly different from before.
+
+### [wms_dynamic.svg](https://svgmap.org/examples/tutorials/wms2/wms_dynamic.svg) {#wms-dynamic-svg}
 
 - ```data-controller="wmsController.html"``` This layer is linked to the WebApp ("wmsController.html").
     - The WebApp performs DOM manipulation to display WMS content every time you scroll.
@@ -44,10 +44,10 @@ There's nothing particularly different from before.
 </svg>
 ```
 
-### [wmsController.html](https://svgmap.org/devinfo/devkddi/tutorials/wms2/wmsController.html), [wmsController.js](https://svgmap.org/devinfo/devkddi/tutorials/wms2/wmsController.js) {#wms-controller}
+### [wmsController.html](https://svgmap.org/examples/tutorials/wms2/wmsController.html), [wmsController.js](https://svgmap.org/examples/tutorials/wms2/wmsController.js) {#wms-controller}
 
 - ```onload``` A function called immediately after the webApp is loaded.
-    - ```svgMap.refreshScreen()``` preRenderFunctionThis will cause the map to be refreshed immediately after the webapp is loaded .
+    - ```svgMap.refreshScreen()``` ```preRenderFunction``` This will cause the map to be refreshed immediately after the webapp is loaded .
 - ```preRenderFunction``` [This is a callback function that is executed when redrawing occurs](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#preRenderFunction). It is also called when redrawing occurs during elastic scrolling.
     - ```prevImageElement.remove()``` Delete the image from WMS one step before (just before the telescopic scroll occurs)
     - ```svgMap.getGeoViewBox()``` [Get the display area in geographic coordinates](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#getGeoViewBox)

@@ -2,13 +2,13 @@
 
 ## Introduction {#introduction}
 
-This is a tutorial for displaying Japan's coastline. [Click here to see it in action](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/tutorial1.html).
+This is a tutorial for displaying Japan's coastline. [Click here to see it in action](https://svgmap.org/examples/tutorials/tutorial1/tutorial1.html).
 
 ### File Structure {#file-structure}
 
 The following files are present in the tutorial1 directory. This section explains how to download the files used in the tutorial.
 
-- [tutorial1.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial1/tutorial1.html)
+- [tutorial1.html](https://www.svgmap.org/examples/tutorials/tutorial1/tutorial1.html)
   - Loads the SVGMap core program files (SVGMapLv0.1_r17.js and SVGMapLv0.1_LayerUI2_r4.js) to enable the use of SVGMap's various APIs.
   - Defines the map display area (using a DIV element) and loads the SVG file (Containers.svg) that groups the layers to be displayed (the layers automatically set to Visible by the SVGMap core program above will be displayed).
   - Zoom up, zoom down, and GPS buttons are displayed and clicked (calling the respective API of the SVGMap core program).
@@ -17,9 +17,9 @@ The following files are present in the tutorial1 directory. This section explain
     - GPS button: svgMap.gps() By calling the API, zoom up and display around the current location (only if the position of the PC or smartphone can be identified).
   - Displays a cross mark representing the center.
   - Latitude and longitude display on the map shown by the cross mark above (actually, the latitude and longitude of the center of the map are displayed when the map is moved).
-- [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial1/Container.svg)
+- [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial1/Container.svg)
   - Loads the SVG files for each layer to be displayed (only Coastline.svg is loaded)
-- [Coastline.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial1/Coastline.svg)
+- [Coastline.svg](https://www.svgmap.org/examples/tutorials/tutorial1/Coastline.svg)
   - Defines Japan's coastline data using numerous lines.
 
 ## Tutorial {#tutorial}
@@ -28,10 +28,10 @@ The following files are present in the tutorial1 directory. This section explain
 
 The files used in this tutorial can be obtained from the following locations:
 
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial1.zip)
-- [https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/) : HTML page for displaying the map and map content
-  - [img directory](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/img/) : Images and icons
-  - [js directory](https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/js) : SVGMap framework library and stylesheets (SVGMap.js)
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial1.zip)
+- [https://svgmap.org/examples/tutorials/tutorial1/](https://svgmap.org/examples/tutorials/tutorial1/) : HTML page for displaying the map and map content
+  - [img directory](https://svgmap.org/examples/tutorials/tutorial1/img/) : Images and icons
+  - [js directory](https://svgmap.org/examples/tutorials/tutorial1/js) : SVGMap framework library and stylesheets (SVGMap.js)
   - Note: The SVGMap.js open-source repository is here ([GitHub](https://github.com/svgmap/svgMapLv0.1))
 
 #### Content Structure {#content-structure}
@@ -53,8 +53,8 @@ tutorial1.html
 - Download the ZIP archive file mentioned above, or
 - Download directly from the sample source directory
   - Use the wget (wget2) command with the -r option
-  - `wget -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/`
-  - `wget2 --http2=off -timeout=60 --max-threads=1 -r https://svgmap.org/devinfo/devkddi/tutorials/tutorial1/`
+  - `wget -r https://svgmap.org/examples/tutorials/tutorial1/`
+  - `wget2 --http2=off -timeout=60 --max-threads=1 -r https://svgmap.org/examples/tutorials/tutorial1/`
   - `index.html*` There is no need to create a directory for each download.
 
 ##### Windows (using wget2) {#wget2}

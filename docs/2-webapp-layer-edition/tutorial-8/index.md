@@ -8,11 +8,11 @@ sidebar_position: 8
 
 This tutorial demonstrates how to asynchronously load a CSV file containing mesh data in a 2D array format (also known as grid data or raster data) into a web application, convert it to an SVGMap DOM element, and display it.
 
-To actually do it, click on [mesh1.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh1/mesh1.html).
+To actually do it, click on [mesh1.html](https://svgmap.org/examples/tutorials/mesh1/mesh1.html).
 
 ### Source Code {#source-code}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/mesh1/)
+- [Source code directory](https://svgmap.org/examples/tutorials/mesh1/)
 - Determine the format of the mesh data you will be using in this tutorial.
 - Container.svg: Specifies a clickable layer.
 - ArrayMesh.svg: Layer associated with webApp
@@ -21,8 +21,8 @@ To actually do it, click on [mesh1.html](https://svgmap.org/devinfo/devkddi/tuto
 
 ## Tutorial {#tutorial}
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/mesh1/mesh1.html) to see how it works.
-- The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh1.zip).
+- [Click here](https://svgmap.org/examples/tutorials/mesh1/mesh1.html) to see how it works.
+- The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/mesh1.zip).
 
 
 ### What is mesh data? {#what-is-mesh-data}
@@ -115,7 +115,7 @@ We will use a text-encoded raster format.
 
 #### Sample data for practical use
 
-[Click here](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh1/mesh.csv) for the sample data (density of shrines and temples in Japan)
+[Click here](https://www.svgmap.org/examples/tutorials/mesh1/mesh.csv) for the sample data (density of shrines and temples in Japan)
 
 ```
 minX:124.1539312,maxX:145.7870748,minY:24.33444293,maxY:45.51431213,partX:100,partY:98,valName:count/km2,minVal:1.95645299200927E-03,maxVal:2.86870067881484

@@ -8,11 +8,11 @@ sidebar_position: 11
 
 Based on [Tutorial 10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10), we will build an interactive application that allows you to specify a location on a map and calculates and displays the geoid elevation for that location.
 
-To see the actual operation, click on [mesh3b.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/mesh3b.html).
+To see the actual operation, click on [mesh3b.html](https://svgmap.org/examples/tutorials/mesh3b/mesh3b.html).
 
 ### Source Code {#source-code}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/)
+- [Source code directory](https://svgmap.org/examples/tutorials/mesh3b/)
 - Calculation of values ​​​​at arbitrary positions using mesh data via bilinear interpolation
 - Select any point on the map to display the geoid elevation at that location.
 
@@ -20,10 +20,10 @@ To see the actual operation, click on [mesh3b.html](https://svgmap.org/devinfo/d
 
 Based on [Tutorial 10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10), we will build an interactive application that calculates and displays the geoid elevation at a specified location on a map. The distinctive code is located in the webApp linked to the layer.
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/mesh3b.html) to see how it works.
-- The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh3b.zip).
+- [Click here](https://svgmap.org/examples/tutorials/mesh3b/mesh3b.html) to see how it works.
+- The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/mesh3b.zip).
 
-### [mesh3b.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/mesh3b.html) {#mesh3b-html}
+### [mesh3b.html](https://svgmap.org/examples/tutorials/mesh3b/mesh3b.html) {#mesh3b-html}
 
 There aren't any major differences from before.
 
@@ -72,15 +72,15 @@ There aren't any major differences from before.
 </html>
 ```
 
-### [Container.svg](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/Container.svg) {#container-svg}
+### [Container.svg](https://svgmap.org/examples/tutorials/mesh3b/Container.svg) {#container-svg}
 
 There are no significant differences from before.
 
-### [rasterMeshI.svg](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/rasterMeshI.svg) {#raster-meshi-svg}
+### [rasterMeshI.svg](https://svgmap.org/examples/tutorials/mesh3b/rasterMeshI.svg) {#raster-meshi-svg}
 
 There aren't any major differences from [Tutorial 10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10#Container.svg).
 
-### [rasterMeshI.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/rasterMeshI.html), [geoidCalc.js](https://svgmap.org/devinfo/devkddi/tutorials/mesh3b/geoidCalc.js) {#raster-mesh-geoid-calc}
+### [rasterMeshI.html](https://svgmap.org/examples/tutorials/mesh3b/rasterMeshI.html), [geoidCalc.js](https://svgmap.org/examples/tutorials/mesh3b/geoidCalc.js) {#raster-mesh-geoid-calc}
 
 The code from [Tutorial 10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10#rasterMesh.html) now includes a UI for specifying a location on a map and a function to calculate the geoid height at that location.
 
@@ -91,7 +91,7 @@ The code from [Tutorial 10](https://www.svgmap.org/wiki/index.php?title=%E3%83%8
 	- ```svgMapAuthoringTool.initPOIregistTool```
 		- ```id="pointInputUI"``` In the div element,
 		- This tool registers a UI element for placing point information on a map, which can be used with [svgMapAuthoringTool](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#svgMapAuthoringTool). ([initPOIregistTool](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#initPOIregistTool))
-		- ```POIUIcbFunc``` This is a callback function that is called when the operation to set a point is performed. It obtains latitude and longitude information from the UI, getGeoidHeightpasses it to a function that calculates geoid height, and displays the answer.
+		- ```POIUIcbFunc``` This is a callback function that is called when the operation to set a point is performed. It obtains latitude and longitude information from the UI, (```getGeoidHeightpasses```) it to a function that calculates geoid height, and displays the answer.
 - ```getGeoidHeight``` A function to calculate geoid height from grid data.
 	- Bilinear interpolation is used to calculate the geoid height at any given latitude and longitude (within the range of grid data).
 

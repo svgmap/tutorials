@@ -8,11 +8,11 @@ sidebar_position: 10
 
 Mesh data (grid data), also known as [raster data](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster), is almost equivalent to bit image data used as web content. Therefore, we will build a web application that dynamically converts mesh data into bit image content (PNG format) and displays it on a map screen. This offers performance advantages.
 
-To actually do it, click on [mesh3.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/mesh3.html).
+To actually do it, click on [mesh3.html](https://svgmap.org/examples/tutorials/mesh3/mesh3.html).
 
 ### Source Code {#source-code}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/)
+- [Source code directory](https://svgmap.org/examples/tutorials/mesh3/)
 - [The geoid height data](https://fgd.gsi.go.jp/download/geoid.php) (TEXT data) published by the Geospatial Information Authority of Japan is read using the fetch API and stored in a variable (Object).
 - Construct a bit image using the canvas element API.
 - Convert it to a dataURI, turn it into an SVG image element, and place it on the map.
@@ -23,14 +23,14 @@ Mesh data (Grid data),also known as [raster data](https://www.svgmap.org/wiki/in
 
 The distinctive code is found in the webApp linked to the layer.
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/mesh3.html) to see how it works.
-- The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh3.zip).
+- [Click here](https://svgmap.org/examples/tutorials/mesh3/mesh3.html) to see how it works.
+- The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/mesh3.zip).
 
 ### Data to Use {#data-to-use}
 
 We will use the geoid height data (TEXT data) published by the Geospatial Information Authority of Japan on [this page](https://fgd.gsi.go.jp/download/geoid.php).
 
-[Actual data to be used](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/gsigeo2011_ver2_1.asc)
+[Actual data to be used](https://svgmap.org/examples/tutorials/mesh3/gsigeo2011_ver2_1.asc)
 
 The detailed specifications of this data are described in the package documentation (**asc_instruction_sheet.pdf**) distributed on the above website , but it is basically in text [Raster format](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster).
 
@@ -43,17 +43,17 @@ Regarding the data itself, it's important to note the difference between the def
 
 ![Explination Diagram](../../../src/images/800px-Raster.png)
 
-[Explination Diagram](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/mesh3_raster_exp.svg)
+[Explination Diagram](https://svgmap.org/examples/tutorials/mesh3/mesh3_raster_exp.svg)
 
-### [mesh3.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/mesh3.html) {#mesh3-html}
-
-Nothing has changed from before.
-
-### [Container.svg](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/Container.svg) {#container-svg}
+### [mesh3.html](https://svgmap.org/examples/tutorials/mesh3/mesh3.html) {#mesh3-html}
 
 Nothing has changed from before.
 
-### [rasterMesh.svg](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/rasterMesh.svg) {#raster-mesh-svg}
+### [Container.svg](https://svgmap.org/examples/tutorials/mesh3/Container.svg) {#container-svg}
+
+Nothing has changed from before.
+
+### [rasterMesh.svg](https://svgmap.org/examples/tutorials/mesh3/rasterMesh.svg) {#raster-mesh-svg}
 
 - The WebApp is blank content linked to (rasterMesh.html below).
 - This specifies that the webApp window should appear along with the display.
@@ -67,7 +67,7 @@ Nothing has changed from before.
 </svg>
 ```
 
-### [rasterMesh.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/rasterMesh.html), [rasterMesh.js](https://svgmap.org/devinfo/devkddi/tutorials/mesh3/rasterMesh.js) {#raster-mesh}
+### [rasterMesh.html](https://svgmap.org/examples/tutorials/mesh3/rasterMesh.html), [rasterMesh.js](https://svgmap.org/examples/tutorials/mesh3/rasterMesh.js) {#raster-mesh}
 
 This process dynamically generates a bit image using the raster data of the loaded text, and then visualizes it by pasting it onto the associated rasterMesh.svg file.
 

@@ -2,7 +2,7 @@
 
 When integrating with external web services, you need to understand and handle cross-origin access depending on the external service.
 
-If a bit image map layer requires projection conversion, or if you access a web service (webapi) on a different domain from the site where the webapp is located using XMLHttpRequest or fetch, an error may occur due to cross-origin access restrictions. This error cannot be resolved on the WebApp side alone, and requires adjustment of the server-side settings.
+When a map layer in a bit image requires a projection transformation, or when accessing a web service (web API) on a different domain than the site where the web application resides using XMLHttpRequest or fetch, [cross-origin access](https://developer.mozilla.org/ja/docs/Web/HTTP/CORS) restrictions may cause errors. These errors cannot be resolved solely on the web application side; server-side configuration adjustments are necessary.
 
 ## Overview {#overview}
 

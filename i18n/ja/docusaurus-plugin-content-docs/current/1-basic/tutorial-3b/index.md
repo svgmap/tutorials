@@ -2,14 +2,14 @@
 
 ## はじめに  {#introduction}
 
-前章ではすでに作成済みのタイルを用いていましたが、ここでは [svgMapTools](https://github.com/svgmap/svgMapTools)を用いて、shapefileからタイルデータを作成し表示してみます。実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial3b/tutorial3b.html)をクリック。
+前章ではすでに作成済みのタイルを用いていましたが、ここでは [svgMapTools](https://github.com/svgmap/svgMapTools)を用いて、shapefileからタイルデータを作成し表示してみます。実際の動作は[こちら](https://svgmap.org/examples/tutorials/tutorial3b/tutorial3b.html)をクリック。
 
 ### ファイル構造 {#file-structure}
 
 ファイル構造は以下の通りです：
 
-- ファイル構成は[tutorial3bディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/)ディレクトリに以下のファイルがあります。
-  - https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b/
+- ファイル構成は[tutorial3bディレクトリ](https://www.svgmap.org/examples/tutorials/tutorial3b/)ディレクトリに以下のファイルがあります。
+  - https://www.svgmap.org/examples/tutorials/tutorial3b/
 - svgMapToolsを使って、地球地図 日本のデータのうちいくつかをタイリングされたSVGMapコンテンツに変換。
   - svgMapToolsが行うタイリング(Quad Tree Composite Tiling)については、[こちらの資料](https://www.slideshare.net/totipalmate/quad-tree-composite-tiling-for-web-mapping-in-japanese)を参照。
 - 変換したコンテンツを、レイヤーとして表示
@@ -18,7 +18,7 @@
 
 ### 使用ファイル {#files-used}
 
-- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial3b.zip)
+- 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/tutorial3b.zip)
 
 ### タイリングされたコンテンツの準備 {#preparing-tiled-content}
 

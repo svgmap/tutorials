@@ -6,13 +6,13 @@ We will integrate a service that dynamically generates and distributes vector da
 
 Although it connects to dynamic services, there is no fundamental difference from [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON).
 
-- To see it in action, click [geojson2.html](https://svgmap.org/devinfo/devkddi/tutorials/geojson2/geojson2.html).
+- To see it in action, click [geojson2.html](https://svgmap.org/examples/tutorials/geojson2/geojson2.html).
 
 ## Source Code {#source-code}
 
 [Compared to Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON), the following differences apply:
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/geojson2/)
+- [Source code directory](https://svgmap.org/examples/tutorials/geojson2/)
 - geoJsonExample2.html:
   - Generates a URL for GeoJson requests based on [the USGS Earthquake Hazards Program Feed specification and provides a UI for doing so](https://earthquake.usgs.gov/earthquakes/feed/).
   - Metadata display settings based on the same specifications
@@ -22,8 +22,8 @@ Although it connects to dynamic services, there is no fundamental difference fro
 
 We will integrate a service that dynamically generates and distributes vector data into SVGMap.js. Here, we will integrate [real-time global earthquake occurrence data (GeoJSON Real-time Feeds)](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) (GeoJSON version) distributed by the USGS Hazards Program. There are basically no differences from [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON).
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/geojson2/geojson2.html) to see it in action .
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/geojson2.zip) of used files
+- [Click here](https://svgmap.org/examples/tutorials/geojson2/geojson2.html) to see it in action .
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/geojson2.zip) of used files
 
 ### geojson1.html {#geojson-html}
 
@@ -64,21 +64,21 @@ This service delivers real-time updates of earthquake occurrences around the wor
 
 #### Code
 
-- A webApp that is linked to geoJsonExample2.svg and can control its DOM
-- The following are the differences from Tutorial 6#geoJsonExample1.html
+- A webApp that is linked to geoJsonExample2.svg and can [control its DOM](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E5.9B.BA.E6.9C.89.E3.81.AEUI)
+- The following are the differences from [Tutorial 6#geoJsonExample1.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6#geoJsonExample1.html)
 - ```addEventListener("load", function(){..})```
   - ```changeData()``` A function to request and visualize earthquake data based on UI settings.
     - ```getUSGSURL()``` Generate a GET request to retrieve earthquake data from the USGS.
-      - We are making a request that performs cross-origin access. The USGS Earthquake GeoJSON Real-time Feeds is access-control-allow-origin: *accessible because it has a response header.
+      - We are making a request that performs cross-origin access. [The USGS Earthquake GeoJSON Real-time Feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) is ```access-control-allow-origin: *``` accessible because it has a response header.
     - ```loadAndDrawGeoJson()``` A function that asynchronously retrieves and renders JSON data
-      - ```loadJSON()``` To prevent browser caching, we add a query part that is constantly changing ( there are getTime() better ways to do this , but this is a classic bad tip).
+      - ```loadJSON()``` To prevent browser caching, we add a query part that is constantly changing ( there are ```getTime()``` [better ways to do this](https://hacks.mozilla.org/2016/03/referrer-and-cache-control-apis-for-fetch/) , but this is a classic bad tip).
       - ```buildSchema()```
-        - When visualizing with the svgMapGIStool.drawGeoJson function, schema data is constructed to adapt to the metadata display framework of SVGMap.js , and is set as the document root element of the SVGMap content.
+        - When visualizing with the [svgMapGIStool.drawGeoJson](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#drawGeoJson) function, schema data is constructed to adapt to the [metadata display framework of SVGMap.js](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#metadata.E3.83.95.E3.83.AC.E3.83.BC.E3.83.A0.E3.83.AF.E3.83.BC.E3.82.AF) , and is set as the document root element of the SVGMap content.
         - Generates the final argument (metaSchema) passed to the svgMapGIStool.drawGeoJson function.
       - ```setMagColors()```
-        - Use the svgMapGIStool.drawGeoJson function's ability to set styles using the properties of each feature to color point features based on their magnitude values.
+        - Use the [svgMapGIStool.drawGeoJson](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#drawGeoJson) function's ability to set styles using the properties of each feature to color point features based on their magnitude values.
       - ```svgMapGIStool.drawGeoJson()```
-        - ```buildSchema()``` The generated schema ( metaSchema) is given, and the metadata can be displayed properly using the SVGMap.js metadata display framework.
+        - ```buildSchema()``` The generated schema ( ```metaSchema``` ) is given, and the metadata can be displayed properly using the [SVGMap.js metadata display framework](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#metadata.E3.83.95.E3.83.AC.E3.83.BC.E3.83.A0.E3.83.AF.E3.83.BC.E3.82.AF).
   - ```setInterval(function(){..}..)``` A function that updates periodically at specified intervals (since earthquake data is updated in real time)
 
 geoJsonExample2.html

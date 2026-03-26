@@ -4,17 +4,17 @@
 
 This is a tutorial that adds airport POIs [(Points of Interest)](https://ja.wikipedia.org/wiki/Point_of_interest) to the content of [Tutorial 1](../tutorial-1/).
 
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html) to see it in action.
+[Click here](https://svgmap.org/examples/tutorials/tutorial2/tutorial2.html) to see it in action.
 
 ### File Structure
 
-The [tutorial2 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2) contains the following files. The file structure is as follows:
+The [tutorial2 directory](https://www.svgmap.org/examples/tutorials/tutorial2) contains the following files. The file structure is as follows:
 
-- [tutorial2.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2/tutorial2.html)
+- [tutorial2.html](https://www.svgmap.org/examples/tutorials/tutorial2/tutorial2.html)
   - HTML for Tutorial 2. Same content as tutorial1.html.
 - Container.svg
   - Load an SVG file for each layer you want to display (only Coastline_Airport.svg is loaded)
-- [Coastline_Airport.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2/Coastline_Airport.svg)
+- [Coastline_Airport.svg](https://www.svgmap.org/examples/tutorials/tutorial2/Coastline_Airport.svg)
   - Adds airport information to Coastline.svg in Tutorial 1.
   - Defines the airport display image and describes the actual airport information (latitude/longitude, image used, title, information displayed upon clicking).
   - HTTP links can also be described alongside airport information. In this case, the following actions become possible:
@@ -26,7 +26,7 @@ The [tutorial2 directory](https://www.svgmap.org/devinfo/devkddi/tutorials/tutor
 
 ### Files Used
 
-[ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2.zip) of the files used in this tutorial.
+[ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial2.zip) of the files used in this tutorial.
 
 ### Content Structure
 
@@ -430,7 +430,7 @@ Load an SVG file for each layer you want to display (only Coastline_Airport.svg 
   <use transform="ref(svg,13960,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="url noTarget noMetadata"/>
  </a>
 <!-- Airport information with link: Click this POI to go to the link (changes the display position on the current map. Specify the full URL). Open the link in a new tab -->
- <a xlink:href="http://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null">
+ <a xlink:href="http://svg2.mbsrv.net/examples/tutorials/tutorial2/tutorial2.html#svgView(viewBox(global,139,35,2,2))" target="null">
   <use transform="ref(svg,13950,-3555.07211)" x="0" y="0" xlink:href="#syl6" xlink:title="URL+hash target noMetadata"/>
  </a>
 <!-- Airport information with link: Clicking on this POI will take you to the link (changes the display position on the current map. Appends the href content to the current URL). Go to the link in the current tab. -->

@@ -8,22 +8,22 @@ sidebar_position: 5
 
 This tutorial demonstrates how to create a layer using [OpenStreetMap's tile pyramid](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames) that displays the appropriate map ([Level of Detail](https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics))) as it expands and scrolls, utilizing SVGMap's [WebApp Layer mechanism](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0).
 
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial5/tutorial5.html) to see how it works .
+[Click here](https://svgmap.org/examples/tutorials/tutorial5/tutorial5.html) to see how it works .
 
 ### File Structure {#file-structure}
 
 The file structure is as follows:
 
-- [the tutorial5](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5) directory contains the following files.
-  - [Tutorial5.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5/tutorial5.html)
+- [the tutorial5](https://www.svgmap.org/examples/tutorials/tutorial5) directory contains the following files.
+  - [Tutorial5.html](https://www.svgmap.org/examples/tutorials/tutorial5/tutorial5.html)
     - HTML for Tutorial 5. Same content as tutorial2b.html.
-  - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5/Container.svg)
+  - [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial5/Container.svg)
     - Load dynamicOSM_r11.svg to display an external OpenStreetMap.
-  - [dynamicOSM_r11.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5/dynamicOSM_r11.svg)
+  - [dynamicOSM_r11.svg](https://www.svgmap.org/examples/tutorials/tutorial5/dynamicOSM_r11.svg)
     - A layer containing SVGMap content that displays an external OpenStreetMap (it's empty inside, and the underlying web application dynamically constructs the DOM).
-  - [dynamicOSM_r11.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5/dynamicOSM_r11.html)
+  - [dynamicOSM_r11.html](https://www.svgmap.org/examples/tutorials/tutorial5/dynamicOSM_r11.html)
     - The HTML of the web application associated with the above dynamicOSM_r11.svg
-  - [dynamicOSM_r11.js](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5/dynamicOSM_r11.js)
+  - [dynamicOSM_r11.js](https://www.svgmap.org/examples/tutorials/tutorial5/dynamicOSM_r11.js)
     - The JavaScript code for the web application linked to the above dynamicOSM_r11.svg file.
 
 ## Tutorial {#tutorial}
@@ -38,8 +38,8 @@ Here, we'll use this feature to build a layer that uses OpenStreetMap's tile pyr
 
 Note that Tutorial 5 contains a fair amount of code, so if you want to try out the WebApp Layer's features with less code, [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6) might be easier.
 
-[Click here](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5/tutorial5.html) to see how it works .
-The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial5.zip).
+[Click here](https://www.svgmap.org/examples/tutorials/tutorial5/tutorial5.html) to see how it works .
+The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial5.zip).
 
 ### Tutorial5.html {#tutorial5-html}
 
@@ -107,7 +107,7 @@ The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tut
 </svg>
 ```
 
-### dynamicOSM_r11.svg
+### dynamicOSM_r11.svg {#dynamic-osm-r11-svg}
 
 An SVG map content layer file with a web application linked to display an external OpenStreetMap.
 
@@ -177,7 +177,7 @@ dynamicOSM_r11.html
     - When this function (preRenderFunction) is called again after scrolling, it uses the value of this metadata to ensure that tiles that have already been drawn up to the previous step and should be drawn again after scrolling remain in place.
   - ```getTile``` Based on the information (ZoomLevel, X, Y) in the tile list's associative array, obtain the image element for the tile to be retrieved.
     - OSM bit image tiles are pasted as SVG image elements.
-    - getURLA function that generates the URL of an actual OSM tile from ZoomLevel, X, and Y.
+    - ```getURL``` A function that generates the URL of an actual OSM tile from ZoomLevel, X, and Y.
     - ```XY2latLng``` A function that obtains the geographic coordinate region of a tile from ZoomLevel, X, and Y.
 - ```getTileSet```A function that lists the tiles to be displayed at the current zoom level and display area.
   - [This function](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Zoom_levels) retrieves the Zoom and [XY coordinates](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#X_and_Y) of an OSM Slippy Map Tile and returns an associative array using these coordinates as keys.
@@ -193,222 +193,216 @@ dynamicOSM_r11.html
 <summary>Click see full JS data</summary>
 
 ```js
-// Dynamic OpenStreetMap Layer for SVGMap Sample for SVGMapLevel0 > r10 
-// Programmed by Satoru Takagi 
-// Copyright (C) 2013 by Satoru Takagi @ KDDI CORPORATION 
-// 
-// License: 
-// This program is free software: you can redistribute it and/or modify 
-// it under the terms of the GNU General Public License version 3 as 
-// published by the Free Software Foundation. 
-// 
-// This program is distributed in the hope that it will be useful, 
-// but WITHOUT ANY WARRANTY; without even the implied warranty of 
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
-// GNU General Public License for more details. 
-// 
-// You should have received a copy of the GNU General Public License 
-// along with this program. If not, see (http://www.gnu.org/licenses/). 
+// Dynamic OpemStreetMap Layer for SVGMap Sample for SVGMapLevel0 > r10
+//
+// Programmed by Satoru Takagi
+//
+// License: (MPL v2)
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// Prototype of a dynamic intended layer for use as an iframe
+// (JavaScript can be imported and placed within the SVG content.)
+// OpenStreetMap is used as the map data (this can be easily replaced with other sources).
+//
+//
+// The following are pre-configured in the environment in which this code operates.
+// document:This document itself
+// svgImage: The SVGMap content associated with this document
+// svgMap.getGeoViewBox(): geographical viewbox
+// svgImageProps: Various properties of the SVGMap content associated with this document
+// svgImageProps.scale: Scale (the scale of the coordinates of this SVG content relative to the screen coordinates)
+//
+// 2013/01/24 : 1st ver.
+// 2022/01/31: Ported to WebApp layer
 
-// Prototype of a dynamic layer intended for iframe implementation 
-// (Allows you to place JavaScript imports in the SVG content.) 
-// OpenStreetMap is used as the map data (it can be replaced with other data relatively easily) 
-// 
-// 
-// In the environment in which this code operates, the following are set by default: 
-// document: This document itself 
-// svgImage: The SVGMap content associated with this document 
-// svgMap.getGeoViewBox(): Geographic viewbox 
-// svgImageProps: Various properties of the SVGMap content associated with this document 
-// svgImageProps.scale: Scale (scale of the coordinates of this svg content relative to the screen coordinates) 
-// 
-// 2013/01/24: 1st ver. 
-// 2022/01/31: Ported to WebApp layer // 
-Onload = function () 
+// Execute when this file is loaded.
+onload = function () {
+	// Immediately after this script is loaded, call refreshScreen() to:
+	//The following preRenderFunction is executed the first time.
+	svgMap.refreshScreen();
+};
 
-to be executed when this file is loaded { 
-	// Immediately after this script is loaded, refreshScreen() is called, 
-	// The following preRenderFunction is executed for the first time 
-	svgMap.refreshScreen(); 
-}; 
-function preRenderFunction() { // Callback function 
-	var level 
-	that is executed just before redrawing = 8; 
-	// Calculate zoom level (3 to 18) 
-	var level = Math.floor(Math.LOG2E * Math.log(svgImageProps.scale) + 7.5); 
-	if (level > 18) { 
-		level = 18; 
-	} else if (level < 3) { 
-		level = 3; 
-	} 
-	// Get the XY coordinates and HashKey of the tile to be displayed in the viewBox in the geographic coordinates of this map 
-	var tileSet = getTileSet(svgMap.getGeoViewBox(), level); 
-	// Get the element with the tag name "image" (image for each map tile) that is currently loaded 
-	console.log("tileSet:", tileSet); 
-	var currentTiles = svgImage.getElementsByTagName("image"); 
-	// Repeat the following for each tile obtained, reusing those that have already been loaded and deleting those that are outside the display range 
-	for (var i = currentTiles.length - 1; i >= 0; i--) { 
-		var oneTile = currentTiles[i]; 
-		var qkey = oneTile.getAttribute("metadata"); 
-		if (tileSet[qkey]) { 
-			// Set a flag to skip as it already exists. 
-			tileSet[qkey].exist = true; 
-		} else { 
-			// Since it doesn't exist, remove it 
-			oneTile.parentNode.removeChild(oneTile); 
+function preRenderFunction() {
+	// Callback function executed immediately before redrawing
+	var level = 8;
+	// Calculate zoom level (3 to 18)
+	var level = Math.floor(Math.LOG2E * Math.log(svgImageProps.scale) + 7.5);
+	if (level > 18) {
+		level = 18;
+	} else if (level < 3) {
+		level = 3;
+	}
+
+	// Get the XY coordinates and HashKey of the tile to be displayed in the viewBox in the geographic coordinates of this map.
+	var tileSet = getTileSet(svgMap.getGeoViewBox(), level);
+
+	// Get the currently loaded element with the tag name "image" (the image for each map tile).
+	console.log("tileSet:", tileSet);
+	var currentTiles = svgImage.getElementsByTagName("image");
+
+	// Repeat the following for each tile obtained, reusing those already loaded and deleting those outside the display range.
+	for (var i = currentTiles.length - 1; i >= 0; i--) {
+		var oneTile = currentTiles[i];
+		var qkey = oneTile.getAttribute("metadata");
+		if (tileSet[qkey]) {
+			// Set a flag to skip as it already exists.
+			tileSet[qkey].exist = true;
+		else {
+			// It doesn't exist, so delete it.
+			oneTile.parentNode.removeChild(oneTile);
 		}
+	}
 
+	// Repeat the following steps for the number of tiles to be displayed, adding any unloaded files to the load elements.
+	for (var tkey in tileSet) {
+		if (!tileSet[tkey].exist) {
+			var addTile = getTile(tileSet[tkey].x, tileSet[tkey].y, level, this.CRS);
+			svgImage.getElementsByTagName("svg")[0].appendChild(addTile);
+		}
+	}
+}
 
+// Get tiles (divided map image) for the specified location
+function getTile(tileX, tileY, level, crs) {
+	// Get the URL of the tile with coordinates tileX, tileY, and zoom level.
+	var tileURL = getURL(tileX, tileY, level);
 
+	// Get the bbox in the SVG of the tile
+	var tLatLng = XY2latLng(tileX * tilePix, tileY * tilePix, level);
+	var tSvg = svgMap.transform(tLatLng.lng, tLatLng.lat, crs);
+	var tLatLngBR = XY2latLng(
+		tileX * tilePix + tilePix,
+		tileY * tilePix + tilePix,
+		level
+	);
+	var tSvgBR = svgMap.transform(tLatLngBR.lng, tLatLngBR.lat, crs);
+	tSvg.width = tSvgBR.x - tSvg.x; // Inefficient... Improvement to be postponed
+	tSvg.height = tSvgBR.y - tSvg.y;
 
-	} 
+	// Create the tile elements to be retrieved and set their respective attributes.
+	var cl = svgImage.createElement("image");
+	cl.setAttribute("x", tSvg.x);
+	cl.setAttribute("y", tSvg.y);
+	cl.setAttribute("width", tSvg.width);
+	cl.setAttribute("height", tSvg.height);
+	cl.setAttribute("xlink:href", tileURL.URL);
+	cl.setAttribute("metadata", tileURL.Key);
 
-	// Repeat the following for the number of tiles to be displayed, and add any unloaded files to the loaded element 
-	for (var tkey in tileSet) { 
-		if (!tileSet[tkey].exist) { 
-			var addTile = getTile(tileSet[tkey].x, tileSet[tkey].y, level, this.CRS); 
-			svgImage.getElementsByTagName("svg")[0].appendChild(addTile); 
-		} 
-	} 
-} 
+	return cl;
+}
 
-// Get the tile (divided map image) at the specified location 
-function getTile(tileX, tileY, level, crs) { 
-	// Get the URL of the tile with coordinates tileX, tileY and zoom level. 
-	var tileURL = getURL(tileX, tileY, level); 
+// Returns the required XY set of tiles when displaying a map at the specified map coordinates in a geoViewBox with a zoom level of level.
+function getTileSet(geoViewBox, level) {
+	var TileSet = new Object();
+	if (geoViewBox.y + geoViewBox.height > 85.05113) {
+		geoViewBox.height = 85.05113 - geoViewBox.y;
+	}
 
-	// Get bbox in SVG of tile 
-	var tLatLng = XY2latLng(tileX * tilePix, tileY * tilePix, level); 
-	var tSvg = svgMap.transform(tLatLng.lng, tLatLng.lat, crs); 
-	var tLatLngBR = //
-		​
-		​
-		​
-	​
-	​ 
-	​Inefficient...improvement postponed 
-	tSvg.height = tSvgBR.y - tSvg.y; 
+	if (geoViewBox.y < -85.05113) {
+		geoViewBox.y = -85.05113;
+	}
 
-	// Create the tile element to be retrieved and set its attributes. 
-	var cl = svgImage.createElement("image"); 
-	cl.setAttribute("x", tSvg.x); 
-	cl.setAttribute("y", tSvg.y); 
-	cl.setAttribute("width", tSvg.width); 
-	cl.setAttribute("height", tSvg.height); 
-	cl.setAttribute("xlink:href", tileURL.URL); 
-	cl.setAttribute("metadata", tileURL.Key); 
+	// Returns the XY coordinates of a tile in the specified area and its HashKey.
+	var tlxy = latLng2XY(geoViewBox.y + geoViewBox.height, geoViewBox.x, level);
+	var tileTLxy = XY2TileXY(tlxy);
+	var brxy = latLng2XY(geoViewBox.y, geoViewBox.x + geoViewBox.width, level);
+	var tileBRxy = XY2TileXY(brxy);
 
-	return cl; 
-} 
+	// Repeat the following for the number of tiles required for the desired height and width.
+	for (var i = tileTLxy.y; i <= tileBRxy.y; i++) {
+		for (var j = tileTLxy.x; j <= tileBRxy.x; j++) {
+			// Get the HashKey from the tile's XY coordinates and zoom level
+			var qkey = getKey(j, i, level);
+			// Set the necessary tile information for each HashKey obtained above.
+			TileSet[qkey] = new Object();
+			TileSet[qkey].x = j;
+			TileSet[qkey].y = i;
+		}
+	}
+	return TileSet;
+}
 
-// A function that returns the XY set of tiles required when displaying a map at level zoom level in a geoViewBox with the specified map coordinates. 
-getTileSet(geoViewBox, level) { 
-	var TileSet = new Object(); 
-	if (geoViewBox.y + geoViewBox.height > 85.05113) { 
-		geoViewBox.height = 85.05113 - geoViewBox.y; 
-	} 
-
-	if (geoViewBox.y < -85.05113) { 
-		} 
-	// 
-
-	Returns the XY coordinates and HashKey of the tile in the specified area 
-	var tlxy = latLng2XY(geoViewBox.y + geoViewBox.height, geoViewBox.x, level); 
-	var tileTLxy = XY2TileXY(tlxy); 
-	var brxy = latLng2XY(geoViewBox.y, geoViewBox.x + geoViewBox.width, level); 
-	var tileBRxy = XY2TileXY(brxy); 
-
-	// Repeat the following for the number of tiles equal to the required height and width 
-	for (var i = tileTLxy.y; i <= tileBRxy.y; i++) { 
-		for (var j = tileTLxy.x; j <= tileBRxy.x; j++) { 
-			// Get the HashKey from the tile's XY coordinates and zoom level 
-			var qkey = getKey(j, i, level); 
-			// Set the necessary tile information for each HashKey obtained above. 
-			TileSet[qkey] = new Object(); 
-			TileSet[qkey].x = j; 
-			TileSet[qkey].y = i; 
-		} 
-	} 
-	return TileSet; 
-} 
-
-// Convert latitude and longitude to XY 
-function latLng2XY(lat, lng, lvl) { 
+// Convert latitude and longitude to X and Y coordinates
+function latLng2XY(lat, lng, lvl) {
 	var size = lvl2Res(lvl);
-	var sinLat = Math.sin((lat * Math.PI) / 180.0); 
-	var pixelX = ((lng + 180.0) / 360.0) * size; 
-	var pixelY = 
-		(0.5 - Math.log((1 + sinLat) / (1.0 - sinLat)) / (4 * Math.PI)) * size; 
-	return { 
-		x: pixelX, 
-		y: pixelY, 
-	}; 
-} 
+	var sinLat = Math.sin((lat * Math.PI) / 180.0);
+	var pixelX = ((lng + 180.0) / 360.0) * size;
+	var pixelY =
+		(0.5 - Math.log((1 + sinLat) / (1.0 - sinLat)) / (4 * Math.PI)) * size;
+	return {
+		x: pixelX,
+		y: pixelY,
+	};
+}
 
-// Convert from XY to tile's XY 
-function XY2TileXY(xy) { 
-	var tileX = Math.floor(xy.x / tilePix); 
-	var tileY = Math.floor(xy.y / tilePix); 
-	return { 
-		x: tileX, 
-		y: tileY, 
-	}; 
-} 
+// Convert from XY to tile XY
+function XY2TileXY(xy) {
+	var tileX = Math.floor(xy.x / tilePix);
+	var tileY = Math.floor(xy.y / tilePix);
+	return {
+		x: tileX,
+		y: tileY,
+	};
+}
 
-var tilePix = 256; 
-// Return the size of a tile piece from the zoom level 
-function lvl2Res(lvl) { 
-	var j = 1; 
-	for (var i = 0; i < lvl; i++) { 
-		j = j * 2; 
-	} 
-	return 
-	j * tilePix; 
-} // Convert 
-	from 
+var tilePix = 256;
+// Returns the size of a tile piece from the zoom level.
+function lvl2Res(lvl) {
+	var j = 1;
+	for (var i = 0; i < lvl; i++) {
+		j = j * 2;
+	}
+	return j * tilePix;
+}
 
-XY to latitude/ 
-	longitude 
-function 
-	var lat = 90 - (360 * Math.atan(Math.exp(-y * 2 * Math.PI))) / Math.PI; 
-	var lng = 360 * x; 
-	return { 
-		lat: lat, 
-		lng: lng, 
-	}; 
-} 
-var sva = new Array("a", "b", "c"); 
-var svNumb = 0; 
-var culture = "en-US"; 
-var bingRoadSearchPart = ".jpeg?g=849&mkt=" + culture + "&shading=hill"; // 
-function getURL(tx, ty, lvl) that 
-returns a URL from the tile's XY and zoom level { 
-	// Get a HashKey from the XY and zoom level 
-	var tile_ans = getKey(tx, ty, lvl); 
-	// Assemble an OpenStreetMap URL 
-	var mapServerURL = 
-		"http://" + 
-		sva[svNumb] + 
-		".tile.openstreetmap.org/" + 
-		lvl + 
-		"/" + 
-		tx + 
-		"/" + 
-		ty + 
-		".png"; 
-	// Load balancing is performed when acquiring map images by sequentially switching between multiple similar servers. 
-	++svNumb; 
-	if (svNumb > 2) { 
-		svNumb = 0; 
-	} 
-	return { 
-		URL: mapServerURL, 
-		Key: tile_ans, 
-	}; 
-} // 
-function getKey(tx, ty, lvl) 
-that generates and returns a HashKey { 
-	return tx + "_" + ty + "_" + lvl; 
+// Convert from XY to latitude and longitude
+function XY2latLng(px, py, lvl) {
+	var size = lvl2Res(lvl);
+	var x = px / size - 0.5;
+	var y = 0.5 - py / size;
+	var lat = 90 - (360 * Math.atan(Math.exp(-y * 2 * Math.PI))) / Math.PI;
+	var lng = 360 * x;
+	return {
+		lat: lat,
+		lng: lng,
+	};
+}
+
+var sva = new Array("a", "b", "c");
+var svNumb = 0;
+var culture = "en-US";
+var bingRoadSearchPart = ".jpeg?g=849&mkt=" + culture + "&shading=hill";
+
+// Returns a URL based on the tile's XY coordinates and zoom level.
+function getURL(tx, ty, lvl) {
+	// Get a HashKey from XY and zoom level
+	var tile_ans = getKey(tx, ty, lvl);
+	// Assemble the OpenStreetMap URL
+	var mapServerURL =
+		"http://" +
+		sva[svNumb] +
+		".tile.openstreetmap.org/" +
+		lvl +
+		"/" +
+		tx +
+		"/" +
+		ty +
+		".png";
+	// Load balancing is performed when acquiring map images by sequentially switching between multiple similar servers.
+	++svNumb;
+	if (svNumb > 2) {
+		svNumb = 0;
+	}
+	return {
+		URL: mapServerURL,
+		Key: tile_ans,
+	};
+}
+
+// Generate and return a HashKey
+function getKey(tx, ty, lvl) {
+	return tx + "_" + ty + "_" + lvl;
 }
 ```
 

@@ -10,11 +10,11 @@ This tutorial demonstrates how to display tiled mesh data using asynchronous loa
 
 The sample data used for visualization is [the municipal code data for the third-level mesh system](https://www.stat.go.jp/data/mesh/m_itiran.html), published by the Statistics Bureau .
 
-To actually use it, click on [mesh2.html](https://svgmap.org/devinfo/devkddi/tutorials/mesh2/mesh2.html).
+To actually use it, click on [mesh2.html](https://svgmap.org/examples/tutorials/mesh2/mesh2.html).
 
 ### Source Code {#source-code}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/mesh2/)
+- [Source code directory](https://svgmap.org/examples/tutorials/mesh2/)
 - The mesh data format used in this tutorial
 - Container.svg: Specifies a clickable layer.
 - meshTileViewer.svg: A layer to which webApps are linked; webApps are launched in a hidden state.
@@ -27,8 +27,8 @@ This tutorial displays tiled mesh data. [Tutorial 8](https://www.svgmap.org/wiki
 
 Furthermore, we will be dealing with larger data (more mesh count, finer detail) than in [Tutorial 8](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8).Therefore, in addition to tiling, we will also construct a simple tile pyramid and implement a function ([Level of Detail](https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics))) that changes the data displayed at small and large scales.
 
-- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/mesh2/mesh2.html) to see how it works.
-- The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh2.zip).
+- [Click here](https://svgmap.org/examples/tutorials/mesh2/mesh2.html) to see how it works.
+- The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/mesh2.zip).
 
 ## Data to Display {#data-to-display}
 
@@ -46,10 +46,10 @@ Furthermore, we will be dealing with larger data (more mesh count, finer detail)
 
 ### Preparing the original data {#preparing-the-original-data}
 
-- We will retrieve the data using [this WebApp](https://www.svgmap.org/devinfo/devkddi/lvl0.1/etcLayers/meshCoder/japanMesh_r3.html).
+- We will retrieve the data using [this WebApp](https://www.svgmap.org/examples/lvl0.1/etcLayers/meshCoder/japanMesh_r3.html).
 - This web application automatically retrieves all CSV files from [the Statistics Bureau's list of municipal mesh codes](https://www.stat.go.jp/data/mesh/m_itiran.html) and allows you to save CSV data at a specified mesh level. (All operations are performed within a browser.)
 - How to operate
-	- Access [japanMesh_r3.html](https://www.svgmap.org/devinfo/devkddi/lvl0.1/etcLayers/meshCoder/japanMesh_r3.html)
+	- Access [japanMesh_r3.html](https://www.svgmap.org/examples/lvl0.1/etcLayers/meshCoder/japanMesh_r3.html)
 		- Please wait a while until the CSV data collection is complete.
 	- ```市区町村``` Menu
 	- ```３次メッシュ``` Menu
@@ -60,16 +60,16 @@ Furthermore, we will be dealing with larger data (more mesh count, finer detail)
 
 This tutorial uses a [Jamstack](https://en.wikipedia.org/wiki/Jamstack) configuration that does not deploy a database or dynamic web services in the backend .
 
-Static tile pyramid data (a set of CSV files) will be generated from the acquired raw data. The tool used for generation is [mesh2tileBasic.py](https://svgmap.org/devinfo/devkddi/tutorials/mesh2/mesh2tileBasic.py), which is provided here .
+Static tile pyramid data (a set of CSV files) will be generated from the acquired raw data. The tool used for generation is [mesh2tileBasic.py](https://svgmap.org/examples/tutorials/mesh2/mesh2tileBasic.py), which is provided here .
 
-- Save [mesh2tileBasic.py](https://svgmap.org/devinfo/devkddi/tutorials/mesh2/mesh2tileBasic.py) to your local PC
+- Save [mesh2tileBasic.py](https://svgmap.org/examples/tutorials/mesh2/mesh2tileBasic.py) to your local PC
 - ```tiles``` Prepare a directory in the working directory.
 - ```python mesh2tileBasic.py mesh.csv```　Execute (mesh.csv is the file path of the downloaded original data)
 - ```tiles``` The directory contains the tiled mesh data.
 
 ### Explanation of tile pyramid data {#explination-of-tile-pyramid-data}
 
-#### [top.csv](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh2/meshTiles/top.csv)
+#### [top.csv](https://www.svgmap.org/examples/tutorials/mesh2/meshTiles/top.csv)
 
 Data for small scale (data for the vertices of the tile pyramid)
 
@@ -87,7 +87,7 @@ Data for small scale (data for the vertices of the tile pyramid)
 ...
 ```
 
-#### [4-digit number].csv Example: [5339.csv](https://www.svgmap.org/devinfo/devkddi/tutorials/mesh2/meshTiles/5339.csv)
+#### [4-digit number].csv Example: [5339.csv](https://www.svgmap.org/examples/tutorials/mesh2/meshTiles/5339.csv)
 
 Tile-divided data for large scale (divided at the primary mesh level).
 

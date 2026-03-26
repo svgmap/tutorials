@@ -4,7 +4,7 @@
 
 [The svgmapAppLayers](https://github.com/svgmap/svgmapAppLayers) GitHub repository has a [GitHub Pages](https://docs.github.com/ja/pages/getting-started-with-github-pages/what-is-github-pages) setup. Therefore, some layers can be used simply by linking to the URL published on GitHub Pages.
 
-To see the actual operation, click on [ghAppLayers_wpxy.html](https://svgmap.org/devinfo/devkddi/tutorials/ghAppLayers/ghAppLayers_wpxy.html).
+To see the actual operation, click on [ghAppLayers_wpxy.html](https://svgmap.org/examples/tutorials/ghAppLayers/ghAppLayers_wpxy.html).
 
 [The svgmapAppLayers](https://github.com/svgmap/svgmapAppLayers) repository on GitHub is a collection of [WebApp Layers](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0) that provide various features and content usable with SVGMap.js . All are released as open source. (The license is [MPL2](https://www.mozilla.org/en-US/MPL/2.0/) ( [Japanese reference translation](https://www.mozilla.jp/documents/mpl/2.0/) ) (same as SVGMap.js))
 
@@ -12,8 +12,8 @@ This repository is also set up as a [GitHub Pages](https://docs.github.com/ja/pa
 
 Therefore, in this chapter, we will try to build a map page by directly referencing the layers of svgmapAppLayers, which are published as GitHub Pages.
 
-[Click here](https://svgmap.org/devinfo/devkddi/tutorials/ghAppLayers/ghAppLayers_wpxy.html) for actual operation (with proxy set up)
-The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/ghAppLayers.zip).
+[Click here](https://svgmap.org/examples/tutorials/ghAppLayers/ghAppLayers_wpxy.html) for actual operation (with proxy set up)
+The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/ghAppLayers.zip).
 
 ### Synopsis {#synopsis}
 
@@ -21,7 +21,7 @@ The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tut
 - You can check the list of layers registered in svgmapAppLayers in [the source code of Container.svg](https://github.com/svgmap/svgmapAppLayers/blame/main/Container.svg).
     - Layers in svgmapAppLayers that cannot directly reference a GitHub Pages webApp have the data-cross-origin-restricted attribute.
     - Layers that require cross-origin access proxy configuration have the `data-cross-origin-proxy-required` attribute.
-    - Using the [Container SVG Generation Support WebApp](https://svg2.mbsrv.net/devinfo/devkddi/tutorials/ghAppLayers/containerGenerator.html), you can easily generate Container.svg.
+    - Using the [Container SVG Generation Support WebApp](https://svg2.mbsrv.net/examples/tutorials/ghAppLayers/containerGenerator.html), you can easily generate Container.svg.
 - Build a proxy if necessary.
 
 ### Restrictions {#restrictions}
@@ -31,7 +31,7 @@ The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tut
 
 ### List of Available Layers {#list-of-available-layers}
 
-- Please refer to [this page](https://svg2.mbsrv.net/devinfo/devkddi/tutorials/ghAppLayers/containerGenerator.html).
+- Please refer to [this page](https://svg2.mbsrv.net/examples/tutorials/ghAppLayers/containerGenerator.html).
     - This page was generated based on [https://github.com/svgmap/svgmapAppLayers/blob/main/Container.svg](https://github.com/svgmap/svgmapAppLayers/blob/main/Container.svg).
 - Layers with `corsRestricted` set to true cannot be used with direct references to GitHub Pages.
 - Layers where corsProxyRequired is true require a proxy to be provided.
@@ -40,11 +40,11 @@ The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tut
 
 - Let's try creating a page that only uses layers that don't require proxies. It's easy because there are no proxy settings.
     - It can be operated entirely with static hosting. (It can also be published using a GitHub Pages instance that you have built yourself.)
-- Click [here](https://svgmap.org/devinfo/devkddi/tutorials/ghAppLayers/ghAppLayers.html) to see the actual operation.
+- Click [here](https://svgmap.org/examples/tutorials/ghAppLayers/ghAppLayers.html) to see the actual operation.
 
 ### Preparing the container (conainer.svg) {#preparing-container-svg}
 
-- Show [this page](https://svg2.mbsrv.net/devinfo/devkddi/tutorials/ghAppLayers/containerGenerator.html#withoutProxy)
+- Show [this page](https://svg2.mbsrv.net/examples/tutorials/ghAppLayers/containerGenerator.html#withoutProxy)
     - Layers that require a proxy are automatically unchecked. (This includes layers that cannot directly reference GitHub Pages.)
 - You can obtain Container.svg by checking the layers you want to display and pressing the Save (or Display) button for Container.svg. This will retrieve a Container with embedded links for direct reference.
 
@@ -101,17 +101,17 @@ The file used is a [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tut
 
 - Let's try creating a page that uses layers that require proxies.
     - A proxy service needs to be prepared (it can also be run using PHP; this tutorial provides an example using PHP).
-- Click here to see the actual operation.
+- [Click here](https://svgmap.org/devinfo/devkddi/tutorials/ghAppLayers/ghAppLayers_wpxy.html) to see the actual operation.
 
 ### Preparing the container (Container_wpxy.svg) {#preparing-the-container-wpxy-svg}
 
-- Show [this page](https://svg2.mbsrv.net/devinfo/devkddi/tutorials/ghAppLayers/containerGenerator.html)
+- Show [this page](https://svg2.mbsrv.net/examples/tutorials/ghAppLayers/containerGenerator.html)
 - Layers that require a proxy are also checked. (Layers that cannot be directly referenced from GitHub Pages are unchecked.)
 - Check the layers you want to display, and then press the Save (or Display) button for Container_wpxy.svg to obtain Container.svg. You will get a Container with links that directly reference it.
 
 ### The HTML file for the map page (ghAppLayers_wpxy.html) {#the-html-file-for-the-map-page}
 
-- The difference is that SVGMap.js is set up to allow the use of a proxy. Please refer to this information for more details.
+- The difference is that SVGMap.js is set up to allow the use of a proxy. Please refer to [this information](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9) for more details.
     - The library for handling proxies is imported with `import { CorsProxy } from ' https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/CorsProxyModule.js' ;`.
     - Set it up with corsProxy.setService
         - (In this example, a PHP proxy (./simpleCORSproxy.php) located in the same directory is specified.)

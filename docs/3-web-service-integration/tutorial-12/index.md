@@ -8,12 +8,12 @@ Let's try using the [GEBCO Web Service](https://www.gebco.net/data_and_products/
 
 First, let's simply display the map content, regardless of the elastic scrolling. This is basically the same as what we did in [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4). We just set the query part of the URL according to the WMS specifications.
 
-- Click [wms1.html](https://svgmap.org/devinfo/devkddi/tutorials/wms1/wms1.html) to see it in action .
+- Click [wms1.html](https://svgmap.org/examples/tutorials/wms1/wms1.html) to see it in action .
   - (Note: It may take some time for the WMS to generate and distribute the map.)
 
 ## Source Code Directory {#source-code-directory}
 
-- [Source code directory](https://svgmap.org/devinfo/devkddi/tutorials/wms1/)
+- [Source code directory](https://svgmap.org/examples/tutorials/wms1/)
 - Understand the relationship between WMS parameters and SVGMap content bit image alignment parameters
 - The image element places the data retrieved from the WMS.
 
@@ -23,18 +23,18 @@ This section explains the most basic method of connecting to [the GEBCO Web Serv
 
 On the client side, there is no dynamic code implemented, such as JavaScript, and it simply displays a static bit image. Therefore, there is almost no difference from [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4).
 
-- Click [here](https://svgmap.org/devinfo/devkddi/tutorials/wms1/wms1.html) to see it in action.
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/wms1.zip) of used files
+- Click [here](https://svgmap.org/examples/tutorials/wms1/wms1.html) to see it in action.
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/wms1.zip) of used files
 
-### [wms1.html](https://svgmap.org/devinfo/devkddi/tutorials/wms1/wms1.html) {#wms1-html}
-
-There's nothing particularly different from before.
-
-### [Container.svg](https://svgmap.org/devinfo/devkddi/tutorials/wms1/Container.svg) {#container-svg}
+### [wms1.html](https://svgmap.org/examples/tutorials/wms1/wms1.html) {#wms1-html}
 
 There's nothing particularly different from before.
 
-### [wms_static.svg](https://svgmap.org/devinfo/devkddi/tutorials/wms1/wms_static.svg) {#wms-static-svg}
+### [Container.svg](https://svgmap.org/examples/tutorials/wms1/Container.svg) {#container-svg}
+
+There's nothing particularly different from before.
+
+### [wms_static.svg](https://svgmap.org/examples/tutorials/wms1/wms_static.svg) {#wms-static-svg}
 
 As in [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4) , we use the image element to place a bit image in the SVGMap content .
 
@@ -86,7 +86,7 @@ With that in mind, let's look at the properties of the image element.
 - ```preserveAspectRatio="none"``` In accordance with the WMS bit image generation policy, the aspect ratio is not maintained when placing bit images.
 - ```opacity="0.5"``` The transparency is set to 50% to allow some of the background map to be seen.
 
-#### Sauce
+#### Source
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>

@@ -2,14 +2,14 @@
 
 ## Introduction  {#introduction}
 
-In this tutorial, we will use OpenStreetMap as the background map to create a more practical page. [Click here](https://svgmap.org/devinfo/devkddi/tutorials/tutorial2c/tutorial2c.html) to see it in action. This tutorial is the same as Tutorial 2b, except that it uses OpenStreetMap.svg as the background map.
+In this tutorial, we will use OpenStreetMap as the background map to create a more practical page. [Click here](https://svgmap.org/examples/tutorials/tutorial2c/tutorial2c.html) to see it in action. This tutorial is the same as Tutorial 2b, except that it uses OpenStreetMap.svg as the background map.
 
 ### File Structure {#file-structure}
 
 The file structure is as follows:
 
 - The tutrial2c directory contains the following files
-  - [tutorial2c.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2c/tutorial2c.html)
+  - [tutorial2c.html](https://www.svgmap.org/examples/tutorials/tutorial2c/tutorial2c.html)
 - The background map referenced in Container.svg has been replaced from Coastline.svg to dynamicOSM_r11.svg.
   - dynamicOSM_r11.svg is a dynamic content (WebAppLayer) linked with JavaScript code. We will not go into that in this chapter, but will focus on practical layering.
     - Note: Dynamic content is explained in more detail in [the WebApp Layer section](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8).
@@ -18,7 +18,7 @@ The file structure is as follows:
 
 ### Files Used {#files-used}
 
-- [ZIP archive file](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial2c.zip) of used files
+- [ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial2c.zip) of used files
 
 ### Content Structure {#content-structure}
 
@@ -86,9 +86,9 @@ In the previous chapter, we replaced Coastline.svg with dynamicOSM_r11.svg, but 
 
 You can also use the same method to set up multiple add-on information items and switch between them.
   
-- Click [here](http://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2c/tutorial2c_add.html) to see it in action .
+- Click [here](http://svg2.mbsrv.net/examples/tutorials/tutorial2c/tutorial2c_add.html) to see it in action .
   - If you click on the layer list UI in the upper left corner of the screen, you can choose from two background maps.
-- The file used is [here](https://svg2.mbsrv.net/devinfo/devkddi/tutorials/tutorial2c/)
+- The file used is [here](https://svg2.mbsrv.net/examples/tutorials/tutorial2c/)
 
 The difference is the contents of Container.svg
 

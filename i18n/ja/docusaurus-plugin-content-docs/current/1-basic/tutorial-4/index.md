@@ -2,27 +2,27 @@
 
 ## はじめに  {#introduction}
 
-チュートリアル1の内容に一部のBitmapイメージ地図を重ねて表示するチュートリアルです。実際の動作は[こちら](https://svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)をクリック。
+チュートリアル1の内容に一部のBitmapイメージ地図を重ねて表示するチュートリアルです。実際の動作は[こちら](https://svgmap.org/examples/tutorials/tutorial4/tutorial4.html)をクリック。
 
 ### ファイル構造 {#file-structure}
 
-The file structure is as follows:
+ファイル構造は以下の通りです：
 
-- ファイル構成は[tutrial4ディレクトリ](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)ディレクトリに以下のファイルがあります。
-  - [tutorial4.html](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/tutorial4.html)
+- ファイル構成は[tutrial4ディレクトリ](https://www.svgmap.org/examples/tutorials/tutorial4/tutorial4.html)ディレクトリに以下のファイルがあります。
+  - [tutorial4.html](https://www.svgmap.org/examples/tutorials/tutorial4/tutorial4.html)
     - チュートリアル4用のhtml。tutrial1.htmlと同様の内容。
-  - [Container.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/Container.svg)
+  - [Container.svg](https://www.svgmap.org/examples/tutorials/tutorial4/Container.svg)
     - チュートリアル1と同様のCoastline.svgと重ね合わせて表示するビットマップイメージのbitmapImage.svgを読み込む
-  - [dynamicOSM_r11.svg](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4/dynamicOSM_r11.svg)
+  - [dynamicOSM_r11.svg](https://www.svgmap.org/examples/tutorials/tutorial4/dynamicOSM_r11.svg)
     - チュートリアル2cと同様のOpenStreetMapレイヤー
 - 重ね合わせるビットマップイメージSVGファイル。
-  - こちらのツールを使用して作成したもの。[ビットイメージの地図画像をSVGMapのレイヤー化するツール](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/).
+  - こちらのツールを使用して作成したもの。[ビットイメージの地図画像をSVGMapのレイヤー化するツール](https://svgmap.org/examples/lvl0.1/bitimage2geoInfo/mapPage/).
 
 ## チュートリアル {#tutorial}
 
 ### 使用ファイル {#files-used}
 
-- 実際の動作は[こちら](https://www.svgmap.org/devinfo/devkddi/tutorials/tutorial4.zip)をクリック。
+- 実際の動作は[こちら](https://www.svgmap.org/examples/tutorials/tutorial4.zip)をクリック。
 - 出典：[首都直下地震の被害想定 7ページ](https://www.bousai.go.jp/kyoiku/bousai-vol/drill/h26/tokyo/tokyo03_kato.pdf#page=4)
 
 ### tutorial4.html {#tutorial4-html}
@@ -108,7 +108,7 @@ The file structure is as follows:
 ### bitmapImage.svg {#bitmapimage-svg}
 
 - 重ね合わせるビットマップイメージSVGファイル。
-  - ビットイメージの地図画像をSVGMapのレイヤー化するツールを使用して作成。[こちらのツール](https://svgmap.org/devinfo/devkddi/lvl0.1/bitimage2geoInfo/mapPage/)
+  - ビットイメージの地図画像をSVGMapのレイヤー化するツールを使用して作成。[こちらのツール](https://svgmap.org/examples/lvl0.1/bitimage2geoInfo/mapPage/)
   - オリジナルのビットイメージは本章冒頭記載の文書から抽出
 
 #### 経度緯度とSVGコンテンツのXY座標との関係 {#relationship-between-lon-lat-xy-coord}
