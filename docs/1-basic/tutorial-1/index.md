@@ -41,7 +41,7 @@ tutorial1.html
  | |
  +-img/zoomup.png, img/zoomdown.png, img/gps.png, img/Xcursor.png
  | |
- +-js/layerListStyle.css (default style sheet for map display page) (Note: The javascript library for displaying SVGMap is registered in jedelivr (CDN that publishes open source javascript library on the Internet).
+ +-js/layerListStyle.css (default style sheet for map display page) Note: The javascript library for displaying SVGMap is registered in jedelivr (CDN that publishes open source javascript library on the Internet).
    | |
    +-Container.svg (one SVG file with a role to bind various data (layers) is loaded)
      | |
@@ -191,7 +191,7 @@ Standalone execution is also possible on the terminal PC (though an internet con
 
 The single SVG content loaded first by SVGMap.js. This content does not contain actual map data itself; its role is to reference various map contents (called layers) and bundle them together into a single map.
 
-It loads the SVG files (in SVGMap content format) for each layer to be displayed using the [animation element](#animation) (here, only Coastline.svg is loaded).
+It loads the SVG files (in SVGMap content format) for each layer to be displayed using the [animation element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0) (here, only Coastline.svg is loaded).
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>

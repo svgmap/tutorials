@@ -134,7 +134,7 @@ tutorial1.html
 ### Container.svg {#container-svg}
 
 - SVGMap.jsが最初に読み込む一個のSVGコンテンツ。　このコンテンツには実際の地図データを入れることはなく、様々な地図コンテンツ（レイヤーと言う）を参照し、それらを束ねて一枚の地図にする役割を持っています。
-- [animation要素](#animation-element)によって表示する各レイヤ用のSVGファイル(SVGMapコンテンツ形式)を読み込む(ここではCoastline.svgのみを読み込んでいます)。
+- [animation要素](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0)によって表示する各レイヤ用のSVGファイル(SVGMapコンテンツ形式)を読み込む(ここではCoastline.svgのみを読み込んでいます)。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
