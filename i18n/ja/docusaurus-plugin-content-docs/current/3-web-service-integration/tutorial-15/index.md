@@ -19,7 +19,7 @@
 
 ## チュートリアル {#tutorial}
 
-動的にベクトルデータが生成・配信されているサービスをSVGMap.jsに結合します。[チュートリアル14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14)に対して、こちらは伸縮スクロールする度にその表示領域に応じたデータをサービスから取得して表示します。また[チュートリアル14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14)はgeoJsonデータのサービスでしたがこちらはCSVデータです。
+動的にベクトルデータが生成・配信されているサービスをSVGMap.jsに結合します。[チュートリアル14](../tutorial-14/index.md)に対して、こちらは伸縮スクロールする度にその表示領域に応じたデータをサービスから取得して表示します。また[チュートリアル14](../tutorial-14/index.md)はgeoJsonデータのサービスでしたがこちらはCSVデータです。
 
 結合するサービスはNatural Resources Canadaが提供している、[Geoname Service API](https://www.nrcan.gc.ca/maps-tools-and-publications/maps/geographical-names-canada/application-programming-interface-api/9249)(カナダの地名データサービス)です。
 
@@ -28,15 +28,15 @@
 
 ### vectorService1.html {#vector-service-1}
 
-- [チュートリアル14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14)と特に違いはありません。
+- [チュートリアル14](../tutorial-14/index.md)と特に違いはありません。
 
 ### Container.svg {#container-svg}
 
-- [チュートリアル14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14)と特に違いはありません。
+- [チュートリアル14](../tutorial-14/index.md)と特に違いはありません。
 
 ### CanadianGeoNames.svg {#canadian-geo-names-svg}
 
-- [チュートリアル14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14)と特に違いはありません。アイコンの色もこちらは赤に固定しています。
+- [チュートリアル14](../tutorial-14/index.md)と特に違いはありません。アイコンの色もこちらは赤に固定しています。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>

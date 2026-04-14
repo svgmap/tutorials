@@ -19,7 +19,7 @@ Here we will integrate [the Geoname Service API](https://www.nrcan.gc.ca/maps-to
 
 ## Tutorial {#tutorial}
 
-This example integrates a service that dynamically generates and distributes vector data into SVGMap.js. Unlike [Tutorial 14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14) , this example retrieves and displays data from the service according to the display area each time you scroll. While [Tutorial 14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14) used a geoJson data service, this example uses CSV data.
+This example integrates a service that dynamically generates and distributes vector data into SVGMap.js. Unlike [Tutorial 14](../tutorial-14/index.md) , this example retrieves and displays data from the service according to the display area each time you scroll. While [Tutorial 14](../tutorial-14/index.md) used a geoJson data service, this example uses CSV data.
 
 [The service to be combined is the Geoname Service API](https://www.nrcan.gc.ca/maps-tools-and-publications/maps/geographical-names-canada/application-programming-interface-api/9249) (Canadian geographic name data service) provided by Natural Resources Canada .
 
@@ -28,15 +28,15 @@ This example integrates a service that dynamically generates and distributes vec
 
 ### vectorService1.html {#vector-service-1}
 
-- There is no particular difference from [Tutorial 14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14).
+- There is no particular difference from [Tutorial 14](../tutorial-14/index.md).
 
 ### Container.svg {#container-svg}
 
-- There is no particular difference from [Tutorial 14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14).
+- There is no particular difference from [Tutorial 14](../tutorial-14/index.md).
 
 ### CanadianGeoNames.svg {#canadian-geo-names-svg}
 
-- There are no particular differences from [Tutorial 14](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14). The icon color is also fixed to red.
+- There are no particular differences from [Tutorial 14](../tutorial-14/index.md). The icon color is also fixed to red.
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>

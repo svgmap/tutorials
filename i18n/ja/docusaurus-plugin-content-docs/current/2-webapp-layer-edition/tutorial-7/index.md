@@ -14,11 +14,11 @@ webAppで非同期読み込みによりタイル分割されたCSVのPointジオ
 
 - [ソースコードのディレクトリ](https://svgmap.org/examples/tutorials/tiling1/)
 - tiling1.html: 周辺ライブラリ(SVGMapGIS)の読み込み
-- Container.svg: クリッカブルなレイヤリングの設定 ([Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)とほぼ同じ)
-- simpleTiling.svg: UIを持ったレイヤーを操作するwebApp [tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)とほぼ同じ
+- Container.svg: クリッカブルなレイヤリングの設定 ([Tutorial 6](../tutorial-6/index.md)とほぼ同じ)
+- simpleTiling.svg: UIを持ったレイヤーを操作するwebApp [tutorial 6](../tutorial-6/index.md)とほぼ同じ
 - simpleTiling.html:
 - simpleTiling.js:
-	- GeoJsonを読む点は[Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)と同様
+	- GeoJsonを読む点は[Tutorial 6](../tutorial-6/index.md)と同様
 	- 表示領域に応じてGeoJsonを動的に読み込む
 		- 小縮尺(広いエリア)表示のとき、読み込むタイルが多くなりすぎる場合は読み込みをやめ表示させない
 
@@ -113,7 +113,7 @@ X,Y,P27_001,P27_002,P27_003,P27_004,P27_005,P27_006,P27_007,P27_008,P27_009
 
 ### tiling1.html {#tiling1-html}
 
-- [チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)のhtmlと特に違いはありません
+- [チュートリアル6](../tutorial-6/index.md)のhtmlと特に違いはありません
 
 ```html
 <!DOCTYPE html>
@@ -162,7 +162,7 @@ X,Y,P27_001,P27_002,P27_003,P27_004,P27_005,P27_006,P27_007,P27_008,P27_009
 
 ### Container.svg {#container-svg}
 
-- [チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)のhtmlと特に違いはありません。
+- [チュートリアル6](../tutorial-6/index.md)のhtmlと特に違いはありません。
 	- GeoJsonデータはベクトルタイルデータのため、class属性で[clickable](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#class.E5.B1.9E.E6.80.A7.E3.81.AB.E3.82.88.E3.82.8B.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.AE.E3.82.B0.E3.83.AB.E3.83.BC.E3.83.94.E3.83.B3.E3.82.B0.E3.83.BB.E3.82.AF.E3.83.AA.E3.83.83.E3.82.AB.E3.83.96.E3.83.AB.E6.A9.9F.E8.83.BD.E3.81.AE.E6.8F.90.E4.BE.9B)を指定しています。
 
 ```svg
@@ -201,7 +201,7 @@ X,Y,P27_001,P27_002,P27_003,P27_004,P27_005,P27_006,P27_007,P27_008,P27_009
 ### simpleTiling.html, simpleTiling.js {#simple-tiling}
 
 - simpleTiling.svgに紐付けられ、[そのDOMをコントロールできるwebApp](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E5.9B.BA.E6.9C.89.E3.81.AEUI)
--  表示領域に応じてタイル分割されたGeoJsonデータを動的に読み込みます。この点は [チュートリアル5](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB5)と類似しています。
+-  表示領域に応じてタイル分割されたGeoJsonデータを動的に読み込みます。この点は [チュートリアル5](../tutorial-5/index.md)と類似しています。
 - 縮尺に応じたピラミッド構造は持っていないので、このチュートリアルのほうが単純です。
 - その代わり、小縮尺(縮小表示)では読み込むデータが大量になりすぎるので、読み込みを行わず、描画を消去し(```removeAllTiles()```)、webAppのウィンド上に拡大を促すメッセージを出します。
 - ```addEventListener("zoomPanMap",zpmFunc)``` : 伸縮スクロールが発生したときに、 zpmFunc()を呼び出す。

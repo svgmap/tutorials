@@ -44,7 +44,7 @@ SVGMapのタイリングは他のフレームワーク(openlayersやleaflet,goog
 
 他の地図フレームワークはあらかじめ決め打ちされたタイリング規則([TMS](https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%83%AB%E3%83%9E%E3%83%83%E3%83%97%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9)など)を前提とし**フレームワークにこの規則がハードコード**されています。その規則に基づいて構築されたサーバへのアクセスのためのパラメータだけを指定する仕組みとなっています。パラメータを設定すればタイリングされたコンテンツを導入できるので簡単ですが柔軟性に課題があります。
 
-一方、SVGMapのタイリングはよりプリミティブなもので、タイリング規則は内蔵されていません。(ただしそれは[チュートリアル5](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB5)で解説するWebApp Layerとして容易に実装可能です)。それに対して、タイリングの動作を起こすために必要な より基本的な機能が提供され、これを利用して多様なタイリング方式が実現可能です。
+一方、SVGMapのタイリングはよりプリミティブなもので、タイリング規則は内蔵されていません。(ただしそれは[チュートリアル5](../../2-webapp-layer-edition/tutorial-5/index.md)で解説するWebApp Layerとして容易に実装可能です)。それに対して、タイリングの動作を起こすために必要な より基本的な機能が提供され、これを利用して多様なタイリング方式が実現可能です。
 
 本章では、この機能を用いた最も基本的な静的タイリングを実践してみます。タイル分割ざれたデータの配置情報をインラインで展開したsvgを用意し、ビューアはビューポートとそのコンテナを照合して必要なタイルを取得することで静的なタイリング動作が実現されます。
 
@@ -154,7 +154,7 @@ tutorial1.html
 
 #### タイリング {#tiling}
 
-SVGMapコンテンツの [animation要素](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0)によるタイリングを実施している例になります。
+SVGMapコンテンツの [animation要素](../tutorial-1/index.md#animation要素-animation-element)によるタイリングを実施している例になります。
 
 タイリングは、実際のデータが保存されているタイルコンテンツと、それを統合するコンテナコンテンツ(このファイル)から構成されます。
 
@@ -180,7 +180,7 @@ SVGMapコンテンツの [animation要素](https://www.svgmap.org/wiki/index.php
   - x：12078.24557, 12737.53337, 13396.82117, 14056.10897
   - y: -4750.342539, -4118.743422, -3487.144305, -2855.545188
 - 注意点：Y座標は地理座標(緯度経度座標)と逆向き、原点位置が上端(北)
-  - [globalCoordinateSystem要素](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E5.BF.85.E9.A0.88.E3.81.AE.E6.8B.A1.E5.BC.B5_:_globalCoordinateSystem.E8.A6.81.E7.B4.A0)によるSVG座標と地理座標(緯度経度座標)との関係を参照
+  - [globalCoordinateSystem要素](../tutorial-1/index.md#svgmapコンテンツ形式-svgmap-content-format)によるSVG座標と地理座標(緯度経度座標)との関係を参照
 
 #### svgMapToolsについて {#about-svgmap-tools}
 

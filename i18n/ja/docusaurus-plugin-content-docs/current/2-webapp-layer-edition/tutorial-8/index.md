@@ -222,7 +222,7 @@ minX:124.1539312,maxX:145.7870748,minY:24.33444293,maxY:45.51431213,partX:100,pa
 ### Container.svg {#container-svg}
 
 - GeoJsonを表示する主題レイヤと、背景地図(OpenStreetMap)をanimation要素で読み込んでいます。
-- [チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6#Container.svg)同様にクリッカブルなレイヤーを指定しています。
+- [チュートリアル6](../tutorial-6/index.md#containersvg-container-svg)同様にクリッカブルなレイヤーを指定しています。
 	- 後述のように、メッシュデータをベクトルデータとして可視化し対話性を実現するため、class属性でclickableを指定しています。
 
 ```svg

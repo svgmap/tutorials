@@ -17,7 +17,7 @@
 
 ## チュートリアル {#tutorial}
 
-[WMS (Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service)を使って、表示している領域の地図を伸縮スクロールに応じて表示する機能を持つレイヤーを[WebApp Layer](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0)として実装します。WMSとしては[Tutorial 12](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12) に引き続き [the GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/)を使用します。
+[WMS (Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service)を使って、表示している領域の地図を伸縮スクロールに応じて表示する機能を持つレイヤーを[WebApp Layer](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0)として実装します。WMSとしては[Tutorial 12](../tutorial-12/index.md) に引き続き [the GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/)を使用します。
 
 - 実際の動作は、[こちら](https://svgmap.org/examples/tutorials/wms2/wms2.html) をクリック。
 - 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/wms2.zip)
@@ -54,9 +54,9 @@
     - ```getScreenSize()```  地図表示画面のサイズを取得
     - ```getWMSreq(GEBCOurl, GEBCOlayer, geoViewBox, screenSize)```
         - 表示領域、スクリーンサイズなどのパラメータをもとにGEBCO WMSへのリクエストURLを生成する関数
-        - クエリパラメータの設定内容については、 [チュートリアル12のWMSに関する説明](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12#WMS.E3.81.AE.E3.82.AF.E3.82.A8.E3.83.AA.E3.83.91.E3.83.A9.E3.83.A1.E3.83.BC.E3.82.BF)を参照
+        - クエリパラメータの設定内容については、 [チュートリアル12のWMSに関する説明](../tutorial-12/index.md#wms_staticsvg-wms-static-svg)を参照
     - ```getSvgImage(req, geoViewBox)``` 上で生成したWMSへのリクエストURIと、その地図データの領域情報をもとに、image要素を生成する関数
-        - プロパティの設定内容については、 [チュートリアル12のimage要素の説明](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12#image.E8.A6.81.E7.B4.A0.E3.81.AE.E3.83.97.E3.83.AD.E3.83.91.E3.83.86.E3.82.A3)を参照
+        - プロパティの設定内容については、 [チュートリアル12のimage要素の説明](../tutorial-12/index.md#wmsのクエリパラメータ)を参照
     - ```svgImage.documentElement.appendChild(newImage)``` 生成したImage要素をSVGコンテンツに設置
 
 wmsController.js

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 ## はじめに  {#introduction}
 
-メッシュデータ（グリッドデータ）は[ラスターデータとも呼ばれる](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster)ように、Webコンテンツとして使われるビットイメージデータとほぼ同等です。そこでメッシュデータを動的にビットイメージコンテンツ(PNG形式)化し地図画面上に表示するWebAppを構築してみます。性能面でのメリットがあります。
+メッシュデータ（グリッドデータ）は[ラスターデータとも呼ばれる](../tutorial-8/index.md#raster)ように、Webコンテンツとして使われるビットイメージデータとほぼ同等です。そこでメッシュデータを動的にビットイメージコンテンツ(PNG形式)化し地図画面上に表示するWebAppを構築してみます。性能面でのメリットがあります。
 
 実際の動作は、[mesh3.html](https://svgmap.org/examples/tutorials/mesh3/mesh3.html) をクリック。
 
@@ -19,7 +19,7 @@ sidebar_position: 10
 
 ## チュートリアル {#tutorial}
 
-メッシュデータ（グリッドデータ）は [ラスターデータとも呼ばれる](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster)ように、Webコンテンツとして一般的に使われるビットイメージデータ形式(PNGやJPEGなど)とほぼ同等の形式です。そこでメッシュデータを動的にビットイメージコンテンツ(PNG形式)化し、地図画面上に表示するWebAppを構築してみます。性能面でのメリットがあります。
+メッシュデータ（グリッドデータ）は [ラスターデータとも呼ばれる](../tutorial-8/index.md#raster)ように、Webコンテンツとして一般的に使われるビットイメージデータ形式(PNGやJPEGなど)とほぼ同等の形式です。そこでメッシュデータを動的にビットイメージコンテンツ(PNG形式)化し、地図画面上に表示するWebAppを構築してみます。性能面でのメリットがあります。
 
 特徴的なコードはレイヤーに紐付いたwebAppにあります。
 
@@ -32,7 +32,7 @@ sidebar_position: 10
 
 [実際に使用するデータ](https://svgmap.org/examples/tutorials/mesh3/gsigeo2011_ver2_1.asc)
 
-このデータの詳細な仕様は上記サイトで配布されているパッケージ同梱文書(**asc取扱説明書.pdf**)に記載されていますが、基本的にはテキストの[Raster形式](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster)です。
+このデータの詳細な仕様は上記サイトで配布されているパッケージ同梱文書(**asc取扱説明書.pdf**)に記載されていますが、基本的にはテキストの[Raster形式](../tutorial-8/index.md#raster)です。
 
 データ形式としては、カンマ区切りでなく空白文字区切り 一つのRaw（桁）が１行で終結せず、２５５文字で改行される点が注意点です
 
@@ -76,7 +76,7 @@ sidebar_position: 10
 	- ```var duri = buildImage()```
 		- 指定されたCanvas要素を作業用に使用し、読み込んだデータからビットイメージを生成、[dataURI](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)として出力する
 		- ```canvas.toDataURL()``` [canvasオブジェクトのtoDataURL](https://developer.mozilla.org/ja/docs/Web/API/HTMLCanvasElement/toDataURL)でPNGビットイメージをDataURLとして生成しています
-	- ```imageGeoArea``` [ データの注意点](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10#.E4.BD.BF.E7.94.A8.E3.81.99.E3.82.8B.E3.83.87.E3.83.BC.E3.82.BF)での指摘の通り、ビットイメージをSVG座標に張り付けるための領域情報を計算しています
+	- ```imageGeoArea``` [ データの注意点](../tutorial-10/index.md#使用するデータ-data-to-use)での指摘の通り、ビットイメージをSVG座標に張り付けるための領域情報を計算しています
 	- ```buildSvgImage()```  生成したビットイメージ(dataURI)およびその領域情報を使って、webAppに紐付いたSVG DOMの中に、ビットイメージを張り付ける
 		- ```svgImage``` このwebAppに紐付いたSVGコンテンツのDOM(Documentオブジェクト)があらかじめ定義されている
 	- ```svgMap.refreshScreen()``` 非同期での読み込みとデータ生成・SVGMapのDOM編集が完了したら再描画を明示し画面に反映する([参考](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E5.86.8D.E6.8F.8F.E7.94.BB.E3.81.AE.E5.88.B6.E9.99.90))

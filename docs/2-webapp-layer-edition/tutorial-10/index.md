@@ -6,7 +6,7 @@ sidebar_position: 10
 
 ## Introduction  {#introduction}
 
-Mesh data (grid data), also known as [raster data](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster), is almost equivalent to bit image data used as web content. Therefore, we will build a web application that dynamically converts mesh data into bit image content (PNG format) and displays it on a map screen. This offers performance advantages.
+Mesh data (grid data), also known as [raster data](../tutorial-8/index.md#raster), is almost equivalent to bit image data used as web content. Therefore, we will build a web application that dynamically converts mesh data into bit image content (PNG format) and displays it on a map screen. This offers performance advantages.
 
 To actually do it, click on [mesh3.html](https://svgmap.org/examples/tutorials/mesh3/mesh3.html).
 
@@ -19,7 +19,7 @@ To actually do it, click on [mesh3.html](https://svgmap.org/examples/tutorials/m
 
 ## Tutorial {#tutorial}
 
-Mesh data (Grid data),also known as [raster data](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster), is in a format almost identical to the bit image data formats (such as PNG and JPEG) commonly used for web content. Therefore, we will build a web application that dynamically converts mesh data into bit image content (PNG format) and displays it on a map screen. This offers performance advantages.
+Mesh data (Grid data),also known as [raster data](../tutorial-8/index.md#raster), is in a format almost identical to the bit image data formats (such as PNG and JPEG) commonly used for web content. Therefore, we will build a web application that dynamically converts mesh data into bit image content (PNG format) and displays it on a map screen. This offers performance advantages.
 
 The distinctive code is found in the webApp linked to the layer.
 
@@ -32,7 +32,7 @@ We will use the geoid height data (TEXT data) published by the Geospatial Inform
 
 [Actual data to be used](https://svgmap.org/examples/tutorials/mesh3/gsigeo2011_ver2_1.asc)
 
-The detailed specifications of this data are described in the package documentation (**asc_instruction_sheet.pdf**) distributed on the above website , but it is basically in text [Raster format](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Raster).
+The detailed specifications of this data are described in the package documentation (**asc_instruction_sheet.pdf**) distributed on the above website , but it is basically in text [Raster format](../tutorial-8/index.md#raster).
 
 Note that the data format uses spaces as delimiters, not commas, and each Raw (column) does not end on a single line, but rather breaks every 255 characters.
 
@@ -76,7 +76,7 @@ This process dynamically generates a bit image using the raster data of the load
 	- ```var duri = buildImage()```
 		- Use the specified Canvas element for the task, generate a bit image from the loaded data, and output it as a [dataURI](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 		- ```canvas.toDataURL()``` The [toDataURL](https://developer.mozilla.org/ja/docs/Web/API/HTMLCanvasElement/toDataURL) method of the canvas object generates a PNG bit image as the DataURL.
-	- ```imageGeoArea``` As noted in the [data precautions](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10#.E4.BD.BF.E7.94.A8.E3.81.99.E3.82.8B.E3.83.87.E3.83.BC.E3.82.BF), we are calculating the area information needed to map the bit image to SVG coordinates.
+	- ```imageGeoArea``` As noted in the [data precautions](../tutorial-10/index.md#data-to-use-data-to-use), we are calculating the area information needed to map the bit image to SVG coordinates.
 	- ```buildSvgImage()``` The generated bit image (dataURI) and its region information are used to embed the bit image into the SVG DOM associated with the webApp.
 		- ```svgImage``` The DOM (Document object) of the SVG content associated with this web application is predefined.
 	- ```svgMap.refreshScreen()``` Once asynchronous loading, data generation, and SVGMap DOM editing are complete, explicitly trigger a redraw to reflect the changes on the screen. ([Reference](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E5.86.8D.E6.8F.8F.E7.94.BB.E3.81.AE.E5.88.B6.E9.99.90))

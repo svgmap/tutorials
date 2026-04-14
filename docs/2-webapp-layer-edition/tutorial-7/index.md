@@ -14,11 +14,11 @@ This tutorial demonstrates how to load a tiled CSV Point geometry file into a we
 
 - [Source code directory](https://svgmap.org/examples/tutorials/tiling1/)
 - tiling1.html: Loading of related libraries (SVGMapGIS)
-- Container.svg: Setting up clickable layering ( almost the same as [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6))
-- simpleTiling.svg: Almost identical to webApp [tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6), which manipulates layers with a UI.
+- Container.svg: Setting up clickable layering ( almost the same as [Tutorial 6](../tutorial-6/index.md))
+- simpleTiling.svg: Almost identical to webApp [tutorial 6](../tutorial-6/index.md), which manipulates layers with a UI.
 - simpleTiling.html:
 - simpleTiling.js:
-	- Reading GeoJSON is the same as in [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6).
+	- Reading GeoJSON is the same as in [Tutorial 6](../tutorial-6/index.md).
 	- Dynamically load GeoJSON based on the display area.
 		- When displaying a small scale (wide area), if too many tiles need to be loaded, the loading process will stop and the tiles will not be displayed.
 
@@ -113,7 +113,7 @@ Sarahama Sports Center, 248-1,3,3,9999
 
 ### tiling1.html {#tiling1-html}
 
-- There are no significant differences from the HTML in [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6).
+- There are no significant differences from the HTML in [Tutorial 6](../tutorial-6/index.md).
 
 ```html
 <!DOCTYPE html> 
@@ -162,7 +162,7 @@ Sarahama Sports Center, 248-1,3,3,9999
 
 ### Container.svg {#container-svg}
 
-- There are no significant differences from the HTML in [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6).
+- There are no significant differences from the HTML in [Tutorial 6](../tutorial-6/index.md).
 	- Since GeoJSON data is vector tile data, the class attribute is specified as [clickable](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#class.E5.B1.9E.E6.80.A7.E3.81.AB.E3.82.88.E3.82.8B.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.AE.E3.82.B0.E3.83.AB.E3.83.BC.E3.83.94.E3.83.B3.E3.82.B0.E3.83.BB.E3.82.AF.E3.83.AA.E3.83.83.E3.82.AB.E3.83.96.E3.83.AB.E6.A9.9F.E8.83.BD.E3.81.AE.E6.8F.90.E4.BE.9B).
 
 ```svg
@@ -201,7 +201,7 @@ Sarahama Sports Center, 248-1,3,3,9999
 ### simpleTiling.html, simpleTiling.js {#simple-tiling}
 
 - A web app that can be linked to simpleTiling.svg and [control its DOM](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E5.9B.BA.E6.9C.89.E3.81.AEUI).
--  system dynamically loads GeoJSON data that has been tiled according to the display area. This is similar to [Tutorial 5](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB5).
+-  system dynamically loads GeoJSON data that has been tiled according to the display area. This is similar to [Tutorial 5](../tutorial-5/index.md).
 - Since it doesn't have a pyramidal structure that scales down, this tutorial is simpler.
 - Instead, because loading too much data would be required at a small scale (reduced display), the data is not loaded, the rendering is cleared, ```removeAllTiles()``` and a message prompting zooming in is displayed on the webApp window.
 - ```addEventListener("zoomPanMap",zpmFunc)``` When scaling scroll occurs, call zpmFunc().

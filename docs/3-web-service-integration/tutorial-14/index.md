@@ -4,13 +4,13 @@
 
 We will integrate a service that dynamically generates and distributes vector data into SVGMap.js. Here, we will integrate the [global earthquake occurrence data (GeoJSON version) distributed by the USGS Hazards Program](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
 
-Although it connects to dynamic services, there is no fundamental difference from [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON).
+Although it connects to dynamic services, there is no fundamental difference from [Tutorial 6](../../2-webapp-layer-edition/tutorial-6/index.md).
 
 - To see it in action, click [geojson2.html](https://svgmap.org/examples/tutorials/geojson2/geojson2.html).
 
 ## Source Code {#source-code}
 
-[Compared to Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON), the following differences apply:
+[Compared to Tutorial 6](../../2-webapp-layer-edition/tutorial-6/index.md), the following differences apply:
 
 - [Source code directory](https://svgmap.org/examples/tutorials/geojson2/)
 - geoJsonExample2.html:
@@ -20,18 +20,18 @@ Although it connects to dynamic services, there is no fundamental difference fro
 
 ## Tutorial {#tutorial}
 
-We will integrate a service that dynamically generates and distributes vector data into SVGMap.js. Here, we will integrate [real-time global earthquake occurrence data (GeoJSON Real-time Feeds)](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) (GeoJSON version) distributed by the USGS Hazards Program. There are basically no differences from [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON).
+We will integrate a service that dynamically generates and distributes vector data into SVGMap.js. Here, we will integrate [real-time global earthquake occurrence data (GeoJSON Real-time Feeds)](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) (GeoJSON version) distributed by the USGS Hazards Program. There are basically no differences from [Tutorial 6](../tutorial-14/index.md).
 
 - [Click here](https://svgmap.org/examples/tutorials/geojson2/geojson2.html) to see it in action .
 - [ZIP archive file](https://www.svgmap.org/examples/tutorials/geojson2.zip) of used files
 
 ### geojson1.html {#geojson-html}
 
-- There is no particular difference from [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6).
+- There is no particular difference from [Tutorial 6](../../2-webapp-layer-edition/tutorial-6/index.md).
 
 ### Container.svg {#container-svg}
 
-- There is no particular difference from [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6).
+- There is no particular difference from [Tutorial 6](../../2-webapp-layer-edition/tutorial-6/index.md).
 
 ### geoJsonExample2.svg {#geojsonexample2}
 
@@ -65,7 +65,7 @@ This service delivers real-time updates of earthquake occurrences around the wor
 #### Code
 
 - A webApp that is linked to geoJsonExample2.svg and can [control its DOM](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E5.9B.BA.E6.9C.89.E3.81.AEUI)
-- The following are the differences from [Tutorial 6#geoJsonExample1.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6#geoJsonExample1.html)
+- The following are the differences from [Tutorial 6#geoJsonExample1.html](../../2-webapp-layer-edition/tutorial-6/index.md#geojsonexample1html)
 - ```addEventListener("load", function(){..})```
   - ```changeData()``` A function to request and visualize earthquake data based on UI settings.
     - ```getUSGSURL()``` Generate a GET request to retrieve earthquake data from the USGS.
@@ -216,4 +216,4 @@ function setMagColors(features){ // Use the styling specifications from [[Guide#
 
 ### Appendix: Cross-origin access
 
-[Cross-origin access](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9) ( now a [separate page](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9) )
+[Cross-origin access](../cross-origin-access/index.md) ( now a [separate page](../cross-origin-access/index.md) )

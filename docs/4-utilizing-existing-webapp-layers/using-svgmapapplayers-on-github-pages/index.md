@@ -111,7 +111,7 @@ The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/
 
 ### The HTML file for the map page (ghAppLayers_wpxy.html) {#the-html-file-for-the-map-page}
 
-- The difference is that SVGMap.js is set up to allow the use of a proxy. Please refer to [this information](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9) for more details.
+- The difference is that SVGMap.js is set up to allow the use of a proxy. Please refer to [this information](../../3-web-service-integration/cross-origin-access/index.md) for more details.
     - The library for handling proxies is imported with `import { CorsProxy } from ' https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/CorsProxyModule.js' ;`.
     - Set it up with corsProxy.setService
         - (In this example, a PHP proxy (./simpleCORSproxy.php) located in the same directory is specified.)

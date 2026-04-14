@@ -36,7 +36,7 @@ From Tutorial 5 onwards, we will primarily use this WebApp Layer functionality t
 
 Here, we'll use this feature to build a layer that uses OpenStreetMap's tile pyramid to quickly display the appropriate map as you zoom in and out.
 
-Note that Tutorial 5 contains a fair amount of code, so if you want to try out the WebApp Layer's features with less code, [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6) might be easier.
+Note that Tutorial 5 contains a fair amount of code, so if you want to try out the WebApp Layer's features with less code, [Tutorial 6](../tutorial-6/index.md) might be easier.
 
 [Click here](https://www.svgmap.org/examples/tutorials/tutorial5/tutorial5.html) to see how it works .
 The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/tutorial5.zip).

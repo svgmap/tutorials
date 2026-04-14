@@ -14,7 +14,7 @@ The table below shows cross-origin access cases and the possibility of CORS erro
 | Types of content accessed cross-origin | Content Processing | Possible CORS error |
 |---|---|---|
 |Bitimage (including tiles)|Overlay|Does not occur|
-|Bitimage (including tiles)|Overlay with [nonlinear projection transformation](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9#.E9.9D.9E.E7.B7.9A.E5.BD.A2.E5.9B.B3.E6.B3.95.E5.A4.89.E6.8F.9B)|Possible occurrence|
+|Bitimage (including tiles)|Overlay with [nonlinear projection transformation](../cross-origin-access/index.md)|Possible occurrence|
 |Bitimage (including tiles)|Geospatial information processing, etc.|Possible occurrence|
 |Data other than bit images, such as vector data and JSON|Overlay|Possible occurrence|
 |Data other than bit images, such as vector data and JSON|Geospatial information processing, etc.|Possible occurrence|
@@ -55,7 +55,7 @@ There are three main cases where SVGMap.js requires cross-origin access:
 - [Reference#setProxyURLFactory](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#setProxyURLFactory)
 - [Manual#setImageProxy](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#setImageProxy)
 
-[Examples of initialization](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9#SVGMap.js.E3.81.AE.E5.88.9D.E6.9C.9F.E5.8C.96) using these APIs are explained in the next chapter.
+[Examples of initialization](../cross-origin-access/index.md#initializing-svgmapjs) using these APIs are explained in the next chapter.
 
 **Cross-Origin Access in the WebApp Layer**
 
@@ -65,7 +65,7 @@ However, when accessing via a proxy, it is possible that the proxy used for case
 
 - [Reference#getCORSURL](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#getCORSURL)
 
-We will show how to use getCORSURL [in a later chapter](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9#webApp.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A7.E3.81.AE.E3.82.AF.E3.83.AD.E3.82.B9.E3.82.AA.E3.83.AA.E3.82.B8.E3.83.B3.E3.82.A2.E3.82.AF.E3.82.BB.E3.82.B9).
+We will show how to use getCORSURL [in a later chapter](../cross-origin-access/index.md).
 
 #### Initializing SVGMap.js
 
@@ -105,7 +105,7 @@ Here is a library to make initialization easier. [gitHub](https://github.com/svg
 
 #### Cross-origin access at the webApp layer
 
-[The getCORSURL API](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#getCORSURL) can be used in webApps of each layer that are registered in [the root HTML document (SVGMap page)](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.95.E3.83.AC.E3.83.BC.E3.83.A0.E3.83.AF.E3.83.BC.E3.82.AF.E3.81.AE.E5.91.BC.E3.81.B3.E5.87.BA.E3.81.97) where SVGMap.js has been initialized [for cross-origin access](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9#SVGMap.js.E3.81.AE.E5.88.9D.E6.9C.9F.E5.8C.96).
+[The getCORSURL API](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#getCORSURL) can be used in webApps of each layer that are registered in [the root HTML document (SVGMap page)](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.95.E3.83.AC.E3.83.BC.E3.83.A0.E3.83.AF.E3.83.BC.E3.82.AF.E3.81.AE.E5.91.BC.E3.81.B3.E5.87.BA.E3.81.97) where SVGMap.js has been initialized [for cross-origin access](../cross-origin-access/index.md#initializing-svgmapjs).
 
 This API is a function that allows you to obtain a URL that enables access to the URL of the service you want to access via a commonly prepared cross-origin access server. For example, it can be used as follows:
 

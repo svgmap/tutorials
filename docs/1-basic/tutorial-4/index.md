@@ -28,7 +28,7 @@ The file structure is as follows:
 
 ### tutorial4.html {#tutorial4-html}
 
-Basically the same as [tutorial2b.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b) used in Tutorial 2b .
+Basically the same as [tutorial2b.html](../tutorial-2b/index.md) used in Tutorial 2b .
 
 - Loads the SVGMap core program file (SVGMapLv0.1_r18module.js) and makes various SVGMap APIs available.
 - Load CSS for layer list UI
@@ -88,8 +88,8 @@ Basically the same as [tutorial2b.html](https://www.svgmap.org/wiki/index.php?ti
 
 ### Container.svg {#container-svg}
 
-- [As in Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c), the bitmap images bitmapImage.svg and dynamicOSM_r11.svg are loaded as layers.
-- [As with the additional chapters in Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#.E8.BF.BD.E5.8A.A0.EF.BC.9A.E8.83.8C.E6.99.AF.E5.9C.B0.E5.9B.B3.E3.82.92.E9.81.B8.E3.81.B9.E3.82.8B.E3.82.88.E3.81.86.E3.81.AB.E3.81.99.E3.82.8B), you can choose from two background maps (OpenStreetMap and Coastline.svg).
+- [As in Tutorial 2c](../tutorial-2c/index.md), the bitmap images bitmapImage.svg and dynamicOSM_r11.svg are loaded as layers.
+- [As with the additional chapters in Tutorial 2c](../tutorial-2c/index.md#added-allows-you-to-choose-background-map-added), you can choose from two background maps (OpenStreetMap and Coastline.svg).
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -157,8 +157,8 @@ Ysvg = -latitude
 
 ### dynamicOSM_r11.svg (and dynamicOSM_r11.html) {#dynamicosm-r11-svg}
 
-This is the same as [dynamicOSM_r11.svg from Tutorial 2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#dynamicOSM_r11.svg.E3.80.81.28dynamicOSM_r11.html.29).
+This is the same as [dynamicOSM_r11.svg from Tutorial 2c](../tutorial-2c/index.md#dynamicosm_r11svg-dynamicosm_r11html-dynamicosm_r11-svg).
 
 ### Coastline.svg {#coastline-svg}
 
-This is the same one we have been using since [Tutorial 1](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#Coastline.svg).
+This is the same one we have been using since [Tutorial 1](../tutorial-1/index.md#coastlinesvg-coastline-svg).

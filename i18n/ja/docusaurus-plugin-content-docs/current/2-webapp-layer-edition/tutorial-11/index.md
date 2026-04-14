@@ -6,7 +6,7 @@ sidebar_position: 11
 
 ## はじめに  {#introduction}
 
-[チュートリアル10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10)をベースに、地図上で位置を指定して、その場所のジオイド高を計算・表示する対話型アプリを構築します。
+[チュートリアル10](../tutorial-10/index.md)をベースに、地図上で位置を指定して、その場所のジオイド高を計算・表示する対話型アプリを構築します。
 
 実際の動作は、 [mesh3b.html](https://svgmap.org/examples/tutorials/mesh3b/mesh3b.html)をクリック。
 
@@ -18,7 +18,7 @@ sidebar_position: 11
 
 ## チュートリアル {#tutorial}
 
-[チュートリアル10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10)をベースに、地図上で位置を指定して、その場所のジオイド高を計算・表示する対話型アプリを構築します。 特徴的なコードはレイヤーに紐付いたwebAppにあります。
+[チュートリアル10](../tutorial-10/index.md)をベースに、地図上で位置を指定して、その場所のジオイド高を計算・表示する対話型アプリを構築します。 特徴的なコードはレイヤーに紐付いたwebAppにあります。
 
 - 実際の動作は、[こちら](https://svgmap.org/examples/tutorials/mesh3b/mesh3b.html) をクリック。
 - 使用ファイルの [ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/mesh3b.zip)
@@ -78,11 +78,11 @@ sidebar_position: 11
 
 ### [rasterMeshI.svg](https://svgmap.org/examples/tutorials/mesh3b/rasterMeshI.svg) {#raster-meshi-svg}
 
-[チュートリアル10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10#Container.svg)と特に大きな違いはありません。
+[チュートリアル10](../tutorial-10/index.md#containersvg-container-svg)と特に大きな違いはありません。
 
 ### [rasterMeshI.html](https://svgmap.org/examples/tutorials/mesh3b/rasterMeshI.html), [geoidCalc.js](https://svgmap.org/examples/tutorials/mesh3b/geoidCalc.js) {#raster-mesh-geoid-calc}
 
-[チュートリアル10](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB10#rasterMesh.html)のコードに対して、地図上で位置を指定するUIと、その位置のジオイド高を計算する機能が追加されています。
+[チュートリアル10](../tutorial-10/index.md)のコードに対して、地図上で位置を指定するUIと、その位置のジオイド高を計算する機能が追加されています。
 
 - 地図上で位置を指定するUI：SVGMapAuthoring.jsというSVGMap.js用の追加ライブラリを用いています。
 - ジオイド高計算： [バイリニア補間](https://en.wikipedia.org/wiki/Bilinear_interpolation)を用いて、グリッドデータを用いて任意の位置の値を演算します。

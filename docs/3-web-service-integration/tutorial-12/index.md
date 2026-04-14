@@ -6,7 +6,7 @@ We will display the [Web Map Service (WMS)](https://ja.wikipedia.org/wiki/Web_Ma
 
 Let's try using the [GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) ( [global topographic map including the ocean floor](https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%8B%E6%B0%B4%E6%B7%B1%E7%B7%8F%E5%9B%B3) ).
 
-First, let's simply display the map content, regardless of the elastic scrolling. This is basically the same as what we did in [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4). We just set the query part of the URL according to the WMS specifications.
+First, let's simply display the map content, regardless of the elastic scrolling. This is basically the same as what we did in [Tutorial 4](../../1-basic/tutorial-4/index.md). We just set the query part of the URL according to the WMS specifications.
 
 - Click [wms1.html](https://svgmap.org/examples/tutorials/wms1/wms1.html) to see it in action .
   - (Note: It may take some time for the WMS to generate and distribute the map.)
@@ -21,7 +21,7 @@ First, let's simply display the map content, regardless of the elastic scrolling
 
 This section explains the most basic method of connecting to [the GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) , which distributes map data based on [the WMS (Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service) specification, which dynamically generates map data for a specified area , and displaying map data.
 
-On the client side, there is no dynamic code implemented, such as JavaScript, and it simply displays a static bit image. Therefore, there is almost no difference from [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4).
+On the client side, there is no dynamic code implemented, such as JavaScript, and it simply displays a static bit image. Therefore, there is almost no difference from [Tutorial 4](../../1-basic/tutorial-4/index.md).
 
 - Click [here](https://svgmap.org/examples/tutorials/wms1/wms1.html) to see it in action.
 - [ZIP archive file](https://www.svgmap.org/examples/tutorials/wms1.zip) of used files
@@ -36,9 +36,9 @@ There's nothing particularly different from before.
 
 ### [wms_static.svg](https://svgmap.org/examples/tutorials/wms1/wms_static.svg) {#wms-static-svg}
 
-As in [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4) , we use the image element to place a bit image in the SVGMap content .
+As in [Tutorial 4](../../1-basic/tutorial-4/index.md) , we use the image element to place a bit image in the SVGMap content .
 
-In [Tutorial 4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4), we only briefly explained the relationship between image region information and image element parameters, but here we will provide a detailed explanation of the relationship between image region information and image element parameters.
+In [Tutorial 4](../../1-basic/tutorial-4/index.md), we only briefly explained the relationship between image region information and image element parameters, but here we will provide a detailed explanation of the relationship between image region information and image element parameters.
 
 #### WMS query parameters
 

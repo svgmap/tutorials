@@ -222,7 +222,7 @@ minX:124.1539312,maxX:145.7870748,minY:24.33444293,maxY:45.51431213,partX:100,pa
 ### Container.svg {#container-svg}
 
 - The theme layer displaying GeoJSON and the background map (OpenStreetMap) are loaded using the animation element.
-- As in [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6#Container.svg), the layer is set to be clickable.
+- As in [Tutorial 6](../tutorial-6/index.md#containersvg-container-svg), the layer is set to be clickable.
 	- As described later, the clickable class attribute is specified to visualize the mesh data as vector data and enable interactivity.
 
 ```svg

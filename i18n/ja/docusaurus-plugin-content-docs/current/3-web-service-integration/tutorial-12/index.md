@@ -6,7 +6,7 @@
 
 [GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) ( [海底を含む全球地形図](https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%8B%E6%B0%B4%E6%B7%B1%E7%B7%8F%E5%9B%B3) )を使ってみます。
 
-まずは伸縮スクロールとは関係なく、地図コンテンツを単に表示させてみます。これは [チュートリアル4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4)と行っていることは基本的に同じです。WMSのスペックに従ってURLのクエリパートを設定するだけです。
+まずは伸縮スクロールとは関係なく、地図コンテンツを単に表示させてみます。これは [チュートリアル4](../../1-basic/tutorial-4/index.md)と行っていることは基本的に同じです。WMSのスペックに従ってURLのクエリパートを設定するだけです。
 
 - 実際の動作は、 [wms1.html](https://svgmap.org/examples/tutorials/wms1/wms1.html) をクリック。
   - Note: WMSが地図を生成配信するまでに少々時間がかかります）
@@ -21,7 +21,7 @@
 
 指定した領域の地図データを動的に生成する仕様 [WMS(Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service)に基づいて地図データを配信する [GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) と接続し、地図データを表示する最も基本的な方法を説明します。
 
-クライアント側では特にjavascript等による動的なコードの実装なしに、単に静的なビットイメージを表示するだけのものです。したがって[チュートリアル4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4)との違いはほぼありません。
+クライアント側では特にjavascript等による動的なコードの実装なしに、単に静的なビットイメージを表示するだけのものです。したがって[チュートリアル4](../../1-basic/tutorial-4/index.md)との違いはほぼありません。
 
 - 実際の動作は、[こちら](https://svgmap.org/examples/tutorials/wms1/wms1.html) をクリック。
 - 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/wms1.zip)
@@ -36,9 +36,9 @@
 
 ### [wms_static.svg](https://svgmap.org/examples/tutorials/wms1/wms_static.svg) {#wms-static-svg}
 
-image要素を使って、ビットイメージをSVGMapコンテンツに配置しているのは[チュートリアル4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4)と同じです。
+image要素を使って、ビットイメージをSVGMapコンテンツに配置しているのは[チュートリアル4](../../1-basic/tutorial-4/index.md)と同じです。
 
-[チュートリアル4](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB4)では画像の領域情報とimage要素のパラメータの関係の説明が簡素でしたが、こちらではWMSのクエリパラメータとの関係を合わせ詳細に説明します。
+[チュートリアル4](../../1-basic/tutorial-4/index.md)では画像の領域情報とimage要素のパラメータの関係の説明が簡素でしたが、こちらではWMSのクエリパラメータとの関係を合わせ詳細に説明します。
 
 #### WMSのクエリパラメータ
 

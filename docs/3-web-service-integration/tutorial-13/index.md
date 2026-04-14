@@ -17,7 +17,7 @@
 
 ## Tutorial {#tutorial}
 
-We will use a [WMS (Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service) to implement a layer as a [WebApp Layer](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0) that can display a map of the displayed area in response to elastic scrolling . As a WMS, we will continue to use [the GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) from [Tutorial 12](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12).
+We will use a [WMS (Web Map Service)](https://en.wikipedia.org/wiki/Web_Map_Service) to implement a layer as a [WebApp Layer](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.82.A6.E3.82.A7.E3.83.96.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.AB.E3.82.88.E3.82.8B.E5.8B.95.E7.9A.84.E3.81.AA.E5.9C.B0.E5.9B.B3.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.A8.E3.80.81.E3.81.9D.E3.81.AE.E3.83.8F.E3.82.A4.E3.83.91.E3.83.BC.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0) that can display a map of the displayed area in response to elastic scrolling . As a WMS, we will continue to use [the GEBCO Web Service](https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/) from [Tutorial 12](../tutorial-12/index.md).
 
 - [Click here](https://svgmap.org/examples/tutorials/wms2/wms2.html) to see it in action.
 - [ZIP archive file](https://www.svgmap.org/examples/tutorials/wms2.zip) of used files
@@ -54,9 +54,9 @@ There's nothing particularly different from before.
     - ```getScreenSize()``` Get the size of the map display screen
     - ```getWMSreq(GEBCOurl, GEBCOlayer, geoViewBox, screenSize)```
         - A function that generates a request URL to GEBCO WMS based on parameters such as display area and screen size.
-        - For details on how to set query parameters, see [the explanation about WMS in Tutorial 12](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12#WMS.E3.81.AE.E3.82.AF.E3.82.A8.E3.83.AA.E3.83.91.E3.83.A9.E3.83.A1.E3.83.BC.E3.82.BF).
+        - For details on how to set query parameters, see [the explanation about WMS in Tutorial 12](../tutorial-12/index.md#wms-query-parameters).
     - ```getSvgImage(req, geoViewBox)``` A function that generates an image element based on the request URI to the WMS generated above and the area information of the map data.
-        - For details on property settings, see [the explanation of the image element in Tutorial 12](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB12#image.E8.A6.81.E7.B4.A0.E3.81.AE.E3.83.97.E3.83.AD.E3.83.91.E3.83.86.E3.82.A3).
+        - For details on property settings, see [the explanation of the image element in Tutorial 12](../tutorial-12/index.md#image-element-properties).
     - ```svgImage.documentElement.appendChild(newImage)``` Place the generated Image element in the SVG content
 
 wmsController.js

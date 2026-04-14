@@ -111,7 +111,7 @@
 
 ### 地図ページのhtml (ghAppLayers_wpxy.html) {#the-html-file-for-the-map-page}
 
-- 違いはProxyを使用できるようにSVGMap.jsをセットアップしている点です。詳しくは [こちらの情報](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9) を参照ください。
+- 違いはProxyを使用できるようにSVGMap.jsをセットアップしている点です。詳しくは [こちらの情報](../../3-web-service-integration/cross-origin-access/index.md) を参照ください。
     - import `{ CorsProxy }` from [https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/CorsProxyModule.js'](https://cdn.jsdelivr.net/gh/svgmap/svgmapjs@latest/CorsProxyModule.js') ;でプロキシーを扱うライブラリを読み込み、
     - corsProxy.setServiceでセットアップし
         - (この例では同じディレクトリに設置したPHPによるプロキシ(./simpleCORSproxy.php)を指定)

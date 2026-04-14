@@ -6,7 +6,7 @@ sidebar_position: 9.5
 
 ## Introduction  {#introduction}
 
-In addition to the content of [Tutorial 9](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9), we have customized the dialog box that appears when you click on a mesh.
+In addition to the content of [Tutorial 9](../tutorial-9/index.md), we have customized the dialog box that appears when you click on a mesh.
 
 To see the actual operation, click on [mesh2b.html](https://svgmap.org/examples/tutorials/mesh2b/mesh2b.html).
 
@@ -17,7 +17,7 @@ To see the actual operation, click on [mesh2b.html](https://svgmap.org/examples/
 
 ## Tutorial {#tutorial}
 
-In addition to [Tutorial 9](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9), we will customize the dialog box that appears when you click on a mesh (specifically, a rect element).
+In addition to [Tutorial 9](../tutorial-9/index.md), we will customize the dialog box that appears when you click on a mesh (specifically, a rect element).
 
 The customized dialog searches for and displays the name of the local government based on the mesh code listed in the mesh's metada. At smaller scales, it displays the prefecture name; at larger scales, it displays the city/town/village name.
 
@@ -28,7 +28,7 @@ The difference lies in the web app associated with the layer.
 
 ### [meshTileViewerB.html](https://svgmap.org/examples/tutorials/mesh2b/meshTileViewerB.html) , [meshTileViewerB.js](https://svgmap.org/examples/tutorials/mesh2b/meshTileViewerB.js) {#mesh-tile-viewr-b}
 
-This explains the additions made to [meshTileViewer.html](https://svgmap.org/examples/tutorials/mesh2/meshTileViewer.html) , the WebApp from [Tutorial 9](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9#meshTileViewer.html).
+This explains the additions made to [meshTileViewer.html](https://svgmap.org/examples/tutorials/mesh2/meshTileViewer.html) , the WebApp from [Tutorial 9](../tutorial-9/index.md).
 
 The added parts are the loading of data to create an associative array of city/town names using the city/town code as the key, and the setting of a callback function to display a custom dialog using that data.
 

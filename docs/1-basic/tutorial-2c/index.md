@@ -12,7 +12,7 @@ The file structure is as follows:
   - [tutorial2c.html](https://www.svgmap.org/examples/tutorials/tutorial2c/tutorial2c.html)
 - The background map referenced in Container.svg has been replaced from Coastline.svg to dynamicOSM_r11.svg.
   - dynamicOSM_r11.svg is a dynamic content (WebAppLayer) linked with JavaScript code. We will not go into that in this chapter, but will focus on practical layering.
-    - Note: Dynamic content is explained in more detail in [the WebApp Layer section](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8).
+    - Note: Dynamic content is explained in more detail in [the WebApp Layer section](../../2-webapp-layer-edition/index.md).
 
 ## Tutorial {#tutorial}
 
@@ -39,15 +39,15 @@ tutorial2b.html
 ```
 ### tutorial2c.html {#tutorial2c-html}
 
-This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
+This is the same as [Tutorial 2B](../tutorial-2b/index.md)
 
 ### layerListStyle.css {#layerlistsyle-css}
 
-This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
+This is the same as [Tutorial 2B](../tutorial-2b/index.md)
 
 ### Container.svg {#container-svg}
 
-- Load the SVG files for the two layers you want to display [as layers](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0).
+- Load the SVG files for the two layers you want to display [as layers](../tutorial-1/index.md#layering-layering).
   - Coastline.svg
   - Airport.svg
 - The layer order is as follows: The lower the row, the higher the layer . [SVG Painters Model](https://www.w3.org/TR/SVG11/render.html#PaintersModel)
@@ -74,11 +74,11 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 - This is the default OpenStreetMap background map layer that replaces Coastline.svg.
 - This content is not just SVG content, but a WebAppLayer where content is dynamically generated using JavaScript.
   - dynamicOSM_r11.html is the WebApp content containing the javascript and is linked from dynamicOSM_r11.svg.
-  - WebAppLayer will be explained in more detail in [Tutorial: WebAppLayer](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8). For now, just think of it as a practical background map layer that can be easily used, where a detailed map will be displayed when zoomed in, by simply replacing Coastline.svg with this.
+  - WebAppLayer will be explained in more detail in [Tutorial: WebAppLayer](../../2-webapp-layer-edition/index.md). For now, just think of it as a practical background map layer that can be easily used, where a detailed map will be displayed when zoomed in, by simply replacing Coastline.svg with this.
 
 ### Airport.svg {#airport-svg}
 
-This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
+This is the same as [Tutorial 2B](../tutorial-2b/index.md)
 
 ## Added: Allows you to choose background map {#added}
 
@@ -94,7 +94,7 @@ The difference is the contents of Container.svg
 
 ### tutorial2c_add.html {#tutorial2c_add-html}
 
-[This is the same as the html in the previous chapter](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#tutorial2c.html), except that the linked container svg is Container_add.svg .
+[This is the same as the html in the previous chapter](../tutorial-2c/index.md#tutorial2chtml-tutorial2c-html), except that the linked container svg is Container_add.svg .
 
 ### Container_add.svg {#container_add-svg}
 
@@ -128,4 +128,4 @@ The difference is the contents of Container.svg
 
 ### Coastline.svg {#coastline-svg}
 
-This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
+This is the same as [Tutorial 2B](../tutorial-2b/index.md)
