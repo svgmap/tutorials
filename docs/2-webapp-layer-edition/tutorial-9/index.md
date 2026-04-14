@@ -6,7 +6,7 @@ sidebar_position: 9
 
 ## Introduction  {#introduction}
 
-This tutorial demonstrates how to display tiled mesh data using asynchronous loading in a web application. The loaded mesh data is [Gridded XYZ data](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Gridded_XYZ) based on a regional standard mesh, and a simple tile pyramid is constructed using small-scale and large-scale data to implement [Level of Detail](https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics)).
+This tutorial demonstrates how to display tiled mesh data using asynchronous loading in a web application. The loaded mesh data is [Gridded XYZ data](../tutorial-8/index.md#gridded-xyz) based on a regional standard mesh, and a simple tile pyramid is constructed using small-scale and large-scale data to implement [Level of Detail](https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics)).
 
 The sample data used for visualization is [the municipal code data for the third-level mesh system](https://www.stat.go.jp/data/mesh/m_itiran.html), published by the Statistics Bureau .
 
@@ -23,9 +23,9 @@ To actually use it, click on [mesh2.html](https://svgmap.org/examples/tutorials/
 
 ## Tutorial {#tutorial}
 
-This tutorial displays tiled mesh data. [Tutorial 8](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8), we will be using [Gridded XYZ type mesh data](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Gridded_XYZ).
+This tutorial displays tiled mesh data. [Tutorial 8](../tutorial-8/index.md), we will be using [Gridded XYZ type mesh data](../tutorial-8/index.md#gridded-xyz).
 
-Furthermore, we will be dealing with larger data (more mesh count, finer detail) than in [Tutorial 8](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8).Therefore, in addition to tiling, we will also construct a simple tile pyramid and implement a function ([Level of Detail](https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics))) that changes the data displayed at small and large scales.
+Furthermore, we will be dealing with larger data (more mesh count, finer detail) than in [Tutorial 8](../tutorial-8/index.md).Therefore, in addition to tiling, we will also construct a simple tile pyramid and implement a function ([Level of Detail](https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics))) that changes the data displayed at small and large scales.
 
 - [Click here](https://svgmap.org/examples/tutorials/mesh2/mesh2.html) to see how it works.
 - The file used is a [ZIP archive file](https://www.svgmap.org/examples/tutorials/mesh2.zip).
@@ -111,12 +111,12 @@ Tile-divided data for large scale (divided at the primary mesh level).
 
 #### Note
 
-- The two types of files mentioned above correspond to [Gridded XYZ](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB8#Gridded_XYZ) data. Although it may appear that there is no XY data, this is because the mesh code is information encoded from the gridded XY coordinates.
+- The two types of files mentioned above correspond to [Gridded XYZ](../tutorial-8/index.md#gridded-xyz) data. Although it may appear that there is no XY data, this is because the mesh code is information encoded from the gridded XY coordinates.
 - Furthermore, the most common type of gridded XYZ data has one XYZ data point per row. However, the data presented here is　 ```Z,XY1,XY2,XY3.....XYn```　slightly unconventional, as it encodes multiple XY values ​​​​with a common Z value onto a single row using a variable-length encoding method (to reduce the data size).
 
 #### code_name.csv
 
-- [Data for Tutorial 9b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9b). This is dictionary data between city/town/village codes and municipality names.
+- [Data for Tutorial 9b](../tutorial-9b/index.md). This is dictionary data between city/town/village codes and municipality names.
 - First digit: City/ward/town/village code (5-digit number)
 	- The prefectural government code can be obtained by taking the first two characters.
 - Second digit: Country name
@@ -135,7 +135,7 @@ Tile-divided data for large scale (divided at the primary mesh level).
 ### Container.svg {#container-svg}
 
 - The theme layer, which displays mesh data, and the background map (OpenStreetMap) are loaded using the animation element.
-- Similar to [Tutorial 6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6#Container.svg), a clickable layer is specified.
+- Similar to [Tutorial 6](../tutorial-6/index.md#containersvg-container-svg), a clickable layer is specified.
 	- As described later, the `clickable` attribute is specified in the `class` attribute to visualize the mesh data as vector data and enable interactivity.
 
 ```svg

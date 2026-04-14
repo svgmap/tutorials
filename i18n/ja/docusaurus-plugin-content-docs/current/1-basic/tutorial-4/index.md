@@ -27,7 +27,7 @@
 
 ### tutorial4.html {#tutorial4-html}
 
-基本的に[チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b)で使用したtutorial2b.htmlと同様。
+基本的に[チュートリアル2b](../tutorial-2b/index.md)で使用したtutorial2b.htmlと同様。
 
 - SVGMapのコアプログラムファイル(SVGMapLv0.1_r18module.js)を読み込み、SVGMapの各種APIを利用可能にする。
 - レイヤーリストUI用のCSSを読み込み
@@ -87,8 +87,8 @@
 
 ### Container.svg {#container-svg}
 
-- [チュートリアル2c](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c)と同様に、ビットマップイメージのbitmapImage.svg、dynamicOSM_r11.svgをレイヤーとして読み込んでいます。
-- [チュートリアル2c追加の章と](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#.E8.BF.BD.E5.8A.A0.EF.BC.9A.E8.83.8C.E6.99.AF.E5.9C.B0.E5.9B.B3.E3.82.92.E9.81.B8.E3.81.B9.E3.82.8B.E3.82.88.E3.81.86.E3.81.AB.E3.81.99.E3.82.8B)と同様に背景地図を2つ(OpenStreetMapとCoastline.svg)選べるようにしています。
+- [チュートリアル2c](../tutorial-2c/index.md)と同様に、ビットマップイメージのbitmapImage.svg、dynamicOSM_r11.svgをレイヤーとして読み込んでいます。
+- [チュートリアル2c追加の章と](../tutorial-2c/index.md#追加背景地図を選べるようにする-added)と同様に背景地図を2つ(OpenStreetMapとCoastline.svg)選べるようにしています。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,8 +156,8 @@ Ysvg = -緯度
 
 ### dynamicOSM_r11.svg (およびdynamicOSM_r11.html) {#dynamicosm-r11-svg}
 
-[チュートリアル2cのdynamicOSM_r11.svg](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#dynamicOSM_r11.svg.E3.80.81.28dynamicOSM_r11.html.29)と同じものです。
+[チュートリアル2cのdynamicOSM_r11.svg](../tutorial-2c/index.md#dynamicosm_r11svg-dynamicosm_r11html-dynamicosm_r11-svg)と同じものです。
 
 ### Coastline.svg {#coastline-svg}
 
-[チュートリアル1](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#Coastline.svg)から使ってきているものと同じです。
+[チュートリアル1](../tutorial-1/index.md#coastlinesvg-coastline-svg)から使ってきているものと同じです。

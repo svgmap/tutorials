@@ -4,13 +4,13 @@
 
 動的にベクトルデータが生成・配信されているサービスをSVGMap.jsに結合します。ここではUSGS Hazards Programが配信している、 [世界の地震発生状況データ](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)(GeoJSON版)を結合してみます。
 
-動的なサービスと接続してはいますが、基本的には [チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON)との違いはありません。
+動的なサービスと接続してはいますが、基本的には [チュートリアル6](../../2-webapp-layer-edition/tutorial-6/index.md)との違いはありません。
 
 - 実際の動作は、 [geojson2.html](https://svgmap.org/examples/tutorials/geojson2/geojson2.html)をクリック。
 
 ## ソースコードディレクトリ {#source-code}
 
-[チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON)に対し、以下が相違点です。
+[チュートリアル6](../../2-webapp-layer-edition/tutorial-6/index.md)に対し、以下が相違点です。
 
 - [ソースコードのディレクトリ](https://svgmap.org/examples/tutorials/geojson2/)
 - geoJsonExample2.html:
@@ -20,18 +20,18 @@
 
 ## チュートリアル {#tutorial}
 
-動的にベクトルデータが生成・配信されているサービスをSVGMap.jsに結合します。ここではUSGS Hazards Programが配信している、[リアルタイム世界の地震発生状況データ(GeoJSON Real-time Feeds)](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)(GeoJSON版)を結合してみます。基本的には[チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB14#.E3.83.81.E3.83.A5.E3.83.BC.E3.83.88.E3.83.AA.E3.82.A2.E3.83.AB6_WebApp_Layer_geoJSON)との違いはありません。
+動的にベクトルデータが生成・配信されているサービスをSVGMap.jsに結合します。ここではUSGS Hazards Programが配信している、[リアルタイム世界の地震発生状況データ(GeoJSON Real-time Feeds)](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)(GeoJSON版)を結合してみます。基本的には[チュートリアル6](../../2-webapp-layer-edition/tutorial-6/index.md)との違いはありません。
 
 - 実際の動作は、[こちら](https://svgmap.org/examples/tutorials/geojson2/geojson2.html)をクリック。
 - 使用ファイルの[ZIPアーカイブファイル](https://www.svgmap.org/examples/tutorials/geojson2.zip)
 
 ### geojson1.html {#geojson-html}
 
-- [チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)と特に違いはありません。
+- [チュートリアル6](../../2-webapp-layer-edition/tutorial-6/index.md)と特に違いはありません。
 
 ### Container.svg {#container-svg}
 
-- [チュートリアル6](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6)と特に違いはありません。
+- [チュートリアル6](../../2-webapp-layer-edition/tutorial-6/index.md)と特に違いはありません。
 
 ### geoJsonExample2.svg {#geojsonexample2}
 
@@ -65,7 +65,7 @@
 #### Code
 
 - geoJsonExample2.svgに紐付けられ、[そのDOMをコントロールできるwebApp](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E5.9B.BA.E6.9C.89.E3.81.AEUI)
-- [チュートリアル6#geoJsonExample1.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB6#geoJsonExample1.html)に対して以下が相違点
+- [チュートリアル6#geoJsonExample1.html](../../2-webapp-layer-edition/tutorial-6/index.md#geojsonexample1html)に対して以下が相違点
 - ```addEventListener("load", function(){..})```
   - ```changeData()``` UIの設定に基づき、地震データをリクエストして可視化する関数
     - ```getUSGSURL()```  USGSが配信する地震データを取得するためのGETリクエストを生成
@@ -216,4 +216,4 @@ function setMagColors(features){ // Use the styling specifications from [[Guide#
 
 ### appendix:クロスオリジンアクセス
 
-[クロスオリジンアクセス](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9) については([独立したページ](https://www.svgmap.org/wiki/index.php?title=%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9)に移行しました)
+[クロスオリジンアクセス](../cross-origin-access/index.md) については([独立したページ](../cross-origin-access/index.md)に移行しました)

@@ -7,7 +7,7 @@
 - 実際の動作は[こちら](https://www.svgmap.org/examples/tutorials/ghAppLayersClone/ghAppLayers_clone.html) をクリック
   - (このサンプルでは、国交省道路交通情報のレイヤー群と、CSVオーサリングツールレイヤー、basemapsのみを使用しています)
 
-本章では、[svgmapAppLayers](https://github.com/svgmap/svgmapAppLayers)リポジトリを自分のホストにコピーして使用します。 前章の[制限事項](https://www.svgmap.org/wiki/index.php?title=SvgmapAppLayers_GitHub_Pages%E3%81%AE%E5%88%A9%E7%94%A8#.E5.88.B6.E9.99.90.E4.BA.8B.E9.A0.85)はありませんが、svgmapAppLayersリポジトリのアップデートの反映は自身で行う必要があります。
+本章では、[svgmapAppLayers](https://github.com/svgmap/svgmapAppLayers)リポジトリを自分のホストにコピーして使用します。 前章の[制限事項](../using-svgmapapplayers-on-github-pages/index.md#制限事項-restrictions)はありませんが、svgmapAppLayersリポジトリのアップデートの反映は自身で行う必要があります。
 
 - 実際の動作は[こちら](https://www.svgmap.org/examples/tutorials/ghAppLayersClone/ghAppLayers_clone.html) をクリック
   - このサンプルでは、国交省道路交通情報のレイヤー群と、CSVオーサリングツールレイヤー、basemapsのみを使用しています
@@ -109,6 +109,6 @@
 
 [https://github.com/svgmap/svgMapDemo](https://github.com/svgmap/svgMapDemo)
 
-ただし、CORSプロキシについては、上記githubリポジトリのソースではsvgmap.orgの公式デモシステム専用に用意されたものが設定されていますので、ご自身のサイトで別途用意したCORSプロキシ用にhtmlの中のソースの該当部分を編集してください。[CORSプロキシの設定については、こちらを参照](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.82.AF.E3.83.AD.E3.82.B9.E3.82.AA.E3.83.AA.E3.82.B8.E3.83.B3.E3.82.A2.E3.82.AF.E3.82.BB.E3.82.B9).
+ただし、CORSプロキシについては、上記githubリポジトリのソースではsvgmap.orgの公式デモシステム専用に用意されたものが設定されていますので、ご自身のサイトで別途用意したCORSプロキシ用にhtmlの中のソースの該当部分を編集してください。[CORSプロキシの設定については、こちらを参照](../../3-web-service-integration/cross-origin-access/index.md).
 
 参考：[上記githubリポジトリによるSVGMap公式デモページ](https://svgmap.github.io/svgMapDemo/)

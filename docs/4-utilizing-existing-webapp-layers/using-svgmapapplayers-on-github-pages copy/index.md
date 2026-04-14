@@ -7,7 +7,7 @@ Download the contents of [svgmapAppLayers](https://github.com/svgmap/svgmapAppLa
 - [Click here](https://www.svgmap.org/examples/tutorials/ghAppLayersClone/ghAppLayers_clone.html) to see the actual operation.
   - (This sample uses only the Ministry of Land, Infrastructure, Transport and Tourism's road traffic information layers, the CSV authoring tool layer, and basemaps.)
 
-In this chapter, we will copy [the svgmapAppLayers repository](https://github.com/svgmap/svgmapAppLayers) to your own host and use it. There are no [limitations](https://www.svgmap.org/wiki/index.php?title=SvgmapAppLayers_GitHub_Pages%E3%81%AE%E5%88%A9%E7%94%A8#.E5.88.B6.E9.99.90.E4.BA.8B.E9.A0.85) as in the previous chapter, but you will need to be responsible for reflecting updates to the svgmapAppLayers repository yourself.
+In this chapter, we will copy [the svgmapAppLayers repository](https://github.com/svgmap/svgmapAppLayers) to your own host and use it. There are no [limitations](../using-svgmapapplayers-on-github-pages/index.md#restrictions-restrictions) as in the previous chapter, but you will need to be responsible for reflecting updates to the svgmapAppLayers repository yourself.
 
 - [Click here](https://www.svgmap.org/examples/tutorials/ghAppLayersClone/ghAppLayers_clone.html) to see the actual operation.
   - This sample uses only the Ministry of Land, Infrastructure, Transport and Tourism's road traffic information layers, the CSV authoring tool layer, and basemaps.
@@ -109,6 +109,6 @@ By cloning the contents of the following GitHub repository, you can easily creat
 
 [https://github.com/svgmap/svgMapDemo](https://github.com/svgmap/svgMapDemo)
 
-However, the CORS proxy in the source code of the GitHub repository mentioned above is configured specifically for the official demo system of svgmap.org. Therefore, please edit the relevant section of the HTML source code to use a CORS proxy that you have prepared separately for your own site. For information on configuring a CORS proxy, please refer to [this link](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#.E3.82.AF.E3.83.AD.E3.82.B9.E3.82.AA.E3.83.AA.E3.82.B8.E3.83.B3.E3.82.A2.E3.82.AF.E3.82.BB.E3.82.B9).
+However, the CORS proxy in the source code of the GitHub repository mentioned above is configured specifically for the official demo system of svgmap.org. Therefore, please edit the relevant section of the HTML source code to use a CORS proxy that you have prepared separately for your own site. For information on configuring a CORS proxy, please refer to [this link](../../3-web-service-integration/cross-origin-access/index.md).
 
 Reference: [Official SVGMap demo page from the above GitHub repository](https://svgmap.github.io/svgMapDemo/)

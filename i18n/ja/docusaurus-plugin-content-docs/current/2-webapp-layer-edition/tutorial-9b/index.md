@@ -6,7 +6,7 @@ sidebar_position: 9.5
 
 ## はじめに  {#introduction}
 
-[チュートリアル9](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9)の内容に加えて、メッシュをクリックしたときに出現するダイアログをカスタマイズしています。
+[チュートリアル9](../tutorial-9/index.md)の内容に加えて、メッシュをクリックしたときに出現するダイアログをカスタマイズしています。
 
 実際の動作は、[mesh2b.html](https://svgmap.org/examples/tutorials/mesh2b/mesh2b.html)をクリック。
 
@@ -17,7 +17,7 @@ sidebar_position: 9.5
 
 ## チュートリアル {#tutorial}
 
-[チュートリアル9](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9)に加えて、メッシュ(の図形：rect要素)をクリックしたときに出現するダイアログをカスタマイズしてみます。
+[チュートリアル9](../tutorial-9/index.md)に加えて、メッシュ(の図形：rect要素)をクリックしたときに出現するダイアログをカスタマイズしてみます。
 
 カスタマイズされたダイアログでは、メッシュのmetadaに記載されたメッシュコードをもとに自治体名称を検索して表示しています。 小縮尺では県名、大縮尺では市区町村名を表示します。
 
@@ -28,7 +28,7 @@ sidebar_position: 9.5
 
 ### [meshTileViewerB.html](https://svgmap.org/examples/tutorials/mesh2b/meshTileViewerB.html) , [meshTileViewerB.js](https://svgmap.org/examples/tutorials/mesh2b/meshTileViewerB.js) {#mesh-tile-viewr-b}
 
-[チュートリアル9](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB9#meshTileViewer.html) のWebApp、 [meshTileViewer.html](https://svgmap.org/examples/tutorials/mesh2/meshTileViewer.html)に対して追加されている部分を解説します。 
+[チュートリアル9](../tutorial-9/index.md) のWebApp、 [meshTileViewer.html](https://svgmap.org/examples/tutorials/mesh2/meshTileViewer.html)に対して追加されている部分を解説します。 
 
 市区町村コードをキーにした市区町村名の連想配列を作るためのデータを読み込んでいる点と、それを用いたカスタムダイアログを出現させるためのコールバック関数を設定している点が追加部分になります。
 

@@ -62,11 +62,11 @@ Note:
 
 ### tutorial3b.html {#tutorial3b-html}
 
-基本的に、[Tutorial 2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b) で使用した [tutorial2b.html](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同様です。
+基本的に、[Tutorial 2b](../tutorial-2b/index.md) で使用した [tutorial2b.html](../tutorial-2b/index.md#tutorial2bhtml-tutorial2b-html)と同様です。
 
 ### Container.svg {#container-svg}
 
-- [チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b)の[Container.svg](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#Container.svg)と基本的に違いはありません。 
+- [チュートリアル2b](../tutorial-2b/index.md#containersvg-container-svg)と基本的に違いはありません。 
 - ただし、今回は海岸線レイヤー、道路レイヤー、市街地(面・点)レイヤーとも、タイリングされたデータになっています。
 - 各レイヤーを表す**animation要素**の参照先は、svgMapToolsで生成されたタイリングされたSVGMapコンテンツのルートのファイルになります。
 - ベクトルデータをクリッカブルにするために、**class**属性に、**clickable**を加えています。

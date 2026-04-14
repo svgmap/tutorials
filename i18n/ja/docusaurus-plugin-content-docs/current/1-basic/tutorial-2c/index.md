@@ -12,7 +12,7 @@
   - [tutorial2c.html](https://www.svgmap.org/examples/tutorials/tutorial2c/tutorial2c.html)
 - Container.svgで参照している背景地図を、Coastline.svgからdynamicOSM_r11.svgに置き換えています。
   - dynamicOSM_r11.svgはjavascriptコードが紐付けられた動的なコンテンツ(WebAppLayer)になっています。本章ではその内容は割愛し、実用的なレイヤリングを実践してみます。
-    - Note: 動的なコンテンツの詳細は[WebApp Layer編](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8)で解説されています。
+    - Note: 動的なコンテンツの詳細は[WebApp Layer編](../../2-webapp-layer-edition/index.md)で解説されています。
 
 ## チュートリアル {#tutorial}
 
@@ -39,15 +39,15 @@ tutorial2b.html
 ```
 ### tutorial2c.html {#tutorial2c-html}
 
-[Tutorial 2Bチュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同じ内容です
+[Tutorial 2Bチュートリアル2b](../tutorial-2b/index.md#tutorial2bhtml-tutorial2b-html)と同じ内容です
 
 ### layerListStyle.css {#layerlistsyle-css}
 
-This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)
+This is the same as [Tutorial 2B](../tutorial-2b/index.md#tutorial2bhtml-tutorial2b-html)
 
 ### Container.svg {#container-svg}
 
-- 表示する２つのレイヤ用のSVGファイルを[レイヤーとして](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0)読み込む
+- 表示する２つのレイヤ用のSVGファイルを[レイヤーとして](../tutorial-1/index.md#レイヤリング-layering)読み込む
   - Coastline.svg
   - Airport.svg
 - レイヤーの順番は、**下の行ほど上のレイヤー**になる。[SVGのPainters Model](https://www.w3.org/TR/SVG11/render.html#PaintersModel)
@@ -74,11 +74,11 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 - Coastline.svgに代えてデフォルトで表示されるOpenStreetMapの背景地図レイヤーです
 - このコンテンツは、単なるSVGコンテンツではなく、javascriptで動的にコンテンツが生成されるWebAppLayerとなっています。
   - dynamicOSM_r11.htmlは、そのjavascriptが入っているWebAppコンテンツで、 dynamicOSM_r11.svgからリンクされています。
-  - WebAppLayerについては[チュートリアル:WebAppLayer編](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB#WebApp_Layer.E7.B7.A8) で詳しく説明します。ここではCoastline.svgからこれに代えるだけで、拡大すると詳細な地図が表示される、実用的な背景地図のレイヤーを簡単に利用することができたと考えていただくだけで大丈夫です。
+  - WebAppLayerについては[チュートリアル:WebAppLayer編](../../2-webapp-layer-edition/index.md) で詳しく説明します。ここではCoastline.svgからこれに代えるだけで、拡大すると詳細な地図が表示される、実用的な背景地図のレイヤーを簡単に利用することができたと考えていただくだけで大丈夫です。
 
 ### Airport.svg {#airport-svg}
 
-[チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同じ内容です。
+[チュートリアル2b](../tutorial-2b/index.md#tutorial2bhtml-tutorial2b-html)と同じ内容です。
 
 ## 追加：背景地図を選べるようにする {#added}
 
@@ -94,7 +94,7 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 
 ### tutorial2c_add.html {#tutorial2c_add-html}
 
-リンク先のコンテナsvgが、Container_add.svgになっていることを除き、[前章のhtml](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2c#tutorial2c.html)と同じです。
+リンク先のコンテナsvgが、Container_add.svgになっていることを除き、[前章のhtml](../tutorial-2c/index.md#tutorial2chtml-tutorial2c-html)と同じです。
 
 ### Container_add.svg {#container_add-svg}
 
@@ -128,4 +128,4 @@ This is the same as [Tutorial 2B](https://www.svgmap.org/wiki/index.php?title=%E
 
 ### Coastline.svg {#coastline-svg}
 
-[チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b#tutorial2b.html)と同じ内容です。
+[チュートリアル2b](../tutorial-2b/index.md#tutorial2bhtml-tutorial2b-html)と同じ内容です。

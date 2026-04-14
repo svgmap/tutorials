@@ -26,7 +26,7 @@ webAppで非同期読み込みにより[GeoJSONデータ](https://ja.wikipedia.o
 
 ### geojson1.html {#geojson1-html}
 
-[チュートリアル2b](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB2b) のhtmlに対して、読み込む [SVGコンテンツ](https://svgmap.org/examples/tutorials/geojson1/Container.svg) が異なるだけです。
+[チュートリアル2b](../../1-basic/tutorial-2b/index.md) のhtmlに対して、読み込む [SVGコンテンツ](https://svgmap.org/examples/tutorials/geojson1/Container.svg) が異なるだけです。
 
 ```html
 <!DOCTYPE html>
@@ -77,7 +77,7 @@ webAppで非同期読み込みにより[GeoJSONデータ](https://ja.wikipedia.o
 
 - [GeoJsonを表示する主題レイヤ](https://svgmap.org/examples/tutorials/geojson1/geoJsonExample1.svg) と、背景地図(OpenStreetMap)をanimation要素で読み込んでいます。
 - GeoJsonデータはベクトルデータのため、class属性で [`clickable`](https://www.svgmap.org/wiki/index.php?title=%E8%A7%A3%E8%AA%AC%E6%9B%B8#class.E5.B1.9E.E6.80.A7.E3.81.AB.E3.82.88.E3.82.8B.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.BC.E3.81.AE.E3.82.B0.E3.83.AB.E3.83.BC.E3.83.94.E3.83.B3.E3.82.B0.E3.83.BB.E3.82.AF.E3.83.AA.E3.83.83.E3.82.AB.E3.83.96.E3.83.AB.E6.A9.9F.E8.83.BD.E3.81.AE.E6.8F.90.E4.BE.9B) を指定しています。
-- それ以外は [こちらの要点](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E3.83.AC.E3.82.A4.E3.83.A4.E3.83.AA.E3.83.B3.E3.82.B0)を参考にしたレイヤリングを行っています。
+- それ以外は [こちらの要点](../../1-basic/tutorial-1/index.md#レイヤリング-layering)を参考にしたレイヤリングを行っています。
 
 ```svg
 <?xml version="1.0" encoding="UTF-8"?>

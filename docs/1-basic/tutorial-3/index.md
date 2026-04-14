@@ -44,7 +44,7 @@ SVGMap tiling is fundamentally different from other frameworks (openlayers, leaf
 
 Other map frameworks assume pre-defined tiling rules (such as [TMS](https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%83%AB%E3%83%9E%E3%83%83%E3%83%97%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9)) **and these rules are hard-coded into the framework**. The system is designed to only specify parameters for accessing a server built based on those rules. While it is easy to introduce tiled content by simply setting parameters, there are issues with flexibility.
 
-On the other hand, SVGMap tiling is more primitive and does not have built-in tiling rules (although this can easily be implemented as a WebApp Layer, as explained in [Tutorial 5](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB5)), but instead provides the more basic functionality needed to make tiling work, allowing for a wide variety of tiling strategies to be achieved.
+On the other hand, SVGMap tiling is more primitive and does not have built-in tiling rules (although this can easily be implemented as a WebApp Layer, as explained in [Tutorial 5](../../2-webapp-layer-edition/tutorial-5/index.md)), but instead provides the more basic functionality needed to make tiling work, allowing for a wide variety of tiling strategies to be achieved.
 
 In this chapter, we will demonstrate the most basic static tiling using this function. Static tiling is achieved by preparing an SVG file with inline layout information for the tiled data, and the viewer matching the viewport with its container to obtain the necessary tiles.
 
@@ -154,7 +154,7 @@ Basically the same as tutorial1.html used in Tutorial 1.
 
 #### Tiling {#tiling}
 
-This is an example of tiling using [the animation element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#animation.E8.A6.81.E7.B4.A0) of SVGMap content .
+This is an example of tiling using [the animation element](../tutorial-1/index.md#animation-element-animation-element) of SVGMap content.
 
 Tiling consists of tile content, where the actual data is stored, and container content (this file) that integrates it.
 
@@ -180,7 +180,7 @@ Tiling consists of tile content, where the actual data is stored, and container 
   - x：12078.24557, 12737.53337, 13396.82117, 14056.10897
   - y: -4750.342539, -4118.743422, -3487.144305, -2855.545188
 - Note: The Y coordinate is the opposite of the geographic coordinate (latitude and longitude coordinate), and the origin is at the top (north).
-  - See the relationship between SVG coordinates and geographic coordinates (latitude and longitude coordinates) using [the globalCoordinateSystem element](https://www.svgmap.org/wiki/index.php?title=%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB1#.E5.BF.85.E9.A0.88.E3.81.AE.E6.8B.A1.E5.BC.B5_:_globalCoordinateSystem.E8.A6.81.E7.B4.A0).
+  - See the relationship between SVG coordinates and geographic coordinates (latitude and longitude coordinates) using [the globalCoordinateSystem element](../tutorial-1/index.md#required-extension-globalcoordinatesystem-element-container-svg).
 
 #### About svpMap Tools {#about-svgmap-tools}
 
