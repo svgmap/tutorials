@@ -117,7 +117,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} SVGMap Organization, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} SVGMap Organization. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
